@@ -1,0 +1,2475 @@
+/**
+ * Styles for the Kolab web client
+ *
+ * Copyright (C) 2012-2014, Kolab Systems AG <contact@kolabsys.com>
+ * Screendesign by 
+ *
+ * The contents are subject to the Creative Commons Attribution-ShareAlike
+ * License. It is allowed to copy, distribute, transmit and to adapt the work
+ * by keeping credits to the original autors in the README file.
+ * See http://creativecommons.org/licenses/by-sa/3.0/ for details.
+ */
+
+body {
+	background: #e7e7e7 url(images/bg.gif) 0 0 repeat-x;
+	color: #4c4c4c;
+	font-family: Brandon Grotesque, Muli, Noto Sans, Montserat, Trebuchet MS, Fira Sans, Lucida Grande, Lucida Sans Unicode, Lucid Sans, Tahoma, sans-serif;
+	font-size: 12px;
+}
+
+body.extwin {
+	background: #e7e7e7 url(images/bg_extwin.gif) 0 0 repeat-x;
+}
+
+body.login {
+	background: #e7e7e7;
+}
+
+body.login #header {
+	background: #3a3a3a;
+}
+
+/*** basic page layout ***/
+
+#login-form .box-inner {
+	padding-top: 40px;
+	background: #fff;
+	border: none;
+	border-radius: 0;
+}
+
+#login-form .box-bottom {
+	background: transparent;
+}
+
+#login-form td.title {
+	color: #e63023;
+	text-shadow: none;
+	font-weight: bold;
+}
+
+#login-form input.button {
+	border: none;
+	text-shadow: none;
+	color: #fff;
+	box-shadow: none;
+	background: #e63023;
+}
+
+#login-form input.button:hover,
+#login-form input.button:focus {
+	box-shadow: none;
+}
+
+#login-form p.formbuttons {
+	margin-left: 20%;
+	padding-left: 8px;
+	margin-top: 5px;;
+	text-align: left;
+}
+
+.topgradient {
+	height: 0;
+}
+
+#mainscreen {
+	top: 80px;
+	bottom: 15px;
+}
+
+#mainscreen.offset {
+	top: 120px;
+}
+
+#messagestack {
+	right: 10px;
+	bottom: 15px;
+	padding: 0 2px;
+}
+
+#header {
+	height: 60px;
+	overflow: hidden;
+}
+
+.extwin #header {
+	height: 20px;
+}
+
+#header span.username {
+	padding: 0 15px;
+	color: #d9d9d9;
+	line-height: 60px;
+}
+
+#toplogo {
+	margin-top: 8px;
+	margin-left: 18px;
+	paddin: 0;
+	float: left;
+}
+
+#header .aboutlinks {
+	display: inline-block;
+	visibility: hidden;
+	padding: 16px 0 0 2em;
+	color: #666;
+}
+
+#header a {
+	color: #f9f9f9;
+}
+
+#header .topleft:hover .aboutlinks {
+	visibility: visible;
+}
+
+.extwin #header .aboutlinks {
+	display: none;
+}
+
+#helptoolbar,
+#taskstoolbar,
+.notesview #notestoolbar,
+#calendartoolbar,
+#addressbooktoolbar,
+#filestoolbar,
+#messagetoolbar {
+	height: 50px;
+	top: -15px;
+	left: -2px;
+}
+
+#messagesearchtools {
+	top: -9px;
+}
+
+.notesview #quicksearchbar,
+#quicksearchbar {
+	top: -7px;
+}
+
+#messagesearchtools #quicksearchbar {
+	top: 2px;
+}
+
+.splitter-v {
+	background: url(images/splitter.png) -1px center no-repeat;
+}
+
+.splitter-h {
+	background: url(images/splitter.png) center -1px no-repeat;
+}
+
+.ktaskmenu {
+	display: block;
+	position: relative;
+	height: 60px;
+	min-width: 200px;
+	background: #2c2c2c url(images/taskmenu.png) 1px 4px no-repeat;
+	overflow: visible;
+	outline: none;
+}
+
+#composebody:active,
+#composebody:focus {
+	box-shadow: 0 0 3px 2px rgba(230,48,35,0.4) inset;
+}
+
+.ktaskmenu:focus {
+	background: rgba(230,48,35,0.9);
+}
+
+.ktaskmenu .activetask {
+	display: block;
+	font-size: 15px;
+	font-weight: bold;
+	color: #fff;
+	margin: 17px 0 17px 20px;
+	height: 26px;
+	line-height: 26px;
+	padding: 0 35px 0 40px;
+	min-width: 120px;
+	cursor: default;
+	background: url(images/buttons.png) -100px 0 no-repeat;
+}
+
+#ktaskpopup {
+	display: none;
+	position: absolute;
+	top: 60px;
+	right: 0px;
+	width: 205px;
+	height: auto;
+	z-index: 500;
+}
+
+#ktaskpopup .popupmenu {
+	display: block;
+	position: static;
+	top: auto;
+	left: auto;
+	right: auto;
+	width: 100%;
+	border: 0;
+	border-radius: 0;
+}
+
+#ktaskpopup a {
+	display: block;
+	border-bottom: 1px solid #828282;
+	color: #fff;
+	text-decoration: none;
+	min-width: 160px;
+	min-height: 14px;
+	padding: 0 10px;
+	white-space: nowrap;
+	outline: none;
+}
+
+#ktaskpopup a:hover {
+	color: #4c4c4c;
+}
+
+#ktaskpopup a .button-inner {
+	display: block;
+	margin: 0;
+	height: 18px;
+	padding: 6px 8px 3px 30px;
+	background-image: url(images/buttons.png);
+	background-repeat: no-repeat;
+}
+
+.ktaskmenu .activetask.mail,
+.ktaskmenu .button-mail .button-inner {
+	background-position: -4px 2px;
+}
+
+.ktaskmenu .activetask.addressbook,
+.ktaskmenu .button-addressbook .button-inner {
+	background-position: -4px -46px;
+}
+
+.ktaskmenu .activetask.help,
+.ktaskmenu .button-help .button-inner {
+	background-position: -5px -23px;
+}
+
+.ktaskmenu .activetask.calendar,
+.ktaskmenu .button-calendar .button-inner {
+	background-position: -4px -142px;
+}
+
+.ktaskmenu .activetask.tasks,
+.ktaskmenu .button-tasklist .button-inner {
+	background-position: -4px -70px;
+}
+
+.ktaskmenu .activetask.settings,
+.ktaskmenu .button-settings .button-inner {
+	background-position: -5px -95px;
+}
+
+.ktaskmenu .activetask.notes,
+.ktaskmenu .button-notes .button-inner {
+	background-position: -4px -2582px;
+}
+
+.ktaskmenu .button-logout .button-inner {
+	background-position: -4px -119px;
+}
+
+.ktaskmenu .button-mail:hover .button-inner {
+	background-position: -4px -2636px;
+}
+
+.ktaskmenu .button-addressbook:hover .button-inner {
+	background-position: -4px -2683px;
+}
+
+.ktaskmenu .button-help:hover .button-inner {
+	background-position: -5px -2660px;
+}
+
+.ktaskmenu .button-calendar:hover .button-inner {
+	background-position: -4px -2779px;
+}
+
+.ktaskmenu .button-tasklist:hover .button-inner {
+	background-position: -4px -2707px;
+}
+
+.ktaskmenu .button-settings:hover .button-inner {
+	background-position: -5px -2732px;
+}
+
+.ktaskmenu .button-notes:hover .button-inner {
+	background-position: -5px -2755px;
+}
+
+#ktaskpopup a.button-files .button-inner {
+	display: block;
+	margin: 0;
+	height: 18px;
+	padding: 6px 8px 1px 30px;
+	background-image: url(images/listicons.png);
+	background-repeat: no-repeat;
+	background-position: -2px 2px;
+}
+
+#ktaskpopup a.button-files:hover .button-inner {
+	background-position: -2px -46px;
+}
+
+.ktaskmenu .activetask.files {
+	background-image: url(images/listicons.png);
+	background-position: -1px 2px;
+}
+
+.ktaskmenu .dropdownhandle {
+	position: absolute;
+	display: block;
+	top: 0;
+	right: 0;
+	width: 27px;
+	height: 60px;
+	background: url(images/taskmenu.png) 0 -58px no-repeat;
+}
+
+#messagestack div {
+	background: #5d5d5d;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	text-shadow: none;
+	opacity: 0.95;
+	padding: 10px 10px 10px 35px;
+}
+
+.uibox,
+.uibox .boxfooter,
+.uibox .boxtitle,
+.uibox .listing thead th,
+.uibox .listing thead td,
+html.mozilla #mailboxlist > li:first-child,
+.moreheaderstoggle,
+.messagelist thead th:first-child,
+.popupmenu,
+.popupmenu.dropdown,
+.rcube-fc-content,
+#calendar .fc-header .fc-button,
+.calendarmain #calendar .fc-header-left .fc-button,
+.calendarmain #calendar .fc-header-left .fc-button:focus,
+#rcmKSearchpane,
+#composebody,
+#contact-frame,
+#messagecontframe,
+#messagelistfooter,
+#preferences-frame,
+#helpcontentframe,
+#mailview-bottom {
+	border-radius: 0;
+	border: none;
+	box-shadow: none;
+	text-shadow: none;
+}
+
+
+/** color style overrides **/
+
+a {
+	color: #eb594f;
+}
+
+a:visited {
+	color: #333;
+}
+
+.boxfooter .countdisplay {
+	color: #666;
+}
+
+.listbox,
+.listbox .boxfooter,
+.listbox table.listing,
+.ui-dialog .listbox,
+ul.listing li {
+	background: #fff;
+}
+
+.boxfooter .listbutton {
+	background: #ededed;
+	margin-top: 0;
+	padding: 4px 0;
+}
+
+#contacts-table td span.email,
+.listbox .listitem a,
+.listbox .tablink a,
+.listing tbody td,
+.listing tbody td a,
+.listing li a {
+	color: #3a3a3a;
+	height: 17px;
+	line-height: 17px;
+	text-shadow: none;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+.listing tbody td {
+	height: 21px;
+	line-height: 21px;
+	text-shadow: none;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+table.records-table {
+	border-color: #ededed;
+}
+
+.records-table tbody td {
+	padding: 5px 7px 6px;
+	border-bottom-color: #ededed;
+	border-left-color: #ededed;
+}
+
+ul.treelist li a:focus,
+ul.listing .listitem a:focus,
+ul.listing .listitem span:focus,
+ul.listing.focus .listitem.focused span,
+.messagelist tr th.threads .listmenu:focus,
+.records-table thead th a:focus,
+.boxfooter a.listbutton:focus,
+.toolbar a.button:focus,
+.dropbutton .dropbuttontip:focus,
+.pagenav a.button:focus,
+.pagenav.dark a.button:focus,
+.previewheader a.button:focus,
+#composeheaders a.button:focus,
+#calendar .fc-header .fc-button:focus {
+	background-color: rgba(230,48,35,0.4) !important;
+	text-shadow: none;
+	color: #4c4c4c !important;
+}
+
+.pagenav a.button.pressed,
+.pagenav.dark a.button.pressed,
+.buttongroup a.button:focus,
+.buttongroup a.button.selected:focus,
+.moreheaderstoggle:focus {
+	background: rgba(230,48,35,0.4) !important;
+	text-shadow: none;
+	color: #4c4c4c !important;
+}
+
+.mce-panel {
+	background: #f9f9f9 !important;
+	border-bottom: 1px solid #ededed !important;
+}
+
+.listbox .listitem.selected,
+.listbox .tablink.selected,
+.listbox .listitem.selected > a,
+.listbox .tablink.selected > a,
+.listing tbody tr.unfocused td,
+.listing tbody tr.selected td,
+.listing li.selected,
+.listing li.selected > a,
+#calendars .treelist li.selected > div.calendar {
+	color: #4c4c4c;
+	background-color: #f9f9f9;
+}
+
+.listbox .listitem,
+.listbox .tablink,
+.listing tbody td,
+.listing li {
+	border-bottom: 1px solid #ededed !important;
+	border-top: 0;
+}
+
+.folderlist li.mailbox ul,
+ul.listing li ul {
+	border-top-color: #ededed;
+}
+
+ul.treelist li ul li:last-child {
+	border-bottom: none !important;
+}
+
+.records-table tr.selected td a,
+.records-table tr.selected td span {
+	color: #4c4c4c !important;
+}
+
+.records-table tr.selected td {
+	background-color: #e63023 !important;
+	color: #4c4c4c !important;
+}
+
+.records-table.focus tbody tr.focused > td:first-child,
+.listing.focus tbody tr.focused > td:first-child,
+.notesview #kolabnoteslist.focus li.focused {
+	border-left-color: #e63023;
+}
+
+ul.toolbarmenu {
+	border: 1px solid #828282;
+}
+
+ul.toolbarmenu li,
+#rcmKSearchpane ul li {
+	background: #3a3a3a;
+}
+
+.googie_list td,
+ul.toolbarmenu li,
+#rcmKSearchpane ul li {
+	border-top: none;
+	border-bottom: 1px solid #828282;
+	text-shadow: none !important;
+}
+
+.googie_list td span,
+ul.toolbarmenu li a {
+	text-shadow: none;
+}
+
+.ktaskmenu .popupmenu a:hover,
+.ktaskmenu .popupmenu a:focus,
+#rcmKSearchpane ul li.selected,
+.records-table.focus tr.selected td,
+.googie_list td.googie_list_onhover,
+ul.toolbarmenu li a.active:hover,
+ul.toolbarmenu li a.active:focus,
+select.decorated option:hover,
+select.decorated option:focus,
+select.decorated option[selected='selected'],
+.ui-menu .ui-menu-item a.ui-state-focus,
+.ui-menu .ui-menu-item a.ui-state-active {
+	color: #4c4c4c !important;
+	background: #e63023 !important;
+	text-shadow: none;
+}
+
+.records-table thead th,
+.fc-widget-header,
+.calendarmain .fc-view-table td.fc-list-header,
+#compose-attachments,
+#attendees-freebusy-table h3.boxtitle,
+#schedule-freebusy-times thead th,
+#edit-attendees-table thead th {
+	color: #4c4c4c;
+	background: #f9f9f9;
+	border-left: 1px solid #ededed;
+}
+
+.records-table thead th a,
+.records-table thead th span {
+	color: #4c4c4c;
+	height: 16px;
+	line-height: 16px;
+}
+
+input[type="text"],
+input[type="password"],
+#login-form input[type="text"],
+#login-form input[type="password"],
+.searchbox input,
+#quicksearchbar input,
+.tagedit-list,
+textarea {
+	border-radius: 1px;
+	border: 1px solid #dbdbdb;
+	box-shadow: none;
+	background: #fff;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input.button:focus,
+textarea:focus {
+	border: 1px solid #dbdbdb;
+	box-shadow: none;
+}
+
+#tasksview .buttonbar,
+body.iframe .boxtitle,
+.uibox .boxtitle,
+.uibox .listing thead th,
+.uibox .listing thead td {
+	background: #f9f9f9;
+	color: #e63023;
+	border-bottom: 1px solid #ebebeb;
+}
+
+.listbox .boxfooter {
+	border-top: 1px solid #ededed;
+}
+
+.moreheaderstoggle {
+	background: #828282;
+}
+
+#messagecontent .rightcol,
+#messagepreview .rightcol {
+	background: none;
+	border-radius: 0;
+}
+
+#quotadisplay {
+	color: #4c4c4c;
+	background-image: url(images/quota.png);
+}
+
+#all-headers {
+	border-radius: 0;
+	box-shadow: none;
+	background: #fff;
+	border: 1px solid #ededed;
+}
+
+#messagelistfooter {
+	background: #f9f9f9;
+	border: none;
+	height: 26px;
+	padding: 6px 6px 2px;
+}
+
+#messagelistcontainer {
+	bottom: 34px;
+}
+
+#mailpreviewtoggle {
+	top: 10px;
+}
+
+.filelist thead tr th.sortedASC a,
+.filelist thead tr th.sortedDESC a,
+.messagelist thead tr th.sortedASC a,
+.messagelist thead tr th.sortedDESC a {
+	color: #4c4c4c;
+	background-image: url(images/listicons.png);
+}
+
+.messagelist tr td.status span.msgicon {
+	background-position: 1px -2897px;
+}
+
+.messagelist tr.selected td.subject span.msgicon {
+	background-position: 1px -2939px;
+}
+
+.folderlist li.mailbox.unread > a {
+	padding-right: 24px;
+}
+
+.folderlist li.mailbox .unreadcount,
+.folderlist li.mailbox.selected > a .unreadcount,
+.folderlist li.mailbox.recent > a .unreadcount {
+	top: 8px;
+	right: 8px;
+	min-width: 1em;
+	text-align: right;
+	padding: 0;
+	font-size: inherit;
+	font-weight: bold;
+	color: #4c4c4c;
+	border-radius: 0;
+	background: none;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+#directorylist li a,
+ul.toolbarmenu li span.icon,
+.folderlist li.mailbox a,
+.folderlist li.mailbox div.collapsed,
+.folderlist li.mailbox div.expanded,
+.messagelist tr div.collapsed,
+.messagelist tr div.expanded,
+.messagelist tr .threads .listmenu,
+.messagelist tr .attachment span.attachment,
+.messagelist tr .attachment span.report,
+.messagelist tr .priority span.priority,
+.messagelist tr .priority span.prio1,
+.messagelist tr .priority span.prio2,
+.messagelist tr .priority span.prio3,
+.messagelist tr .priority span.prio4,
+.messagelist tr .priority span.prio5,
+.messagelist tr .flag span.flagged,
+.messagelist tr .flag span.unflagged,
+.messagelist tr .flag span.unflagged:hover,
+.messagelist tr .status span.status,
+.messagelist tr .status span.msgicon,
+.messagelist tr .status span.deleted,
+.messagelist tr .status span.unread,
+.messagelist tr .status span.unreadchildren,
+.messagelist tr .subject span.msgicon,
+.messagelist tr .subject span.deleted,
+.messagelist tr .subject span.unread,
+.messagelist tr .subject span.replied,
+.messagelist tr .subject span.forwarded,
+.messagelist tr d.subject span.unreadchildren,
+#contacts-table td.contact,
+#contacts-table td.contactgroup,
+#compose-contacts li a,
+#contacts-table .contact td.name,
+#contacts-table .contact td.action a,
+#sections-table tbody td,
+#settings-sections .listitem a,
+#settings-sections .tablink a,
+ul.treelist li div.treetoggle,
+ul.toolbarmenu li span.icon.taskadd,
+ul.toolbarmenu li .appendnote span.icon {
+	background-image: url(images/listicons.png);
+}
+
+#settings-sections .filter a {
+	background-position: 6px -1748px;
+}
+
+#settings-sections .filter.selected a {
+	background-position: 6px -1772px;
+}
+
+#settings-sections .responses a {
+	background-position: 6px -2460px;
+}
+
+#settings-sections .responses.selected a {
+	background-position: 6px -2484px;
+}
+
+#settings-sections .identities a {
+	background-position: 6px -479px;
+}
+
+#settings-sections .identities.selected a {
+	background-position: 6px -503px;
+}
+
+#sections-table #rcmrowmailview .section {
+	background-position: 4px -730px;
+}
+
+#sections-table #rcmrowmailview.selected .section {
+	background-position: 4px -730px;
+}
+
+#sections-table #rcmrowserver .section,
+#sections-table #rcmrowserver.selected .section {
+	background-position: 4px -835px;
+}
+
+ul.toolbarmenu li span.icon.taskadd {
+	background-position: 0px -1973px;
+}
+
+ul.toolbarmenu li .appendnote span.icon {
+	background-position: 0px -2626px;
+}
+
+ul.toolbarmenu li span.icon.filterlink {
+	background-position: 0 -1926px;
+}
+
+ul.toolbarmenu li span.icon.move {
+	background-position: -1px -96px;
+}
+
+ul.toolbarmenu li span.icon.copy {
+	background-position: -1px -96px;
+}
+
+ul.toolbarmenu li span.icon.print {
+	background-position: -1px -3003px;
+}
+
+ul.toolbarmenu li:hover a.active span.icon.download {
+	background-position: 0 -2978px;
+}
+
+ul.toolbarmenu li:hover a.active span.icon.edit {
+	background-position: 0 -2954px;
+}
+
+div.contextmenu ul.iconized li:hover a.openfolder.active span.icon,
+ul.toolbarmenu li:hover a.active span.icon.extwin {
+	background-position: -1px -3096px;
+}
+
+ul.toolbarmenu li:hover a.active span.icon.filterlink {
+	background-position: 0 -3026px;
+}
+
+ul.toolbarmenu li:hover a.active span.mail {
+	background-position: 0 -2830px;
+}
+
+ul.toolbarmenu li:hover a.active span.list {
+	background-position: 0 -2854px;
+}
+
+ul.toolbarmenu li:hover a.active span.invert {
+	background-position: 0 -2877px;
+}
+
+ul.toolbarmenu li:hover a.active span.flagged {
+	background-position: 1px -2920px;
+}
+
+ul.toolbarmenu li:hover a.active span.unread {
+	background-position: 1px -2895px;
+}
+
+ul.toolbarmenu li a.calendarlink span.calendar,
+#attachmentmenu li a.calendarlink span.calendar {
+	background-position: 0px -1948px;
+}
+
+ul.toolbarmenu li:hover a.calendarlink.active span.calendar,
+#attachmentmenu li:hover a.calendarlink.active span.calendar {
+	background-position: 0 -3048px;
+}
+
+ul.toolbarmenu li:hover a.active span.icon.note {
+	background-position: -1px -3117px;
+}
+
+ul.toolbarmenu li:hover a.active span.icon.taskadd {
+	background-position: 0 -3073px;
+}
+
+ul.toolbarmenu li:hover a.active span.icon.copy,
+ul.toolbarmenu li:hover a.active span.icon.move {
+	background-position: -1px -74px;
+}
+
+.folderlist li.mailbox.trash.empty > a {
+	background-position: 6px -382px;
+}
+
+.folderlist li.mailbox.trash.empty > a:focus,
+.folderlist li.mailbox.trash.empty.selected > a {
+	background-position: 6px -406px;
+}
+
+#taskitemmenu ul.toolbarmenu li span.add {
+	background-position: 0px -1996px;
+}
+
+a.iconlink,
+a.iconbutton,
+a.button span.icon,
+.toolbar a.button,
+.boxpagenav a.icon,
+.draglayercopy:before,
+.dropbutton .dropbuttontip,
+.pagenav a.button span.inner,
+.boxfooter .listbutton .inner,
+.attachmentslist li a.delete,
+.attachmentslist li a.cancelupload,
+#taskbar a span.button-inner,
+#mailpreviewtoggle,
+div.more-headers,
+.moreheaderstoggle .iconlink,
+#calendartoolbar a.button,
+#filestoolbar a.button,
+#taskstoolbar a.button {
+	background-image: url(images/buttons.png);
+	text-shadow: none;
+}
+
+.dropbutton .dropbuttontip {
+	right: 4px;
+}
+
+a.iconbutton.reset {
+	background-position: -26px -317px;
+}
+
+.toolbar a.button.license
+a.iconbutton.searchicon,
+body.calendarmain #searchmenulink,
+body.tasklistview #searchmenulink {
+	width: 16px;
+}
+
+#messageheader #contactphoto {
+	background-image: url(images/contactpic_48px.png);
+	border: none;
+	border-radius: 10px;
+}
+
+#messageheader.previewheader #contactphoto {
+	background-image: url(images/contactpic_32px.png);
+	border: none;
+}
+
+#composebodycontainer .mce-panel {
+	background: #f9f9f9;
+	border-color: #ededed !important;
+	margin-top: 0;
+}
+
+#compose-attachments {
+	border-top: none;
+	top: 0;
+}
+
+
+/*** form styles ***/
+
+ul.proplist li,
+table.propform td {
+	background: #f9f9f9;
+	border-bottom: 1px solid #ededed;
+}
+
+table.propform td.title {
+	color: #4c4c4c;
+}
+
+.contactfieldgroup {
+	background: #f9f9f9;
+	border-bottom: 1px solid #ededed;
+	border-radius: 0;
+	margin: 0;
+}
+
+.contactfieldgroup legend {
+	background: #f9f9f9;
+	color: #e63023;
+	border-radius: 0;
+	border: 0;
+	text-shadow: none;
+	padding: 10px 12px 0;
+}
+
+.contactfieldgroup .row {
+	margin: -4px 0 4px;
+}
+
+img.skinthumbnail {
+	border-radius: 0;
+	border-color: #ededed;
+}
+
+body.iframe .footerleft.floating,
+#composeview-bottom .formbuttons.floating {
+	padding: 7px 14px;
+}
+
+body.iframe .footerleft.floating:before,
+#composeview-bottom .formbuttons.floating:before {
+	background: none;
+	padding-bottom: 7px;
+	padding-top: 7px;
+}
+
+#sourcename,
+#contact-details #contactphoto {
+	padding-left: 10px;
+}
+
+a.menuselector {
+	border: 1px solid #dbdbdb;
+	border-radius: 1px;
+	background: #fff;
+	color: #4c4c4c;
+	height: 24px;
+	line-height: 24px;
+}
+
+a.menuselector .handle {
+	background: url(images/selector.png) right 0 no-repeat;
+	border-radius: 1px;
+	height: 24px;
+	line-height: 24px;
+	text-shadow: none;
+}
+
+#foldersubscriptions tbody td,
+#delegatefolders tbody td {
+	border-bottom: 1px solid #ededed;
+	background-color: #f9f9f9;
+}
+
+#foldersubscriptions thead th,
+#delegatefolders thead th {
+	border-bottom: 1px solid #ededed;
+	background-color: #f9f9f9;
+	color: #e63023;
+}
+
+
+/*** button styles ***/
+
+a.button, .buttongroup {
+	background: #e7e7e7;
+	color: #4c4c4c;
+	box-shadow: none;
+	text-shadow: none;
+}
+
+.pagenav a.button,
+.pagenav a.button:hover,
+.pagenav.dark a.button,
+.pagenav.dark a.button:hover,
+.previewheader a.button,
+#composeheaders a.button {
+	background: none;
+	border: 0;
+	padding: 1px;
+	height: 16px;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	text-shadow: none;
+}
+
+a.button span.icon,
+.pagenav a.button span.inner {
+	height: 15px;
+}
+
+.boxpagenav a.icon {
+	height: 14px;
+}
+
+.pagenav .countdisplay {
+	text-shadow: none;
+}
+
+.pagenavbuttons {
+	top: 0;
+}
+
+.buttongroup {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	background-color: #ededed;
+	border-color: #e63023;
+}
+
+.previewheader .buttongroup,
+#composeheaders .buttongroup {
+	position: relative;
+	top: -3px;
+}
+
+.buttongroup a.button,
+.buttongroup a.button.selected {
+	box-shadow: none;
+	border: none;
+	box-shadow: none;
+	background-color: transparent;
+}
+
+.buttongroup a.button.selected,
+.buttongroup a.button.selected:hover {
+	background: transparent;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+.previewheader a.button,
+#composeheaders a.button,
+.previewheader .pagenav a.button,
+#composeheaders .pagenav a.button,
+.previewheader a.button span.icon,
+#composeheaders a.button span.icon,
+.previewheader .pagenav a.button span.inner,
+#composeheaders .pagenav a.button span.inner {
+	width: 24px;
+	height: 24px;
+	margin: 0;
+}
+
+.previewheader .buttongroup a.button,
+#composeheaders .buttongroup a.button,
+.previewheader .buttongroup a.button:hover,
+#composeheaders .buttongroup a.button:hover {
+	width: 20px;
+	height: 20px;
+}
+
+.previewheader .buttongroup a.button span.icon,
+#composeheaders .buttongroup a.button span.icon,
+.previewheader .buttongroup a.button span.inner,
+#composeheaders .buttongroup a.button span.inner {
+	width: 18px;
+	height: 17px;
+	margin: 1px 0;
+}
+
+.previewheader .pagenav a.reply span.inner,
+.previewheader a.button.reply span.icon {
+	background-position: -1px -263px;
+}
+
+.previewheader .pagenav a.replyall span.inner,
+.previewheader a.button.replyall span.icon {
+	background-position: -27px -263px;
+}
+
+.previewheader .pagenav a.forward span.inner,
+.previewheader a.button.forward span.icon {
+	background-position: -1px -187px;
+}
+
+.pagenav a.changeformat.html span.inner,
+.pagenav a.changeformat.html.selected span.inner,
+a.button.changeformat.html span.icon,
+a.button.changeformat.html.selected span.icon {
+	background-position: -5px -2224px;
+}
+.pagenav a.changeformat.text span.inner,
+.pagenav a.changeformat.text.selected span.inner,
+a.button.changeformat.text span.icon,
+a.button.changeformat.text.selected span.icon {
+	background-position: -5px -2242px;
+}
+
+.previewheader .pagenav a.extwin span.inner,
+#composeheaders .pagenav a.extwin span.inner,
+.previewheader a.button.extwin span.icon,
+#composeheaders a.button.extwin span.icon {
+	background-position: -27px -187px;
+}
+
+.toolbar a.button.responses {
+	background-position: center -2464px;
+}
+
+.toolbar a.button.move {
+	background-position: center -2544px;
+}
+
+#composebuttons {
+	top: 3px;
+	right: 3px;
+}
+
+#compose-contacts #directorylist {
+	border-bottom-color: #ededed;
+}
+
+.calendarmain #calendar .fc-button-today,
+.calendarmain #calendar .fc-button-today.fc-state-default,
+.calendarmain #calendar .fc-button-today.fc-state-hover,
+.ui-button.ui-state-default,
+input.button,
+.formbuttons input.button {
+	background: #e7e7e7;
+	border: none;
+	border-radius: 2px;
+	box-shadow: none;
+	text-shadow: none;
+	color: #4c4c4c;
+	font-weight: bold;
+	padding: 6px 10px;
+	margin: 1px 2px;
+}
+
+input.button.mainaction {
+	background: #add03e;
+	color: #fff;
+	box-shadow: none;
+	text-shadow: none;
+}
+
+input.button.disabled:hover,
+input.button:hover,
+input.button:focus,
+.formbuttons input.button:focus,
+.formbuttons input.button:hover {
+	border: none;
+	color: #4c4c4c;
+	background: #e0e0e0;
+	box-shadow: none;
+}
+
+.toolbar a.button.disabled:hover {
+	box-shadow: none;
+}
+
+input.button.mainaction:focus,
+input.button.mainaction:hover {
+	box-shadow: none;
+	border: none;
+	color: #fff;
+	background: #88b400;
+}
+
+.popupdialog .formbuttons {
+	margin: 15px 0 4px;
+}
+
+.calendarmain #calendar .fc-button-today,
+.calendarmain #calendar .fc-button-today.fc-state-default {
+	top: -4px;
+	padding: 3px 10px;
+}
+
+
+/*** message bar ***/
+
+#message div.loading,
+#message div.warning,
+#message div.error,
+#message div.notice,
+#message div.confirmation,
+#messagestack div.warning:after,
+#messagestack div.error:after,
+#messagestack div.notice:after,
+#messagestack div.confirmation:after,
+#message-objects div.notice {
+	background-image: url(images/messages.png);
+}
+
+#messagestack div:after {
+	height: 28px;
+	width: 24px;
+}
+
+#message div.notice {
+	color: #054f9b;
+}
+
+#message div.loading {
+	background-image: url(images/ajaxloader.gif);
+}
+
+#messagestack div.loading:after {
+	background: url(images/ajaxloader_dark.gif) 3px 7px no-repeat;
+}
+
+#messagestack div.loading,
+#messagestack div.uploading {
+	color: #fff;
+}
+
+#messagestack div.notice:after {
+	background-position: 3px 9px;
+}
+
+#messagestack div.confirmation {
+	color: #c1e065;
+}
+
+#messagestack div.confirmation:after {
+	background-position: 3px -21px;
+}
+
+#messagestack div.warning {
+	color: #e07400;
+}
+
+#messagestack div.warning:after {
+	background-position: 3px -82px;
+}
+
+#messagestack div.error {
+	color: #dd4646;
+}
+
+#messagestack div.error:after {
+	background-position: 0 -53px;
+}
+
+
+/**** attachments list ****/
+
+.attachmentslist li {
+	background-image: url(images/filetypes.png);
+}
+
+.attachmentslist li.ppt,
+.attachmentslist li.pptx,
+.attachmentslist li.mspowerpoint {
+	background-position: 0 -156px;
+}
+
+.attachmentslist li.odp {
+	background-position: 0 -182px;
+}
+
+.attachmentslist li.gz,
+.attachmentslist li.zip,
+.attachmentslist li.rar {
+	background-position: 0 -234px;
+}
+
+.attachmentslist li.jpg,
+.attachmentslist li.jpeg,
+.attachmentslist li.png,
+.attachmentslist li.image {
+	background-position: 0 -208px;
+}
+
+.attachmentslist li.sig,
+.attachmentslist li.pgp-signature,
+.attachmentslist li.pkcs7-signature {
+	background-position: 0 -260px;
+}
+
+.attachmentslist li.m4p,
+.attachmentslist li.mp3,
+.attachmentslist li.audio {
+	background-position: 0 -286px;
+}
+
+.attachmentslist li.video {
+	background-position: 0 -338px;
+}
+
+.attachmentslist li.txt,
+.attachmentslist li.text {
+	background-position: 0 -416px;
+}
+
+.attachmentslist li.ics,
+.attachmentslist li.calendar {
+	background-position: 0 -364px;
+}
+
+.attachmentslist li.vcard {
+	background-position: 0 -390px;
+}
+
+.attachmentslist li.html {
+	background-position: 0 -442px;
+}
+
+.attachmentslist li.css {
+	background-position: 0 -468px;
+}
+
+.attachmentslist li.csv {
+	background-position: 0 -494px;
+}
+
+.attachmentslist li.eml,
+.attachmentslist li.rfc822 {
+	background-position: 0 -520px;
+}
+
+
+/*** jquery UI theme overrides ***/
+
+.ui-dialog {
+	border-radius: 0 !important;
+}
+
+.ui-widget-content {
+	background: #fff !important;
+	border-radius: 0;
+}
+
+.ui-dialog .ui-dialog-title {
+	text-shadow: none;
+	color: #e63023;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+	border-radius: 0;
+	background: #f9f9f9 !important;
+	padding: 10px 1em 12px;
+}
+
+.ui-dialog .ui-dialog-titlebar-close .ui-icon-closethick {
+	background: url(images/ui-dialog-close.png) 0 0 no-repeat;
+}
+
+#messageheader,
+#mailview-right #messageheader,
+#composeheaders {
+	background: #f9f9f9;
+	border-bottom: 1px solid #ededed;
+	border-radius: 0;
+}
+
+.ui-tabs .ui-tabs-panel {
+	background: #f9f9f9;
+	border-radius: 0;
+}
+
+.ui-tabs .ui-tabs-nav {
+	border-top: 1px solid #ededed;
+	border-radius: 0;
+}
+
+.ui-tabs .ui-tabs-nav li {
+	background: #fff;
+}
+
+.ui-tabs .ui-tabs-nav li.tablink a {
+	background: #ededed;
+	border-right: 0;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+	padding-bottom: 0;
+}
+
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+	background: #ededed;
+	color: #4c4c4c;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor {
+	background: #e63023;
+	color: #fff;
+}
+
+.ui-tabs .tabsbar.ui-tabs-nav {
+	margin-bottom: 0;
+	border-radius: 0;
+}
+
+
+/*** IE hacks ***/
+
+.ie .pagenav.dark a.button,
+.ie .pagenav.dark a.button.pressed,
+.ie .folderlist li.mailbox .unreadcount {
+	filter: none;
+}
+
+.ie #messageheader #countcontrols a.button {
+	filter: none;
+	height: 24px;
+}
+
+
+/*** kolab folder styles ***/
+
+.listsearchbox {
+	background-color: #fff;
+	border-bottom: 1px solid #ededed;
+}
+
+#calendars .searchresults .boxtitle,
+#tasklistsbox .searchresults .boxtitle,
+#directorylist .searchresults .boxtitle,
+.notesview #notebooks .searchresults .boxtitle {
+/*
+	background: #bccad0;
+	color: #215c6e;
+*/
+}
+
+#tasklistsbox .treelist li span.listname,
+#calendars .treelist li span.calname,
+#directorylist li.addressbook.readonly,
+#directorylist li.addressbook.shared,
+#directorylist li.addressbook.other,
+.notesview #notebooks div.folder span.handle {
+	background-image: url(images/listicons.png);
+	background-position: right -5000px;
+	background-repeat: no-repeat;
+	color: #4c4c4c;
+}
+
+#directorylist li.addressbook.readonly {
+	background-position: 98% -2121px;
+}
+#tasklistsbox  .treelist .readonly > span.listname,
+#calendars .treelist div.readonly span.calname,
+.notesview #notebooks div.readonly span.handle,
+.notesview #notebooks div.other.readonly span.handle {
+	background-position: right -2128px;
+}
+
+#directorylist li.addressbook.other,
+#directorylist li.addressbook.virtual.user {
+	background-position: 98% -2147px;
+}
+
+#tasklistsbox .treelist .user > span.listname,
+#calendars .treelist li.user > div span.calname,
+#calendars .treelist div.other span.calname,
+.notesview #notebooks div.other span.handle {
+	background-position: right -2152px;
+}
+
+#directorylist li.addressbook.other.readonly {
+	background-position: 98% -2172px;
+}
+#tasklists li.other.readonly span.listname,
+#calendars .treelist div.other.readonly span.calname {
+	background-position: right -2176px;
+}
+
+#directorylist li.addressbook.shared {
+	background-position: 98% -2196px;
+}
+#tasklists li.shared span.listname,
+#calendars .treelist div.shared span.calname {
+	background-position: right -2200px;
+}
+
+#directorylist li.addressbook.shared.readonly {
+	background-position: 98% -2220px;
+}
+#tasklists li.shared.readonly span.listname,
+#calendars .treelist div.shared.readonly span.calname {
+	background-position: right -2224px;
+}
+
+#directorylist li.addressbook.virtual.user {
+	background-image: url(images/listicons.png) !important;
+}
+
+#directorylist li.addressbook a,
+#directorylist li.addressbook.selected > div a {
+	background-position: 6px -765px;
+}
+
+#directorylist ul li.addressbook > div a,
+#directorylist ul li.addressbook.selected > div a {
+	background-position: 32px -765px;
+}
+
+#directorylist ul li.contactgroup a,
+#directorylist li.contactgroup.selected a {
+	background-position: 32px -1578px;
+}
+
+#calendars .treelist div a.subscribed,
+#tasklistsbox .treelist div a.subscribed,
+.notesview #notebooksbox .treelist div a.subscribed,
+#directorylistbox ul.treelist div span.subscribed,
+#calendars .treelist div a.remove,
+#tasklistsbox .treelist div a.remove,
+.notesview #notebooksbox .treelist div a.remove,
+#directorylistbox ul.treelist div span.remove {
+	background-image: url(images/listicons.png);
+	background-position: -100px 0;
+	top: 7px;
+}
+
+#calendars .treelist div:hover a.subscribed,
+#calendars .treelist div a.subscribed:focus,
+#tasklistsbox .treelist div a.subscribed:focus,
+#tasklistsbox .treelist div:hover a.subscribed,
+.notesview #notebooksbox .treelist div a.subscribed:focus,
+.notesview #notebooksbox .treelist div:hover a.subscribed,
+#directorylistbox ul.treelist div span.subscribed:focus,
+#directorylistbox ul.treelist div:hover span.subscribed {
+	background-position: -4px -2606px;
+	background-color: transparent !important;
+}
+
+#calendars .treelist div.subscribed a.subscribed,
+#calendars .treelist div.subscribed a.subscribed:focus,
+#tasklistsbox .treelist div.subscribed a.subscribed,
+#tasklistsbox .treelist div.subscribed a.subscribed:focus,
+.notesview #notebooksbox .treelist div.subscribed a.subscribed,
+.notesview #notebooksbox .treelist div.subscribed a.subscribed:focus,
+#directorylistbox ul.treelist div.subscribed span.subscribed,
+#directorylistbox ul.treelist div.subscribed span.subscribed:focus {
+	background-position: -26px -2606px;
+	background-color: transparent !important;
+}
+
+#calendars .treelist div.subscribed.partial a.subscribed,
+#calendars .treelist div.subscribed.partial a.subscribed:focus,
+#tasklistsbox .treelist div.subscribed.partial a.subscribed,
+#tasklistsbox .treelist div.subscribed.partial a.subscribed:focus,
+.notesview #notebooksbox .treelist div.subscribed.partial a.subscribed,
+.notesview #notebooksbox .treelist div.subscribed.partial a.subscribed:focus,
+#directorylistbox ul.treelist div.subscribed.partial span.subscribed,
+#directorylistbox ul.treelist div.subscribed.partial span.subscribed:focus {
+	background-position: -4px -2674px;
+}
+
+#calendars .treelist div:hover a.remove,
+#calendars .treelist div a.remove:focus,
+#tasklistsbox .treelist div a.remove:focus,
+#tasklistsbox .treelist div:hover a.remove,
+.notesview #notebooksbox .treelist div a.remove:focus,
+.notesview #notebooksbox .treelist div:hover a.remove,
+#directorylistbox ul.treelist div span.remove:focus,
+#directorylistbox ul.treelist div:hover span.remove {
+	background-position: -26px -2674px;
+}
+
+#calendars .searchresults .listing li,
+#tasklistsbox .searchresults .listing li,
+#directorylistbox .searchresults .listing li,
+.notesview #notebooksbox .searchresults .listing li {
+	background-color: #828282;
+}
+
+#contacts-table td.contact,
+#contacts-table tr.selected td.contact,
+#contacts-table .contact td.name {
+	background-position: 4px -1602px;
+}
+
+#contacts-table td.contactgroup,
+#contacts-table tr.selected td.contactgroup,
+#contacts-table .contactgroup td.name {
+	background-position: 4px -1553px;
+}
+
+#contacts-table .contact.selected td.name {
+	background-position: 4px -1625px;
+}
+
+#sections-table #rcmrowgeneral.selected .section,
+#sections-table #rcmrowgeneral .section {
+	background-position: 4px -570px;
+}
+
+#sections-table #rcmrowmailbox.selected .section,
+#sections-table #rcmrowmailbox .section {
+	background-position: 4px -644px;
+}
+
+#sections-table #rcmrowcompose.selected .section,
+#sections-table #rcmrowcompose .section {
+	background-position: 4px -669px;
+}
+
+#sections-table #rcmrowaddressbook.selected .section,
+#sections-table #rcmrowaddressbook .section {
+	background-position: 4px -765px;
+}
+
+#sections-table #rcmrowfolders.selected .section,
+#sections-table #rcmrowfolders .section {
+	background-position: 4px 4px;
+}
+
+#sections-table #rcmrowcalendar.selected .section,
+#sections-table #rcmrowcalendar .section {
+	background-position: 4px -524px;
+}
+
+
+/*** calendar module styles ***/
+
+#calendar .fc-header {
+	position: absolute;
+	top: -7px;
+	height: 50px;
+}
+
+#calendartoolbar a.button.addevent {
+	background-position: center -1784px;
+}
+
+#calendartoolbar a.button.import {
+	background-position: center -2505px;
+}
+
+#calendartoolbar a.button.export {
+	background-position: center -1825px;
+}
+
+#calendartoolbar a.button.print {
+	background-position: center -810px;
+}
+
+.calendarmain #calendar .fc-header-left .fc-button {
+	background-image: url(images/buttons.png);
+}
+
+.calendarmain #calendar .fc-header-left .fc-button-agendaDay {
+	background-position: center -1864px;
+}
+
+.calendarmain #calendar .fc-header-left .fc-button-agendaDay.fc-state-active {
+	background-position: center -1904px;
+}
+
+.calendarmain #calendar .fc-header-left .fc-button-agendaWeek {
+	background-position: center -1944px;
+}
+
+.calendarmain #calendar .fc-header-left .fc-button-agendaWeek.fc-state-active {
+	background-position: center -1984px;
+}
+
+.calendarmain #calendar .fc-header-left .fc-button-month {
+	background-position: center -2024px;
+}
+
+.calendarmain #calendar .fc-header-left .fc-button-month.fc-state-active {
+	background-position: center -2064px;
+}
+
+.calendarmain #calendar .fc-header-left .fc-button-table {
+	background-position: center -2104px;
+}
+
+.calendarmain #calendar .fc-header-left .fc-button-table.fc-state-active {
+	background-position: center -2144px;
+}
+
+.calendarmain #calendar .fc-button-prev,
+.calendarmain #calendar .fc-button-next,
+.calendarmain #calendar .fc-button-prev.fc-state-default,
+.calendarmain #calendar .fc-button-next.fc-state-default,
+.calendarmain #quickview-calendar .fc-button-prev,
+.calendarmain #quickview-calendar .fc-button-next,
+.calendarmain #quickview-calendar .fc-button-prev.fc-state-default,
+.calendarmain #quickview-calendar .fc-button-next.fc-state-default {
+	display: inline-block;
+	border: 0;
+	margin: 4px;
+	width: 14px;
+	height: 15px;
+	line-height: 12px;
+	text-indent: 5000px;
+	background: url(images/buttons.png) 4px -227px no-repeat;
+	overflow: hidden;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.calendarmain #calendar .fc-button-next,
+.calendarmain #calendar .fc-button-next.fc-state-default,
+.calendarmain #quickview-calendar .fc-button-next,
+.calendarmain #quickview-calendar .fc-button-next.fc-state-default {
+	background-position: -22px -227px;
+}
+
+#calendars .treelist li span.handle {
+	box-shadow: none;
+	border: none;
+	width: 12px;
+	height: 12px;
+}
+
+.fc-view thead th.fc-widget-header {
+	color: #4c4c4c;
+}
+
+.ui-datepicker td {
+	border-color: #4d4d4d;
+}
+
+.ui-datepicker .ui-datepicker-header {
+	border-radius: 0
+}
+
+#datepicker td.ui-datepicker-activerange {
+	border-color: #4d4d4d;
+}
+
+#datepicker td.ui-datepicker-activerange a {
+	color: #4c4c4c;
+	background: #fad6d3;
+}
+
+#datepicker td.ui-datepicker-activerange a.ui-state-active {
+	color: #fff;
+	background: #e63023;
+}
+
+.ui-datepicker td span,
+.ui-datepicker td a {
+	text-shadow: none !important;
+}
+
+.ui-datepicker td a.ui-state-active {
+	border-color: #4d4d4d !important;
+	text-shadow: none !important;
+	background: #e63023 !important;
+}
+
+.ui-datepicker td a.ui-state-default {
+	background: #ededed;
+	border: none !important;
+}
+
+#schedule-freebusy-times td {
+	padding: 4px;
+}
+
+.attendees-list .attendee,
+.event-attendees span.organizer {
+	background: url(images/listicons.png) 0 -2040px no-repeat;
+}
+
+.attendees-list .organizer {
+	background-position: -30px -2020px;
+}
+
+.event-attendees span.organizer {
+	background-position: right -2024px;
+}
+
+.attendees-list .opt-participant {
+	background-position: 0 -2060px;
+}
+
+.attendees-list .non-participant {
+	background-position: 0 -2080px;
+}
+
+.attendees-list .chair {
+	background-position: 0 -2100px;
+}
+
+.attendees-list .spacer,
+.attendees-list .total {
+	background: none;
+}
+
+#timezonedisplay {
+	bottom: 2px;
+}
+
+/*** tasklist module styles ***/
+
+#tasksview {
+	background: #fff;
+}
+
+.taskhead {
+	box-shadow: none;
+	border-radius: 0;
+	border: 1px solid #ededed;
+}
+
+#quickaddbox {
+	top: -7px;
+}
+
+#quickaddinput {
+	border-color: #ededed;
+}
+
+#taskstoolbar a.button.newtask {
+	background-image: url(images/buttons.png);
+	background-position: center -2184px;
+}
+
+.tasklistview ul.toolbarmenu li span.expand,
+.tasklistview ul.toolbarmenu li span.collapse {
+	background-image: url(images/listicons.png);
+	background-position: 0 -2508px;
+}
+
+.tasklistview ul.toolbarmenu li span.collapse {
+	background-position: 0 -2532px;
+}
+
+#tagslist li.selected,
+#taskselector li.selected a {
+	background: #e63023;
+	border: none;
+	border-radius: 2px;
+	box-shadow: none;
+	padding: 0.4em 0.6em;
+	color: #fff;
+}
+
+#taskselector li.inactive a {
+	color: #999;
+}
+
+#tagslist li .count {
+	color: #4c4c4c;
+	background: #ededed;
+	border: none;
+	border-radius: 2px;
+	box-shadow: none;
+}
+
+.tagcloud li,
+.tagcloud li.inactive,
+#taskselector li a {
+	color: #4c4c4c;
+	font-size: 100%;
+}
+
+.tag-draghelper .tag,
+.taskhead .tags .tag {
+	color: #fff;
+	background: #e63023;
+	border: none;
+}
+
+.buttonbar-right .listmenu .inner {
+	height: 20px;
+	width: 26px;
+	overflow: hidden;
+	background-image: url(images/listicons.png);
+	background-position: 0 -976px;
+}
+
+#rootdroppable {
+	background: #eaeaea;
+}
+
+div.messagetasklinks::before {
+	background-image: url(images/listicons.png);
+	background-position: -1px -2693px;
+}
+
+/*
+#thelist {
+	margin: 0;
+}
+
+.taskitem {
+	margin-bottom: 0;
+	border-bottom: 1px solid #ededed;
+}
+*/
+
+/*** kolab_files module styles ***/
+
+.filelist tr > .options a.listmenu,
+.filelist tr > .flag span.flagged,
+.filelist tr > .flag span.unflagged,
+.filelist tr > .flag span.unflagged:hover {
+	background-image: url(images/listicons.png);
+}
+
+.filelist thead tr th.options .listmenu {
+	background-position: 2px -969px;
+}
+
+#filestoolbar a.button,
+#messagetoolbar a.button.saveas {
+	background-image: url(images/buttons.png);
+}
+
+#filestoolbar a.button.upload {
+	background-position: center -2304px;
+}
+
+.toolbar a.button.download,
+#filestoolbar a.button.get {
+	background-position: center -2264px;
+}
+
+#filestoolbar a.button.open {
+	background-position: center -2344px;
+}
+
+#filestoolbar a.button.edit {
+	background-position: center -2384px;
+}
+
+#filestoolbar a.button.save,
+#messagetoolbar a.button.saveas {
+	background-position: center -1700px;
+}
+
+#filestoolbar a.button.print {
+	background-image: url(images/buttons.png);
+	background-position: center -810px;
+}
+
+#filestoolbar a.button.delete {
+	background-image: url(images/buttons.png);
+	background-position: center -690px;
+}
+
+#files-folder-list ul li span.name,
+#files-folder-list ul li.mailbox.collection span.name {
+	background-image: url(images/listicons.png);
+	color: #4c4c4c;
+	line-height: 29px;
+	padding: 8px 8px 8px 35px;
+}
+
+#files-folder-list ul li.mailbox.collection.audio span.name,
+#files-folder-list ul li.mailbox.collection.audio.selected span.name {
+	background-position: 7px -2360px;
+}
+
+#files-folder-list ul li.mailbox.collection.video span.name,
+#files-folder-list ul li.mailbox.collection.video.selected span.name {
+	background-position: 7px -2384px;
+}
+
+#files-folder-list ul li.mailbox.collection.image span.name,
+#files-folder-list ul li.mailbox.collection.image.selected span.name {
+	background-position: 7px -2408px;
+}
+
+#files-folder-list ul li.mailbox.collection.document span.name,
+#files-folder-list ul li.mailbox.collection.document.selected span.name {
+	background-position: 7px -2432px;
+}
+
+#files-folder-list ul li span.name {
+	background-position: 7px 6px;
+}
+
+#files-folder-list ul li.child span.name {
+	background-position: 7px -90px;
+}
+
+ul.toolbarmenu li span.saveas {
+	background-image: url(images/listicons.png);
+	background-position: -1px -96px;
+}
+
+ul.toolbarmenu li:hover a.active span.saveas {
+	background-image: url(images/listicons.png);
+	background-position: -1px -74px;
+}
+
+.filelist thead tr th:first-child {
+	border-radius: 0;
+}
+
+.filelist tbody tr td {
+	height: 25px;
+	line-height: 25px;
+}
+
+/*** kolab delegation plugin ***/
+
+#settings-sections #settingstabplugindelegation a {
+	background-image: url(images/listicons.png);
+	background-position: 7px -2244px;
+}
+
+#settings-sections #settingstabplugindelegation.selected a {
+	background-position: 7px -2268px;
+}
+
+div.foldersblock h3,
+div.subscriptionblock h3 {
+	background-image: url(images/listicons.png);
+	background-repeat: no-repeat;
+}
+
+div.foldersblock h3.mail,
+div.subscriptionblock h3.mail {
+	background-position: 0px -2292px;
+}
+
+div.foldersblock h3.event,
+div.subscriptionblock h3.event {
+	background-position: 0px -528px;
+}
+
+div.foldersblock h3.contact,
+div.subscriptionblock h3.contact {
+	background-position: 0px -768px;
+}
+
+div.foldersblock h3.task,
+div.subscriptionblock h3.task {
+	background-position: 0px -2316px;
+}
+
+div.foldersblock h3.note,
+div.subscriptionblock h3.note {
+	background-position: 0px -2340px;
+}
+
+.foldersblock th.read {
+  background: url(images/read.png) center no-repeat;
+}
+
+.foldersblock th.write {
+  background: url(images/write.png) center no-repeat;
+}
+
+
+/*** kolab folders ***/
+
+.folderlist li.mailbox.type-event a,
+.folderlist li.mailbox.type-journal a {
+	background-position: 6px -526px;
+}
+.folderlist li.mailbox ul li.type-event a,
+.folderlist li.mailbox ul li.type-event > a:focus,
+.folderlist li.mailbox ul li.type-event.selected > a,
+.folderlist li.mailbox ul li.type-journal a,
+.folderlist li.mailbox ul li.type-journal > a:focus,
+.folderlist li.mailbox ul li.type-journal.selected > a {
+	background-position: 22px -526px;
+}
+.folderlist li.mailbox ul ul li.type-event a,
+.folderlist li.mailbox ul ul li.type-event > a:focus,
+.folderlist li.mailbox ul ul li.type-event.selected > a,
+.folderlist li.mailbox ul ul li.type-journal a,
+.folderlist li.mailbox ul ul li.type-journal > a:focus,
+.folderlist li.mailbox ul ul li.type-journal.selected > a {
+	background-position: 38px -526px;
+}
+.folderlist li.mailbox ul ul ul li.type-event a,
+.folderlist li.mailbox ul ul ul li.type-event > a:focus,
+.folderlist li.mailbox ul ul ul li.type-event.selected > a,
+.folderlist li.mailbox ul ul ul li.type-journal a,
+.folderlist li.mailbox ul ul ul li.type-journal > a:focus,
+.folderlist li.mailbox ul ul ul li.type-journal.selected > a {
+	background-position: 54px -526px;
+}
+.folderlist li.mailbox ul ul ul ul li.type-event a,
+.folderlist li.mailbox ul ul ul ul li.type-event > a:focus,
+.folderlist li.mailbox ul ul ul ul li.type-event.selected > a,
+.folderlist li.mailbox ul ul ul ul li.type-journal a,
+.folderlist li.mailbox ul ul ul ul li.type-journal > a:focus,
+.folderlist li.mailbox ul ul ul ul li.type-journal.selected > a {
+	background-position: 70px -526px;
+}
+
+.folderlist li.mailbox.type-task a {
+	background-position: 6px -2314px;
+}
+.folderlist li.mailbox ul li.type-task a,
+.folderlist li.mailbox ul li.type-task > a:focus,
+.folderlist li.mailbox ul li.type-task.selected > a {
+	background-position: 22px -2314px;
+}
+.folderlist li.mailbox ul ul li.type-task a,
+.folderlist li.mailbox ul ul li.type-task > a:focus,
+.folderlist li.mailbox ul ul li.type-task.selected > a {
+	background-position: 38px -2314px;
+}
+.folderlist li.mailbox ul ul ul li.type-task a,
+.folderlist li.mailbox ul ul ul li.type-task > a:focus,
+.folderlist li.mailbox ul ul ul li.type-task.selected > a {
+	background-position: 54px -2314px;
+}
+.folderlist li.mailbox ul ul ul ul li.type-task a,
+.folderlist li.mailbox ul ul ul ul li.type-task > a:focus,
+.folderlist li.mailbox ul ul ul ul li.type-task.selected > a {
+	background-position: 70px -2314px;
+}
+
+.folderlist li.mailbox.type-note a {
+	background-position: 6px -2338px;
+}
+.folderlist li.mailbox ul li.type-note a,
+.folderlist li.mailbox ul li.type-note > a:focus,
+.folderlist li.mailbox ul li.type-note.selected > a {
+	background-position: 22px -2338px;
+}
+.folderlist li.mailbox ul ul li.type-note a,
+.folderlist li.mailbox ul ul li.type-note > a:focus,
+.folderlist li.mailbox ul ul li.type-note.selected > a {
+	background-position: 38px -2338px;
+}
+.folderlist li.mailbox ul ul ul li.type-note a,
+.folderlist li.mailbox ul ul ul li.type-note > a:focus,
+.folderlist li.mailbox ul ul ul li.type-note.selected > a {
+	background-position: 54px -2338px;
+}
+.folderlist li.mailbox ul ul ul ul li.type-note a,
+.folderlist li.mailbox ul ul ul ul li.type-note > a:focus,
+.folderlist li.mailbox ul ul ul ul li.type-note.selected > a {
+	background-position: 70px -2338px;
+}
+
+.folderlist li.mailbox.type-configuration a {
+	background-position: 6px -887px;
+}
+.folderlist li.mailbox ul li.type-configuration a,
+.folderlist li.mailbox ul li.type-configuration > a:focus,
+.folderlist li.mailbox ul li.type-configuration.selected > a {
+	background-position: 22px -887px;
+}
+.folderlist li.mailbox ul ul li.type-configuration a,
+.folderlist li.mailbox ul ul li.type-configuration > a:focus,
+.folderlist li.mailbox ul ul li.type-configuration.selected > a {
+	background-position: 38px -887px;
+}
+.folderlist li.mailbox ul ul ul li.type-configuration a,
+.folderlist li.mailbox ul ul ul li.type-configuration > a:focus,
+.folderlist li.mailbox ul ul ul li.type-configuration.selected > a {
+	background-position: 54px -887px;
+}
+.folderlist li.mailbox ul ul ul ul li.type-configuration a,
+.folderlist li.mailbox ul ul ul ul li.type-configuration > a:focus,
+.folderlist li.mailbox ul ul ul ul li.type-configuration.selected > a {
+	background-position: 70px -887px;
+}
+
+.folderlist li.mailbox.type-contact a {
+	background-position: 6px -766px;
+}
+.folderlist li.mailbox ul li.type-contact a,
+.folderlist li.mailbox ul li.type-contact > a:focus,
+.folderlist li.mailbox ul li.type-contact.selected > a {
+	background-position: 22px -766px;
+}
+.folderlist li.mailbox ul ul li.type-contact a,
+.folderlist li.mailbox ul ul li.type-contact > a:focus,
+.folderlist li.mailbox ul ul li.type-contact.selected > a {
+	background-position: 38px -766px;
+}
+.folderlist li.mailbox ul ul ul li.type-contact a,
+.folderlist li.mailbox ul ul ul li.type-contact > a:focus,
+.folderlist li.mailbox ul ul ul li.type-contact.selected > a {
+	background-position: 54px -766px;
+}
+.folderlist li.mailbox ul ul ul ul li.type-contact a,
+.folderlist li.mailbox ul ul ul ul li.type-contact > a:focus,
+.folderlist li.mailbox ul ul ul ul li.type-contact.selected > a {
+	background-position: 70px -766px;
+}
+
+.folderlist li.mailbox.type-freebusy a {
+	background-position: 6px -2648px;
+}
+.folderlist li.mailbox ul li.type-freebusy a,
+.folderlist li.mailbox ul li.type-freebusy > a:focus,
+.folderlist li.mailbox ul li.type-freebusy.selected > a {
+	background-position: 22px -2648px;
+}
+.folderlist li.mailbox ul ul li.type-freebusy a,
+.folderlist li.mailbox ul ul li.type-freebusy > a:focus,
+.folderlist li.mailbox ul ul li.type-freebusy.selected > a {
+	background-position: 38px -2648px;
+}
+.folderlist li.mailbox ul ul ul li.type-freebusy a,
+.folderlist li.mailbox ul ul ul li.type-freebusy > a:focus,
+.folderlist li.mailbox ul ul ul li.type-freebusy.selected > a {
+	background-position: 54px -2648px;
+}
+.folderlist li.mailbox ul ul ul ul li.type-freebusy a,
+.folderlist li.mailbox ul ul ul ul li.type-freebusy > a:focus,
+.folderlist li.mailbox ul ul ul ul li.type-freebusy.selected > a {
+	background-position: 70px -2648px;
+}
+
+
+/*** ACL plugin ***/
+
+#aclcontainer {
+	background: none;
+	border-color: #ededed;
+}
+
+#acltable a {
+	color: #4c4c4c;
+}
+
+#acltable tbody tr.selected td.partial {
+	background: #e63023 !important;
+	background-image: url(images/partial.png);
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#acltable tbody tr.selected td.enabled {
+	background: #e63023 !important;
+	background-image: url(images/enabled.png);
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+
+/*** Managesieve plugin ***/
+
+#settings-sections .vacation a,
+#settings-sections .vacation.selected a {
+	background-image: url(images/listicons.png);
+	background-position: 7px -2555px;
+}
+
+#filter-frame {
+	border-radius: 0;
+}
+
+/*** Kolab Notes plugin ***/
+
+.notesview #notedetailsbox {
+	background: url(images/watermark.jpg) center no-repeat #fff;
+}
+
+.notesdialog #notedetailstitle {
+	background: none;
+	border-bottom: 0;
+}
+
+.notesview #notestoolbar a.button.createnote {
+	background-image: url(images/buttons.png);
+	background-position: center -2608px;
+}
+
+.notesview #notestoolbar a.button.sendnote {
+	background-image: url(images/buttons.png);
+	background-position: left -650px;
+}
+
+
+/*** Kolab ActiveSync plugin ***/
+
+#settings-sections .activesync a {
+	background-position: 6px -863px;
+}
+
+#settings-sections .activesync.selected a {
+	background-position: 6px -863px;
+}
+
+#folder-sync-options {
+	border-radius: 0;
+}
+
+#devices-table td span.devicetype {
+	color: #828282;
+}
+
+/*** Kolab Tags plugin ***/
+
+.tagbox {
+	border-radius: 2px !important;
+	color: #4c4c4c;
+}
+
+.tagbox a {
+	margin-right: -2px;
+}
+
+#taglist li {
+	color: #4c4c4c;
+	padding: 3px 6px;
+}
+
+#taglist li.selected {
+	color: #fff;
+	background: #e63023;
+	border-radius: 2px;
+}
+
+
+/*** Contextmenu plugin ***/
+
+#folder-selector li a span,
+#addressbook-selector li a span,
+div.contextmenu ul.iconized li a.readfolder span.icon,
+div.contextmenu ul.iconized li a.openfolder span.icon,
+div.contextmenu ul.iconized li a.reply-all span.icon,
+div.contextmenu ul.iconized li a.replyalllink span.icon,
+div.contextmenu ul.iconized li a.replylistlink span.icon,
+div.contextmenu ul.iconized li a.forward span.icon,
+div.contextmenu ul.iconized li a.forwardlink span.icon,
+div.contextmenu ul.iconized li a.forwardattachmentlink span.icon,
+div.contextmenu ul.iconized li a.delete span.icon,
+div.contextmenu ul.iconized li a.cmd_group-create span.icon,
+div.contextmenu ul.iconized li a.cmd_group-rename span.icon,
+div.contextmenu ul.iconized li a.cmd_group-delete span.icon,
+div.contextmenu ul.iconized li a.cmd_search-delete span.icon,
+div.contextmenu ul.iconized li a.cmd_book-remove span.icon,
+div.contextmenu ul.iconized li a.reply span.icon,
+div.contextmenu ul.iconized li a.compose span.icon,
+div.contextmenu ul.iconized li a.removegroup span.icon,
+div.contextmenu ul.iconized li a.exportalllink span.icon,
+div.contextmenu ul.iconized li a.exportsellink span.icon {
+    background-image: url(images/listicons.png);
+}
+
+div.contextmenu ul.iconized li a.readfolder span.icon {
+    background-position: 0px -1220px;
+}
+
+div.contextmenu ul.iconized li a.delete span.icon,
+div.contextmenu ul.iconized li a.cmd_group-delete span.icon,
+div.contextmenu ul.iconized li a.cmd_search-delete span.icon {
+    background-position: 0px -1364px;
+}
+
+div.contextmenu ul.iconized li a.openfolder span.icon {
+    background-position: 0px -1485px;
+}
+
+div.contextmenu ul.iconized li a.reply span.icon {
+    background-position: 0px -2712px;
+}
+
+div.contextmenu ul.iconized li a.reply-all span.icon,
+div.contextmenu ul.iconized li a.replyalllink span.icon,
+div.contextmenu ul.iconized li a.replylistlink span.icon {
+    background-position: 0px -2736px;
+}
+
+div.contextmenu ul.iconized li a.forward span.icon,
+div.contextmenu ul.iconized li a.forwardlink span.icon,
+div.contextmenu ul.iconized li a.forwardattachmentlink span.icon {
+    background-position: 0px -2760px;
+}
+
+ul.rcmcontextmenu .calendar-create-from-mail a span {
+    background-position: 4px -1947px;
+}
+
+ul.rcmcontextmenu .tasklist-create-from-mail a span {
+    background-position: 4px -1971px;
+}
+
+#folder-selector li a span {
+    text-indent: 4px;
+    background-position: 5px -119px;
+}
+
+#folder-selector li a.inbox span {
+    background-position: 4px -215px;
+}
+
+#folder-selector li a.drafts span {
+    background-position: 4px -263px;
+}
+
+#folder-selector li a.sent span {
+    background-position: 4px -311px;
+}
+
+#folder-selector li a.junk span {
+    background-position: 4px -359px;
+}
+
+#folder-selector li a.trash span {
+    background-position: 4px -407px;
+}
+
+#addressbook-selector li a.addressbook span {
+    text-indent: 4px;
+    background-position: 2px -792px;
+}
+
+#addressbook-selector li a.contactgroup span {
+    text-indent: 10px;
+    background-position: 10px -1580px;
+}
+
+div.contextmenu ul.iconized li a.compose span.icon {
+    background-position: 0px -1292px;
+}
+
+div.contextmenu ul.iconized li:hover a.active.compose span.icon {
+    background-position: 0px -2829px;
+}
+
+div.contextmenu ul.iconized li a.removegroup span.icon,
+div.contextmenu ul.iconized li a.cmd_book-remove span.icon {
+    background-position: -25px -2670px;
+}
+
+div.contextmenu ul.iconized li a.exportalllink span.icon,
+div.contextmenu ul.iconized li a.exportsellink span.icon {
+    background-position: 0px -2785px;
+}
+
+div.contextmenu ul.iconized li a.cmd_group-create span.icon {
+  background-position: 0px -2809px;
+}
+
+div.contextmenu ul.iconized li a.cmd_group-rename span.icon {
+    background-position: 0px -1387px;
+}
+
+div.contextmenu ul.iconized li:hover a.active.cmd_group-rename span.icon {
+	background-position: 0 -2954px;
+}
+
