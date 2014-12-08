@@ -59,6 +59,7 @@ body.login #header {
 #login-form input.button:hover,
 #login-form input.button:focus {
 	box-shadow: none;
+	-webkit-box-shadow: none;
 }
 
 #login-form p.formbuttons {
@@ -341,6 +342,7 @@ body.login #header {
 	border: none;
 	border-radius: 0;
 	box-shadow: none;
+	-webkit-box-shadow: none;
 	text-shadow: none;
 	opacity: 0.95;
 	padding: 10px 10px 10px 35px;
@@ -371,6 +373,7 @@ html.mozilla #mailboxlist > li:first-child,
 	border-radius: 0;
 	border: none;
 	box-shadow: none;
+	-webkit-box-shadow: none;
 	text-shadow: none;
 }
 
@@ -584,6 +587,7 @@ textarea {
 	border-radius: 1px;
 	border: 1px solid #dbdbdb;
 	box-shadow: none;
+	-webkit-box-shadow: none;
 	background: #fff;
 }
 
@@ -593,6 +597,12 @@ input.button:focus,
 textarea:focus {
 	border: 1px solid #dbdbdb;
 	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+input[type="text"]:required,
+input[type="password"]:required {
+	border-color: #e63023;
 }
 
 #tasksview .buttonbar,
@@ -627,6 +637,7 @@ body.iframe .boxtitle,
 #all-headers {
 	border-radius: 0;
 	box-shadow: none;
+	-webkit-box-shadow: none;
 	background: #fff;
 	border: 1px solid #ededed;
 }
@@ -1012,6 +1023,7 @@ a.button, .buttongroup {
 	background: #e7e7e7;
 	color: #4c4c4c;
 	box-shadow: none;
+	-webkit-box-shadow: none;
 	text-shadow: none;
 }
 
@@ -1064,8 +1076,8 @@ a.button span.icon,
 .buttongroup a.button,
 .buttongroup a.button.selected {
 	box-shadow: none;
+	-webkit-box-shadow: none;
 	border: none;
-	box-shadow: none;
 	background-color: transparent;
 }
 
@@ -1161,6 +1173,7 @@ a.button.changeformat.text.selected span.icon {
 .calendarmain #calendar .fc-button-today,
 .calendarmain #calendar .fc-button-today.fc-state-default,
 .calendarmain #calendar .fc-button-today.fc-state-hover,
+.ui-dialog .ui-dialog-buttonpane button,
 .ui-button.ui-state-default,
 input.button,
 .formbuttons input.button {
@@ -1168,6 +1181,7 @@ input.button,
 	border: none;
 	border-radius: 2px;
 	box-shadow: none;
+	-webkit-box-shadow: none;
 	text-shadow: none;
 	color: #4c4c4c;
 	font-weight: bold;
@@ -1175,13 +1189,17 @@ input.button,
 	margin: 1px 2px;
 }
 
+.ui-dialog .ui-dialog-buttonpane button.mainaction,
 input.button.mainaction {
 	background: #add03e;
 	color: #fff;
 	box-shadow: none;
+	-webkit-box-shadow: none;
 	text-shadow: none;
 }
 
+.ui-dialog .ui-dialog-buttonpane button:focus,
+.ui-dialog .ui-dialog-buttonpane button:hover,
 input.button.disabled:hover,
 input.button:hover,
 input.button:focus,
@@ -1191,15 +1209,20 @@ input.button:focus,
 	color: #4c4c4c;
 	background: #e0e0e0;
 	box-shadow: none;
+	-webkit-box-shadow: none;
 }
 
 .toolbar a.button.disabled:hover {
 	box-shadow: none;
+	-webkit-box-shadow: none;
 }
 
+.ui-dialog .ui-dialog-buttonpane button.mainaction:focus,
+.ui-dialog .ui-dialog-buttonpane button.mainaction:hover,
 input.button.mainaction:focus,
 input.button.mainaction:hover {
 	box-shadow: none;
+	-webkit-box-shadow: none;
 	border: none;
 	color: #fff;
 	background: #88b400;
@@ -1213,6 +1236,10 @@ input.button.mainaction:hover {
 .calendarmain #calendar .fc-button-today.fc-state-default {
 	top: -4px;
 	padding: 3px 10px;
+}
+
+.ui-dialog .ui-dialog-buttonpane button {
+	padding: 0.2em 0.5em;
 }
 
 
@@ -1361,14 +1388,29 @@ input.button.mainaction:hover {
 
 /*** jquery UI theme overrides ***/
 
+.ui-menu {
+	border-radius: 0 !important;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
 .ui-dialog {
 	border-radius: 0 !important;
+}
+
+.ui-widget,
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+	font-family: inherit;
 }
 
 .ui-widget-content {
 	background: #fff !important;
 	border-radius: 0;
 }
+
 
 .ui-dialog .ui-dialog-title {
 	text-shadow: none;
@@ -1431,6 +1473,16 @@ input.button.mainaction:hover {
 	border-radius: 0;
 }
 
+.ui-datepicker .ui-datepicker-header .ui-icon {
+	background-image: url(images/ui-icons-datepicker.png);
+}
+
+#datepicker .ui-datepicker .ui-datepicker-prev,
+#datepicker .ui-datepicker .ui-datepicker-next {
+	top: 6px;
+	border-radius: none;
+	cursor: pointer;
+}
 
 /*** IE hacks ***/
 
@@ -1743,6 +1795,7 @@ input.button.mainaction:hover {
 
 #calendars .treelist li span.handle {
 	box-shadow: none;
+	-webkit-box-shadow: none;
 	border: none;
 	width: 12px;
 	height: 12px;
@@ -1828,6 +1881,27 @@ input.button.mainaction:hover {
 	bottom: 2px;
 }
 
+.ui-datepicker .ui-state-highlight {
+	color: #e63023;
+}
+
+.calendarmain .fc-state-highlight {
+	background-color: rgba(230,48,35,0.10);
+}
+
+#eventedit .edit-attendees-table th.invite label {
+	background: url(images/listicons.png) 2px -1294px no-repeat;
+}
+
+#eventresourcesdialog {
+	background: #e7e7e7 !important;
+	padding: 5px;
+}
+
+#resourcequicksearch {
+	background: transparent;
+}
+
 /*** tasklist module styles ***/
 
 #tasksview {
@@ -1836,6 +1910,7 @@ input.button.mainaction:hover {
 
 .taskhead {
 	box-shadow: none;
+	-webkit-box-shadow: none;
 	border-radius: 0;
 	border: 1px solid #ededed;
 }
@@ -1869,6 +1944,7 @@ input.button.mainaction:hover {
 	border: none;
 	border-radius: 2px;
 	box-shadow: none;
+	-webkit-box-shadow: none;
 	padding: 0.4em 0.6em;
 	color: #fff;
 }
@@ -1883,6 +1959,7 @@ input.button.mainaction:hover {
 	border: none;
 	border-radius: 2px;
 	box-shadow: none;
+	-webkit-box-shadow: none;
 }
 
 .tagcloud li,
@@ -2031,6 +2108,11 @@ ul.toolbarmenu li:hover a.active span.saveas {
 	height: 25px;
 	line-height: 25px;
 }
+
+table.propform td.source.selected {
+	background-color: rgba(230,48,35,0.10);
+}
+
 
 /*** kolab delegation plugin ***/
 
