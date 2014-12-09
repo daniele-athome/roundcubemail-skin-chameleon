@@ -179,7 +179,7 @@ body.login #header {
 }
 
 .ktaskmenu:focus {
-	background: rgba(230,48,35,0.9);
+	background-color: rgba(230,48,35,0.4);
 }
 
 .ktaskmenu .activetask {
@@ -378,6 +378,10 @@ html.mozilla #mailboxlist > li:first-child,
 	text-shadow: none;
 }
 
+.uibox .boxfooter .listbutton:first-child {
+	border-radius: 0;
+}
+
 
 /** color style overrides **/
 
@@ -453,6 +457,7 @@ ul.listing.focus .listitem.focused span,
 .pagenav.dark a.button:focus,
 .previewheader a.button:focus,
 #composeheaders a.button:focus,
+.ui-datepicker td.ui-datepicker-days-cell-over a.ui-state-default,
 #calendar .fc-header .fc-button:focus {
 	background-color: rgba(230,48,35,0.4) !important;
 	text-shadow: none;
@@ -525,11 +530,13 @@ ul.toolbarmenu {
 	border: 1px solid #828282;
 }
 
+select.decorated option,
 ul.toolbarmenu li,
 #rcmKSearchpane ul li {
 	background: #3a3a3a;
 }
 
+select.decorated option,
 .googie_list td,
 ul.toolbarmenu li,
 #rcmKSearchpane ul li {
@@ -671,14 +678,6 @@ body.iframe .boxtitle,
 .messagelist thead tr th.sortedDESC a {
 	color: #4c4c4c;
 	background-image: url(images/listicons.png);
-}
-
-.messagelist tr td.status span.msgicon {
-	background-position: 1px -2897px;
-}
-
-.messagelist tr.selected td.subject span.msgicon {
-	background-position: 1px -2939px;
 }
 
 .folderlist li.mailbox.unread > a {
@@ -882,6 +881,7 @@ ul.toolbarmenu li:hover a.active span.icon.move {
 
 a.iconlink,
 a.iconbutton,
+a.deletebutton,
 a.button span.icon,
 .toolbar a.button,
 .boxpagenav a.icon,
@@ -891,6 +891,7 @@ a.button span.icon,
 .boxfooter .listbutton .inner,
 .attachmentslist li a.delete,
 .attachmentslist li a.cancelupload,
+.attachmentslist li a.drop,
 #taskbar a span.button-inner,
 #mailpreviewtoggle,
 div.more-headers,
@@ -938,7 +939,19 @@ body.tasklistview #searchmenulink {
 	border-top: none;
 	top: 0;
 }
+/*
+.toolbar a.button.help {
+	background: url(images/buttons.png) center -2858px no-repeat;
+}
 
+.toolbar a.button.about {
+	background: url(images/buttons.png) center -2813px no-repeat;
+}
+
+.toolbar a.button.license {
+	background: url(images/buttons.png) center -2902px no-repeat;
+}
+*/
 
 /*** form styles ***/
 
@@ -950,6 +963,10 @@ table.propform td {
 
 table.propform td.title {
 	color: #4c4c4c;
+}
+
+.propform fieldset legend {
+	font-size: 12px;
 }
 
 .contactfieldgroup {
@@ -968,8 +985,12 @@ table.propform td.title {
 	padding: 10px 12px 0;
 }
 
-.contactfieldgroup .row {
+#contactsectioncontact .contactfieldgroup .row {
 	margin: -4px 0 4px;
+}
+
+.contactfieldgroup .contactfieldlabel {
+	line-height: 24px;
 }
 
 img.skinthumbnail {
@@ -1212,6 +1233,12 @@ input.button.mainaction {
 	text-shadow: none;
 }
 
+.ui-dialog .ui-dialog-buttonpane button.delete,
+input.button.delete {
+	background: #df4440;
+	color: #fff;
+}
+
 .ui-dialog .ui-dialog-buttonpane button:focus,
 .ui-dialog .ui-dialog-buttonpane button:hover,
 input.button.disabled:hover,
@@ -1240,6 +1267,14 @@ input.button.mainaction:hover {
 	border: none;
 	color: #fff;
 	background: #88b400;
+}
+
+.ui-dialog .ui-dialog-buttonpane button.delete:focus,
+.ui-dialog .ui-dialog-buttonpane button.delete:hover,
+input.button.delete:focus,
+input.button.delete:hover {
+	background: #d1403c;
+	color: #fff;
 }
 
 .popupdialog .formbuttons {
@@ -1399,6 +1434,9 @@ input.button.mainaction:hover {
 	background-position: 0 -520px;
 }
 
+.attachmentslist li a.drop {
+	background-position: center -1570px;
+}
 
 /*** jquery UI theme overrides ***/
 
@@ -1981,6 +2019,7 @@ input.button.mainaction:hover {
 #taskselector li a {
 	color: #4c4c4c;
 	font-size: 100%;
+	padding: 0.4em 0.6em;
 }
 
 .tag-draghelper .tag,
@@ -2387,6 +2426,12 @@ div.subscriptionblock h3.note {
 
 #filter-frame {
 	border-radius: 0;
+}
+
+div.rulerow:hover,
+div.actionrow:hover {
+	border-color: rgba(230,48,35,0.2);
+	background-color: rgba(230,48,35,0.05);
 }
 
 /*** Kolab Notes plugin ***/
