@@ -965,8 +965,15 @@ table.propform td.title {
 	color: #4c4c4c;
 }
 
-.propform fieldset legend {
+.propform fieldset {
+	margin-bottom: 0;
+}
+
+.propform fieldset legend,
+.propform fieldset fieldset legend {
 	font-size: 12px;
+	color: #4c4c4c;
+	padding: 10px;
 }
 
 .contactfieldgroup {
@@ -1320,7 +1327,8 @@ input.button.delete:hover {
 	background-image: url(images/ajaxloader.gif);
 }
 
-#messagestack div.loading:after {
+#messagestack div.loading:after,
+#messagestack div.uploading:after {
 	background: url(images/ajaxloader_dark.gif) 3px 7px no-repeat;
 }
 
@@ -1525,6 +1533,11 @@ input.button.delete:hover {
 	border-radius: 0;
 }
 
+.ui-datepicker {
+	box-shadow: none;
+	border: 1px solid #ededed;
+}
+
 .ui-datepicker .ui-datepicker-header .ui-icon {
 	background-image: url(images/ui-icons-datepicker.png);
 }
@@ -1532,9 +1545,15 @@ input.button.delete:hover {
 #datepicker .ui-datepicker .ui-datepicker-prev,
 #datepicker .ui-datepicker .ui-datepicker-next {
 	top: 6px;
-	border-radius: none;
+	border-radius: 0;
 	cursor: pointer;
 }
+
+.ui-slider .ui-slider-range {
+	border-radius: 0;
+	background: #e63023;
+}
+
 
 /*** IE hacks ***/
 
@@ -1941,6 +1960,8 @@ input.button.delete:hover {
 	background-color: rgba(230,48,35,0.10);
 }
 
+
+#taskedit .edit-attendees-table th.invite label,
 #eventedit .edit-attendees-table th.invite label {
 	background: url(images/listicons.png) 2px -1294px no-repeat;
 }
@@ -2020,6 +2041,7 @@ input.button.delete:hover {
 	color: #4c4c4c;
 	font-size: 100%;
 	padding: 0.4em 0.6em;
+	font-weight: bold;
 }
 
 .tag-draghelper .tag,
@@ -2437,7 +2459,7 @@ div.actionrow:hover {
 /*** Kolab Notes plugin ***/
 
 .notesview #notedetailsbox {
-	background: url(images/watermark.jpg) center no-repeat #fff;
+	background-image: url(images/watermark.png);
 }
 
 .notesdialog #notedetailstitle {
