@@ -281,6 +281,10 @@ body.login #header {
 	background-position: -4px -119px;
 }
 
+.ktaskmenu .button-logout:hover .button-inner {
+	background-position: -4px -2944px;
+}
+
 .ktaskmenu .button-mail:hover .button-inner {
 	background-position: -4px -2636px;
 }
@@ -701,6 +705,11 @@ body.iframe .boxtitle,
 	-webkit-box-shadow: none;
 }
 
+.folderlist li.mailbox div.treetoggle {
+	top: 15px;
+	left: 20px;
+}
+
 #directorylist li a,
 ul.toolbarmenu li span.icon,
 .folderlist li.mailbox a,
@@ -780,6 +789,16 @@ ul.toolbarmenu li .appendnote span.icon {
 #sections-table #rcmrowserver .section,
 #sections-table #rcmrowserver.selected .section {
 	background-position: 4px -835px;
+}
+
+#preferences-details fieldset.advanced legend {
+	box-sizing: border-box;
+}
+
+#preferences-details fieldset.advanced .advanced-toggle {
+	background-image: url(images/listicons.png);
+	top: 8px;
+	right: 0;
 }
 
 ul.toolbarmenu li span.icon.taskadd {
@@ -1240,6 +1259,12 @@ input.button.mainaction {
 	text-shadow: none;
 }
 
+.ui-dialog .ui-dialog-titlebar-close.ui-button:focus,
+.ui-dialog .ui-dialog-titlebar-close.ui-button.ui-state-focus {
+	-webkit-box-shadow: 0 0 0 2px #e63023 !important;
+	box-shadow: 0 0 0 2px #e63023 !important;
+}
+
 .ui-dialog .ui-dialog-buttonpane button.delete,
 input.button.delete {
 	background: #df4440;
@@ -1484,7 +1509,7 @@ input.button.delete:hover {
 }
 
 .ui-dialog .ui-dialog-titlebar-close .ui-icon-closethick {
-	background: url(images/ui-dialog-close.png) 0 0 no-repeat;
+	background: url(images/ui-dialog-close.png) 1px 1px no-repeat;
 }
 
 #messageheader,
