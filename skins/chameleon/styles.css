@@ -278,11 +278,11 @@ body.login #header {
 }
 
 .ktaskmenu .button-logout .button-inner {
-	background-position: -4px -119px;
+	background-position: -5px -119px;
 }
 
 .ktaskmenu .button-logout:hover .button-inner {
-	background-position: -4px -2944px;
+	background-position: -5px -2944px;
 }
 
 .ktaskmenu .button-mail:hover .button-inner {
@@ -1593,6 +1593,19 @@ input.button.delete:hover {
 	height: 24px;
 }
 
+/*** help plugin styles ***/
+
+.toolbar a.button.help {
+	background: url(images/buttons.png) center -2814px;
+}
+
+.toolbar a.button.about {
+	background: url(images/buttons.png) center -2855px;
+}
+
+.toolbar a.button.license {
+	background: url(images/buttons.png) center -2898px;
+}
 
 /*** kolab folder styles ***/
 
