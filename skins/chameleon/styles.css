@@ -754,6 +754,10 @@ ul.toolbarmenu li .appendnote span.icon {
 	background-image: url(images/listicons.png);
 }
 
+.messagelist tr td.subject span.forwarded {
+	background-position: 6px -1096px;
+}
+
 #settings-sections .filter a {
 	background-position: 6px -1748px;
 }
