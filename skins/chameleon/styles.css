@@ -1701,6 +1701,14 @@ input.button.delete:hover {
 	background-position: 32px -1578px;
 }
 
+#calendars .treelist div:hover span.actions,
+#tasklistsbox .treelist div:hover span.actions,
+.notesview #notebooksbox .treelist div:hover span.actions,
+#directorylistbox ul.treelist div:hover span.actions {
+	background: #ededed;
+	border-color: #ededed;
+}
+
 #calendars .treelist div a.subscribed,
 #tasklistsbox .treelist div a.subscribed,
 .notesview #notebooksbox .treelist div a.subscribed,
@@ -1711,7 +1719,30 @@ input.button.delete:hover {
 #directorylistbox ul.treelist div span.remove {
 	background-image: url(images/listicons.png);
 	background-position: -100px 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+#directorylistbox ul.treelist div span.subscribed,
+#directorylistbox ul.treelist div span.remove {
 	top: 7px;
+}
+
+#calendars .treelist div a.quickview,
+#calendars .treelist div:hover a.quickview,
+#tasklistsbox .treelist div a.quickview,
+#tasklistsbox .treelist div:hover a.quickview {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+#calendars .treelist div a.remove:focus,
+#calendars .treelist div a.quickview:focus,
+#calendars .treelist div a.subscribed:focus,
+#tasklistsbox .treelist div a.remove:focus,
+#tasklistsbox .treelist div a.quickview:focus,
+#tasklistsbox .treelist div a.subscribed:focus {
+	outline: 2px solid rgba(230,48,35, 0.5);
 }
 
 #calendars .treelist div:hover a.subscribed,
