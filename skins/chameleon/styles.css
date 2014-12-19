@@ -958,19 +958,15 @@ body.tasklistview #searchmenulink {
 	border-top: none;
 	top: 0;
 }
-/*
-.toolbar a.button.help {
-	background: url(images/buttons.png) center -2858px no-repeat;
+
+ul.treelist li div.treetoggle {
+	background-position: -3px -142px;
 }
 
-.toolbar a.button.about {
-	background: url(images/buttons.png) center -2813px no-repeat;
+ul.treelist li div.treetoggle.expanded {
+	background-position: -3px -166px;
 }
 
-.toolbar a.button.license {
-	background: url(images/buttons.png) center -2902px no-repeat;
-}
-*/
 
 /*** form styles ***/
 
@@ -1331,6 +1327,7 @@ input.button.delete:hover {
 #message div.error,
 #message div.notice,
 #message div.confirmation,
+#messagestack div:after,
 #messagestack div.warning:after,
 #messagestack div.error:after,
 #messagestack div.notice:after,
@@ -1342,6 +1339,11 @@ input.button.delete:hover {
 #messagestack div:after {
 	height: 28px;
 	width: 24px;
+}
+
+#messagestack div:after,
+#messagestack div.notice:after {
+	background-position: 3px 9px;
 }
 
 #message div.notice {
@@ -1360,10 +1362,6 @@ input.button.delete:hover {
 #messagestack div.loading,
 #messagestack div.uploading {
 	color: #fff;
-}
-
-#messagestack div.notice:after {
-	background-position: 3px 9px;
 }
 
 #messagestack div.confirmation {
@@ -1617,11 +1615,15 @@ input.button.delete:hover {
 #calendars .searchresults .boxtitle,
 #tasklistsbox .searchresults .boxtitle,
 #directorylist .searchresults .boxtitle,
-.notesview #notebooks .searchresults .boxtitle {
-/*
-	background: #bccad0;
-	color: #215c6e;
-*/
+.notesview #notebooksbox .searchresults .boxtitle {
+	background: #f9f9f9;
+	padding: 7px 8px 6px;
+}
+
+#calendars .searchresults,
+#tasklistsbox .searchresults,
+.notesview #notebooksbox .searchresults {
+	margin-top: 0;
 }
 
 #tasklistsbox .treelist li span.listname,
@@ -1795,7 +1797,7 @@ input.button.delete:hover {
 #tasklistsbox .searchresults .listing li,
 #directorylistbox .searchresults .listing li,
 .notesview #notebooksbox .searchresults .listing li {
-	background-color: #828282;
+	background-color: #fff;
 }
 
 #contacts-table td.contact,
@@ -1905,6 +1907,10 @@ input.button.delete:hover {
 	background-position: center -2144px;
 }
 
+.calendarmain #calendar .fc-header-right {
+	padding-top: 3px;
+}
+
 .calendarmain #calendar .fc-button-prev,
 .calendarmain #calendar .fc-button-next,
 .calendarmain #calendar .fc-button-prev.fc-state-default,
@@ -1945,16 +1951,13 @@ input.button.delete:hover {
 	color: #4c4c4c;
 }
 
+#datepicker td.ui-datepicker-activerange,
 .ui-datepicker td {
-	border-color: #4d4d4d;
+	border-color: #fff;
 }
 
 .ui-datepicker .ui-datepicker-header {
 	border-radius: 0
-}
-
-#datepicker td.ui-datepicker-activerange {
-	border-color: #4d4d4d;
 }
 
 #datepicker td.ui-datepicker-activerange a {
