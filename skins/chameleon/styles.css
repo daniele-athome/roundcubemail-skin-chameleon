@@ -1561,6 +1561,17 @@ input.button.delete:hover {
 	border: 1px solid #ededed;
 }
 
+#datepicker .ui-datepicker {
+	border: none;
+}
+
+.ie10 .ui-datepicker .ui-datepicker-title select,
+.webkit .ui-datepicker .ui-datepicker-title select,
+.mozilla .ui-datepicker .ui-datepicker-title select {
+	background-image: url(images/ui-icons-datepicker.png);
+	background-position: right -16px;
+}
+
 .ui-datepicker .ui-datepicker-header .ui-icon {
 	background-image: url(images/ui-icons-datepicker.png);
 }
@@ -1939,7 +1950,8 @@ input.button.delete:hover {
 	background-position: -22px -227px;
 }
 
-#calendars .treelist li span.handle {
+#calendars .treelist li span.handle,
+.calendarmain .fc-view-table .fc-event-handle .fc-event-inner {
 	box-shadow: none;
 	-webkit-box-shadow: none;
 	border: none;
@@ -1949,6 +1961,31 @@ input.button.delete:hover {
 
 .fc-view thead th.fc-widget-header {
 	color: #4c4c4c;
+}
+
+.fc-view-table {
+	border: none;
+}
+
+.calendarmain .fc-view-table tr.fc-event td {
+	border-color: #ededed;
+}
+
+.calendarmain .fc-view-table td.fc-list-header {
+	border-bottom-color: #ededed;
+	padding: 8px 7px;
+}
+
+#agendaoptions {
+	background: #f9f9f9;
+	border-radius: 0;
+	border: none;
+	padding: 9px 8px;
+}
+
+#agendaoptions label {
+	text-shadow: none;
+	vertical-align: middle;
 }
 
 #datepicker td.ui-datepicker-activerange,
@@ -1995,6 +2032,24 @@ input.button.delete:hover {
 	background: url(images/listicons.png) 0 -2040px no-repeat;
 }
 
+.attendees-list span.attendee {
+	display: inline-block;
+	line-height: 14px;
+}
+
+.attendees-list div.attendee {
+	line-height: 15px;
+}
+
+.attendees-list div.attendee.spacer,
+#schedule-freebusy-times tr.spacer td {
+	line-height: 5px;
+}
+
+#schedule-freebusy-times td {
+	line-height: 15px;
+}
+
 .attendees-list .organizer {
 	background-position: -30px -2020px;
 }
@@ -2021,7 +2076,7 @@ input.button.delete:hover {
 }
 
 #timezonedisplay {
-	bottom: 2px;
+	bottom: 0;
 }
 
 .ui-datepicker .ui-state-highlight {
