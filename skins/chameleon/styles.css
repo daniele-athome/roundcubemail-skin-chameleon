@@ -1642,7 +1642,8 @@ input.button.delete:hover {
 #directorylist li.addressbook.readonly,
 #directorylist li.addressbook.shared,
 #directorylist li.addressbook.other,
-.notesview #notebooks div.folder span.handle {
+.notesview #notebooks div.folder span.handle,
+.notesview #notebooks li .listname {
 	background-image: url(images/listicons.png);
 	background-position: right -5000px;
 	background-repeat: no-repeat;
