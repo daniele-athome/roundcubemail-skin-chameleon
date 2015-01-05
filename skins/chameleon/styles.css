@@ -1134,6 +1134,16 @@ a.button span.icon,
 	border-color: #e63023;
 }
 
+.buttongroup a.button.first,
+.buttongroup a.button:first-child {
+	border-radius: 2px 0 0 2px;
+}
+
+.buttongroup a.button.last,
+.buttongroup a.button:last-child {
+	border-radius: 0 2px 2px 0;
+}
+
 #messageheader .buttongroup,
 .previewheader .buttongroup,
 #composeheaders .buttongroup {
@@ -1154,7 +1164,8 @@ a.button span.icon,
 
 .buttongroup a.button.selected,
 .buttongroup a.button.selected:hover {
-	background: #ededed;
+	color: #fff;
+	background: #e63023;
 	box-shadow: none;
 	-webkit-box-shadow: none;
 }
@@ -1207,16 +1218,21 @@ a.button span.icon,
 }
 
 .pagenav a.changeformat.html span.inner,
-.pagenav a.changeformat.html.selected span.inner,
-a.button.changeformat.html span.icon,
-a.button.changeformat.html.selected span.icon {
-	background-position: -6px -2227px;
+a.button.changeformat.html span.icon {
+	background-position: -6px -2228px;
 }
+.pagenav a.changeformat.html.selected span.inner,
+a.button.changeformat.html.selected span.icon {
+	background-position: -30px -2228px;
+}
+
 .pagenav a.changeformat.text span.inner,
-.pagenav a.changeformat.text.selected span.inner,
-a.button.changeformat.text span.icon,
-a.button.changeformat.text.selected span.icon {
+a.button.changeformat.text span.icon {
 	background-position: -6px -2246px;
+}
+.pagenav a.changeformat.text.selected span.inner,
+a.button.changeformat.text.selected span.icon {
+	background-position: -30px -2246px;
 }
 
 .previewheader .pagenav a.extwin span.inner,
@@ -1248,6 +1264,7 @@ a.button.changeformat.text.selected span.icon {
 .calendarmain #calendar .fc-button-today.fc-state-hover,
 .ui-dialog .ui-dialog-buttonpane button,
 .ui-button.ui-state-default,
+a.button,
 input.button,
 .formbuttons input.button {
 	background: #e7e7e7;
