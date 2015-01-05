@@ -16,6 +16,14 @@ or (at your option) any later version.
 PACKAGING and INSTALLATION
 --------------------------
 
+styles.css is written using LESS syntax. Thus it needs to be compliled
+using the `lessc` commandline line tool. This comes with the `nodejs-less`
+RPM package which depends on nodejs.
+
+ $ lessc -x skins/chameleon/styles.css > destination-directory/styles.css
+
+(the -x option minifies the CSS code)
+
 References to image files from the included CSS files can be appended
 with cache-buster marks to avoid browser caching issues after updating.
 

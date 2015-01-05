@@ -5,4 +5,9 @@
 <link rel="stylesheet" type="text/css" href="skins/larry/<roundcube:var name="env:task" />.css" />
 <roundcube:endif />
 <script type="text/javascript" src="skins/larry/ui.js"></script>
+<roundcube:if condition="config:devel_mode" />
+<link rel="stylesheet/less" type="text/css" href="/styles.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.2.0/less.min.js"></script>
+<roundcube:else />
 <link rel="stylesheet" type="text/css" href="/styles.css" />
+<roundcube:endif />

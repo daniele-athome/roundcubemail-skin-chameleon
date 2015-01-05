@@ -1,18 +1,20 @@
 /**
  * Styles for the Kolab web client
  *
- * Copyright (C) 2012-2014, Kolab Systems AG <contact@kolabsys.com>
- * Screendesign by 
+ * Copyright (C) 2014-2015, Kolab Systems AG <contact@kolabsys.com>
+ * Screendesign by Kolab Digital, London, kolabdigital.com
  *
- * The contents are subject to the Creative Commons Attribution-ShareAlike
- * License. It is allowed to copy, distribute, transmit and to adapt the work
- * by keeping credits to the original autors in the README file.
- * See http://creativecommons.org/licenses/by-sa/3.0/ for details.
+ * The contents of this folder can be redistributed and/or modified
+ * under the terms of the GNU Affero General Public License as published
+ * by the Free Software Foundation, either version 3 of the License,
+ * or (at your option) any later version.
  */
+
+@import (reference) "colors.less";
 
 body {
 	background: #e7e7e7 url(images/bg.gif) 0 0 repeat-x;
-	color: #4c4c4c;
+	color: @text-color;
 	font-family: Brandon Grotesque, Muli, Noto Sans, Montserat, Trebuchet MS, Fira Sans, Lucida Grande, Lucida Sans Unicode, Lucid Sans, Tahoma, sans-serif;
 	font-size: 12px;
 }
@@ -43,7 +45,7 @@ body.login #header {
 }
 
 #login-form td.title {
-	color: #e63023;
+	color: @main-color;
 	text-shadow: none;
 	font-weight: bold;
 }
@@ -53,7 +55,7 @@ body.login #header {
 	text-shadow: none;
 	color: #fff;
 	box-shadow: none;
-	background: #e63023;
+	background: @main-color;
 }
 
 #login-form input.button:hover,
@@ -184,11 +186,11 @@ body.login #header {
 
 #composebody:active,
 #composebody:focus {
-	box-shadow: 0 0 3px 2px rgba(230,48,35,0.4) inset;
+	box-shadow: 0 0 3px 2px @focus-color inset;
 }
 
 .ktaskmenu:focus {
-	background-color: rgba(230,48,35,0.4);
+	background-color: @focus-color;
 }
 
 .ktaskmenu .activetask {
@@ -239,7 +241,7 @@ body.login #header {
 }
 
 #ktaskpopup a:hover {
-	color: #4c4c4c;
+	color: @hightlight-text;
 }
 
 #ktaskpopup a .button-inner {
@@ -290,35 +292,43 @@ body.login #header {
 	background-position: -5px -119px;
 }
 
-.ktaskmenu .button-logout:hover .button-inner {
+.ktaskmenu .button-logout:hover .button-inner,
+.ktaskmenu .button-logout:focus .button-inner {
 	background-position: -5px -2944px;
 }
 
-.ktaskmenu .button-mail:hover .button-inner {
+.ktaskmenu .button-mail:hover .button-inner,
+.ktaskmenu .button-mail:focus .button-inner {
 	background-position: -4px -2636px;
 }
 
-.ktaskmenu .button-addressbook:hover .button-inner {
+.ktaskmenu .button-addressbook:hover .button-inner,
+.ktaskmenu .button-addressbook:focus .button-inner {
 	background-position: -4px -2683px;
 }
 
-.ktaskmenu .button-help:hover .button-inner {
+.ktaskmenu .button-help:hover .button-inner,
+.ktaskmenu .button-help:focus .button-inner {
 	background-position: -5px -2660px;
 }
 
-.ktaskmenu .button-calendar:hover .button-inner {
+.ktaskmenu .button-calendar:hover .button-inner,
+.ktaskmenu .button-calendar:focus .button-inner {
 	background-position: -4px -2779px;
 }
 
-.ktaskmenu .button-tasklist:hover .button-inner {
+.ktaskmenu .button-tasklist:hover .button-inner,
+.ktaskmenu .button-tasklist:focus .button-inner {
 	background-position: -4px -2707px;
 }
 
-.ktaskmenu .button-settings:hover .button-inner {
+.ktaskmenu .button-settings:hover .button-inner,
+.ktaskmenu .button-settings:focus .button-inner {
 	background-position: -5px -2732px;
 }
 
-.ktaskmenu .button-notes:hover .button-inner {
+.ktaskmenu .button-notes:hover .button-inner,
+.ktaskmenu .button-notes:focus .button-inner {
 	background-position: -5px -2755px;
 }
 
@@ -332,7 +342,8 @@ body.login #header {
 	background-position: -2px 2px;
 }
 
-#ktaskpopup a.button-files:hover .button-inner {
+#ktaskpopup a.button-files:hover .button-inner,
+#ktaskpopup a.button-files:focus .button-inner {
 	background-position: -2px -46px;
 }
 
@@ -400,7 +411,7 @@ html.mozilla #mailboxlist > li:first-child,
 
 .ui-widget-content a,
 a {
-	color: #eb594f;
+	color: @link-color;
 }
 
 a:visited {
@@ -461,9 +472,9 @@ ul.treelist li a:focus,
 ul.listing .listitem a:focus,
 ul.listing .listitem span:focus,
 ul.listing.focus .listitem.focused span {
-	background-color: rgba(230,48,35,0.4);
+	background-color: @focus-color;
 	text-shadow: none;
-	color: #4c4c4c;
+	color: @text-color !important;
 }
 
 .messagelist tr th.threads .listmenu:focus,
@@ -477,9 +488,10 @@ ul.listing.focus .listitem.focused span {
 #composeheaders a.button:focus,
 .ui-datepicker td.ui-datepicker-days-cell-over a.ui-state-default,
 #calendar .fc-header .fc-button:focus {
-	background-color: rgba(230,48,35,0.4) !important;
+	background-color: @focus-color !important;
 	text-shadow: none;
-	color: #4c4c4c !important;
+	color: @text-color !important;
+	outline: none;
 }
 
 .pagenav a.button.pressed,
@@ -487,9 +499,9 @@ ul.listing.focus .listitem.focused span {
 .buttongroup a.button:focus,
 .buttongroup a.button.selected:focus,
 .moreheaderstoggle:focus {
-	background: rgba(230,48,35,0.4) !important;
+	background: @focus-color !important;
 	text-shadow: none;
-	color: #4c4c4c !important;
+	color: @text-color !important;
 }
 
 .mce-panel {
@@ -507,7 +519,7 @@ ul.listing.focus .listitem.focused span {
 .listing li.selected > a,
 .messagelist tr.thread.expanded td,
 #calendars .treelist li.selected > div.calendar {
-	color: #4c4c4c;
+	color: @text-color;
 	background-color: #f9f9f9;
 }
 
@@ -530,18 +542,18 @@ ul.treelist li ul li:last-child {
 
 .records-table tr.selected td a,
 .records-table tr.selected td span {
-	color: #4c4c4c !important;
+	color: @hightlight-text !important;
 }
 
 .records-table tr.selected td {
-	background-color: #e63023 !important;
-	color: #4c4c4c !important;
+	background-color: @main-color !important;
+	color: @hightlight-text !important;
 }
 
 .records-table.focus tbody tr.focused > td:first-child,
 .listing.focus tbody tr.focused > td:first-child,
 .notesview #kolabnoteslist.focus li.focused {
-	border-left-color: #e63023;
+	border-left-color: @main-color;
 }
 
 ul.toolbarmenu {
@@ -582,8 +594,8 @@ select.decorated option:focus,
 select.decorated option[selected='selected'],
 .ui-menu .ui-menu-item a.ui-state-focus,
 .ui-menu .ui-menu-item a.ui-state-active {
-	color: #4c4c4c !important;
-	background: #e63023 !important;
+	color: @hightlight-text !important;
+	background: @main-color !important;
 	text-shadow: none;
 }
 
@@ -626,18 +638,25 @@ textarea {
 	background: #fff;
 }
 
+input[type="text"],
+input[type="password"] {
+	padding: 5px;
+	background: #fff;
+	border: 1px solid #dbdbdb;
+}
+
 input[type="text"]:focus,
 input[type="password"]:focus,
 input.button:focus,
 textarea:focus {
-	border: 1px solid #dbdbdb;
+	border-color: @outline-color !important;
 	box-shadow: none;
 	-webkit-box-shadow: none;
 }
 
 input[type="text"]:required,
 input[type="password"]:required {
-	border-color: #e63023;
+	border-color: #e73023;
 }
 
 #tasksview .buttonbar,
@@ -646,7 +665,7 @@ body.iframe .boxtitle,
 .uibox .listing thead th,
 .uibox .listing thead td {
 	background: #f9f9f9;
-	color: #e63023;
+	color: @main-color;
 	border-bottom: 1px solid #ebebeb;
 }
 
@@ -665,7 +684,7 @@ body.iframe .boxtitle,
 }
 
 #quotadisplay {
-	color: #4c4c4c;
+	color: @text-color;
 	background-image: url(images/quota.png);
 }
 
@@ -990,6 +1009,7 @@ ul.proplist li,
 table.propform td {
 	background: #f9f9f9;
 	border-bottom: 1px solid #ededed;
+	height: 26px;
 }
 
 table.propform td.title {
@@ -1016,7 +1036,7 @@ table.propform td.title {
 
 .contactfieldgroup legend {
 	background: #f9f9f9;
-	color: #e63023;
+	color: @main-color;
 	border-radius: 0;
 	border: 0;
 	text-shadow: none;
@@ -1080,7 +1100,16 @@ a.menuselector .handle {
 #delegatefolders thead th {
 	border-bottom: 1px solid #ededed;
 	background-color: #f9f9f9;
-	color: #e63023;
+	color: @main-color;
+}
+
+a.menuselector:focus,
+a.menuselector.focus,
+a.iconbutton:focus,
+.pagenav a.button:focus {
+	border-color: @focus-color;
+	-webkit-box-shadow: 0 0 0 2px @outline-color;
+	box-shadow: 0 0 0 2px @outline-color;
 }
 
 
@@ -1088,7 +1117,7 @@ a.menuselector .handle {
 
 a.button, .buttongroup {
 	background: #e7e7e7;
-	color: #4c4c4c;
+	color: @text-color;
 	box-shadow: none;
 	-webkit-box-shadow: none;
 	text-shadow: none;
@@ -1131,7 +1160,7 @@ a.button span.icon,
 	box-shadow: none;
 	-webkit-box-shadow: none;
 	background-color: #ededed;
-	border-color: #e63023;
+	border-color: @main-color;
 }
 
 .buttongroup a.button.first,
@@ -1165,7 +1194,7 @@ a.button span.icon,
 .buttongroup a.button.selected,
 .buttongroup a.button.selected:hover {
 	color: #fff;
-	background: #e63023;
+	background: @main-color;
 	box-shadow: none;
 	-webkit-box-shadow: none;
 }
@@ -1273,7 +1302,7 @@ input.button,
 	box-shadow: none;
 	-webkit-box-shadow: none;
 	text-shadow: none;
-	color: #4c4c4c;
+	color: @text-color;
 	font-weight: bold;
 	padding: 6px 10px;
 	margin: 1px 2px;
@@ -1290,8 +1319,8 @@ input.button.mainaction {
 
 .ui-dialog .ui-dialog-titlebar-close.ui-button:focus,
 .ui-dialog .ui-dialog-titlebar-close.ui-button.ui-state-focus {
-	-webkit-box-shadow: 0 0 0 2px #e63023 !important;
-	box-shadow: 0 0 0 2px #e63023 !important;
+	-webkit-box-shadow: 0 0 0 2px @outline-color !important;
+	box-shadow: 0 0 0 2px @outline-color !important;
 }
 
 .ui-dialog .ui-dialog-buttonpane button.delete,
@@ -1308,7 +1337,7 @@ input.button:focus,
 .formbuttons input.button:focus,
 .formbuttons input.button:hover {
 	border: none;
-	color: #4c4c4c;
+	color: @text-color;
 	background: #e0e0e0;
 	box-shadow: none;
 	-webkit-box-shadow: none;
@@ -1502,6 +1531,13 @@ input.button.delete:hover {
 	background-position: center -1570px;
 }
 
+.attachmentslist li a:focus,
+.attachmentslist li a.drop:focus {
+	background-color: @focus-color;
+}
+
+
+
 /*** jquery UI theme overrides ***/
 
 .ui-menu {
@@ -1530,7 +1566,7 @@ input.button.delete:hover {
 
 .ui-dialog .ui-dialog-title {
 	text-shadow: none;
-	color: #e63023;
+	color: @main-color;
 }
 
 .ui-dialog .ui-dialog-titlebar {
@@ -1557,7 +1593,6 @@ input.button.delete:hover {
 }
 
 .ui-tabs .ui-tabs-nav {
-	border-top: 1px solid #ededed;
 	border-radius: 0;
 }
 
@@ -1576,11 +1611,11 @@ input.button.delete:hover {
 
 .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
 	background: #ededed;
-	color: #4c4c4c;
+	color: @text-color;
 }
 
 .ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor {
-	background: #e63023;
+	background: @main-color;
 	color: #fff;
 }
 
@@ -1609,6 +1644,11 @@ input.button.delete:hover {
 	background-image: url(images/ui-icons-datepicker.png);
 }
 
+.ui-datepicker .ui-datepicker-month:focus,
+.ui-datepicker .ui-datepicker-year:focus {
+	outline: 2px solid @outline-color;
+}
+
 #datepicker .ui-datepicker .ui-datepicker-prev,
 #datepicker .ui-datepicker .ui-datepicker-next {
 	top: 6px;
@@ -1618,7 +1658,7 @@ input.button.delete:hover {
 
 .ui-slider .ui-slider-range {
 	border-radius: 0;
-	background: #e63023;
+	background: @main-color;
 }
 
 
@@ -1789,7 +1829,7 @@ input.button.delete:hover {
 #tasklistsbox .treelist div a.remove:focus,
 #tasklistsbox .treelist div a.quickview:focus,
 #tasklistsbox .treelist div a.subscribed:focus {
-	outline: 2px solid rgba(230,48,35, 0.5);
+	outline: 2px solid fade(@main-color, 50%);
 }
 
 #calendars .treelist div:hover a.subscribed,
@@ -1978,29 +2018,24 @@ input.button.delete:hover {
 .calendarmain #calendar .fc-button-prev,
 .calendarmain #calendar .fc-button-next,
 .calendarmain #calendar .fc-button-prev.fc-state-default,
-.calendarmain #calendar .fc-button-next.fc-state-default,
-.calendarmain #quickview-calendar .fc-button-prev,
-.calendarmain #quickview-calendar .fc-button-next,
-.calendarmain #quickview-calendar .fc-button-prev.fc-state-default,
-.calendarmain #quickview-calendar .fc-button-next.fc-state-default {
+.calendarmain #calendar .fc-button-next.fc-state-default {
 	display: inline-block;
 	border: 0;
-	margin: 4px;
-	width: 14px;
-	height: 15px;
+	margin: 3px 4px;
+	padding: 0;
+	width: 20px;
+	height: 19px;
 	line-height: 12px;
 	text-indent: 5000px;
-	background: url(images/buttons.png) 4px -227px no-repeat;
+	background: url(images/buttons.png) -6px -226px no-repeat;
 	overflow: hidden;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
 
 .calendarmain #calendar .fc-button-next,
-.calendarmain #calendar .fc-button-next.fc-state-default,
-.calendarmain #quickview-calendar .fc-button-next,
-.calendarmain #quickview-calendar .fc-button-next.fc-state-default {
-	background-position: -22px -227px;
+.calendarmain #calendar .fc-button-next.fc-state-default {
+	background-position: -25px -226px;
 }
 
 #calendars .treelist li span.handle,
@@ -2013,7 +2048,7 @@ input.button.delete:hover {
 }
 
 .fc-view thead th.fc-widget-header {
-	color: #4c4c4c;
+	color: @text-color;
 }
 
 .fc-view-table {
@@ -2051,13 +2086,13 @@ input.button.delete:hover {
 }
 
 #datepicker td.ui-datepicker-activerange a {
-	color: #4c4c4c;
-	background: #fad6d3;
+	color: @text-color;
+	background: @light-color;
 }
 
 #datepicker td.ui-datepicker-activerange a.ui-state-active {
 	color: #fff;
-	background: #e63023;
+	background: @main-color;
 }
 
 .ui-datepicker td span,
@@ -2068,12 +2103,16 @@ input.button.delete:hover {
 .ui-datepicker td a.ui-state-active {
 	border-color: #4d4d4d !important;
 	text-shadow: none !important;
-	background: #e63023 !important;
+	background: @main-color !important;
 }
 
 .ui-datepicker td a.ui-state-default {
 	background: #ededed;
 	border: none !important;
+}
+
+.ui-datepicker table:focus {
+	outline: 2px solid @outline-color;
 }
 
 #schedule-freebusy-times td {
@@ -2133,11 +2172,11 @@ input.button.delete:hover {
 }
 
 .ui-datepicker .ui-state-highlight {
-	color: #e63023;
+	color: @main-color;
 }
 
 .calendarmain .fc-state-highlight {
-	background-color: rgba(230,48,35,0.10);
+	background-color: fade(@main-color, 0%);
 }
 
 
@@ -2203,7 +2242,7 @@ input.button.delete:hover {
 
 #tagslist li.selected,
 #taskselector li.selected a {
-	background: #e63023;
+	background: @main-color;
 	border-color: transparent;
 	border-radius: 2px;
 	box-shadow: none;
@@ -2217,7 +2256,7 @@ input.button.delete:hover {
 }
 
 #taskselector li .count {
-	background: #e63023;
+	background: @main-color;
 	box-shadow: none;
 	-webkit-box-shadow: none;
 }
@@ -2227,7 +2266,7 @@ input.button.delete:hover {
 }
 
 #taskselector li .count:after {
-	border-color: #e63023 transparent;
+	border-color: @main-color transparent;
 }
 
 #taskselector li.overdue .count:after {
@@ -2235,7 +2274,7 @@ input.button.delete:hover {
 }
 
 #tagslist li .count {
-	color: #4c4c4c;
+	color: @text-color;
 	background: #ededed;
 	border: none;
 	border-radius: 2px;
@@ -2246,7 +2285,7 @@ input.button.delete:hover {
 .tagcloud li,
 .tagcloud li.inactive,
 #taskselector li a {
-	color: #4c4c4c;
+	color: @text-color;
 	font-size: 100%;
 	padding: 0.4em 0.6em;
 	font-weight: bold;
@@ -2255,7 +2294,7 @@ input.button.delete:hover {
 .tag-draghelper .tag,
 .taskhead .tags .tag {
 	color: #fff;
-	background: #e63023;
+	background: @main-color;
 	border: none;
 }
 
@@ -2340,7 +2379,7 @@ div.messagetasklinks::before {
 #files-folder-list ul li span.name,
 #files-folder-list ul li.mailbox.collection span.name {
 	background-image: url(images/listicons.png);
-	color: #4c4c4c;
+	color: @text-color;
 	line-height: 29px;
 	padding: 8px 8px 8px 35px;
 }
@@ -2393,7 +2432,7 @@ ul.toolbarmenu li:hover a.active span.saveas {
 }
 
 table.propform td.source.selected {
-	background-color: rgba(230,48,35,0.10);
+	background-color: fade(@main-color, 10%);
 }
 
 #files-dialog #folderlistbox {
@@ -2628,18 +2667,18 @@ div.subscriptionblock h3.note {
 }
 
 #acltable a {
-	color: #4c4c4c;
+	color: @text-color;
 }
 
 #acltable tbody tr.selected td.partial {
-	background: #e63023 !important;
+	background: @main-color !important;
 	background-image: url(images/partial.png);
 	background-position: center;
 	background-repeat: no-repeat;
 }
 
 #acltable tbody tr.selected td.enabled {
-	background: #e63023 !important;
+	background: @main-color !important;
 	background-image: url(images/enabled.png);
 	background-position: center;
 	background-repeat: no-repeat;
@@ -2660,8 +2699,8 @@ div.subscriptionblock h3.note {
 
 div.rulerow:hover,
 div.actionrow:hover {
-	border-color: rgba(230,48,35,0.2);
-	background-color: rgba(230,48,35,0.05);
+	border-color: fade(@main-color, 20%);
+	background-color: fade(@main-color, 5%);
 }
 
 /*** Kolab Notes plugin ***/
@@ -2708,7 +2747,7 @@ div.actionrow:hover {
 
 .tagbox {
 	border-radius: 2px !important;
-	color: #4c4c4c;
+	color: @text-color;
 }
 
 .tagbox a {
@@ -2716,13 +2755,13 @@ div.actionrow:hover {
 }
 
 #taglist li {
-	color: #4c4c4c;
+	color: @text-color;
 	padding: 3px 6px;
 }
 
 #taglist li.selected {
 	color: #fff;
-	background: #e63023;
+	background: @main-color;
 	border-radius: 2px;
 }
 
