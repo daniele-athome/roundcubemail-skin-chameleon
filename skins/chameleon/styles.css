@@ -74,12 +74,24 @@ body.login #header {
 }
 
 #mainscreen {
-	top: 80px;
+	top: 65px;
 	bottom: 15px;
 }
 
 #mainscreen.offset {
-	top: 120px;
+	top: 122px;
+}
+
+#mainscreen .offset {
+	top: 57px;
+}
+
+.extwin #mainscreen {
+	top: 25px;
+}
+
+#mainscreencontent {
+	top: 57px;
 }
 
 #messagestack {
@@ -138,17 +150,14 @@ body.login #header {
 #filestoolbar,
 #messagetoolbar {
 	height: 50px;
-	top: -15px;
+	top: 0px;
 	left: -2px;
 }
 
-#messagesearchtools {
-	top: -9px;
-}
-
-.notesview #quicksearchbar,
-#quicksearchbar {
-	top: -7px;
+#messagesearchtools,
+#quicksearchbar,
+.notesview #quicksearchbar {
+	top: 7px;
 }
 
 #messagesearchtools #quicksearchbar {
@@ -451,7 +460,12 @@ table.records-table {
 ul.treelist li a:focus,
 ul.listing .listitem a:focus,
 ul.listing .listitem span:focus,
-ul.listing.focus .listitem.focused span,
+ul.listing.focus .listitem.focused span {
+	background-color: rgba(230,48,35,0.4);
+	text-shadow: none;
+	color: #4c4c4c;
+}
+
 .messagelist tr th.threads .listmenu:focus,
 .records-table thead th a:focus,
 .boxfooter a.listbutton:focus,
@@ -536,6 +550,7 @@ ul.toolbarmenu {
 
 select.decorated option,
 ul.toolbarmenu li,
+.ui-menu .ui-menu-item a,
 #rcmKSearchpane ul li {
 	background: #3a3a3a;
 }
@@ -543,6 +558,7 @@ ul.toolbarmenu li,
 select.decorated option,
 .googie_list td,
 ul.toolbarmenu li,
+.ui-menu .ui-menu-item,
 #rcmKSearchpane ul li {
 	border-top: none;
 	border-bottom: 1px solid #828282;
@@ -1569,7 +1585,7 @@ input.button.delete:hover {
 .webkit .ui-datepicker .ui-datepicker-title select,
 .mozilla .ui-datepicker .ui-datepicker-title select {
 	background-image: url(images/ui-icons-datepicker.png);
-	background-position: right -16px;
+	background-position: right -18px;
 }
 
 .ui-datepicker .ui-datepicker-header .ui-icon {
@@ -1861,10 +1877,29 @@ input.button.delete:hover {
 
 /*** calendar module styles ***/
 
+.calendarmain #datepicker {
+	top: 57px;
+	min-height: 185px;
+}
+
+.calendarmain #calendars {
+	top: 282px;
+}
+
+#calendar {
+	top: 8px;
+}
+
 #calendar .fc-header {
-	position: absolute;
-	top: -7px;
-	height: 50px;
+	height: 47px;
+}
+
+.calendarmain .fc-content {
+	top: 47px;
+}
+
+#calsidebarsplitter {
+	top: 57px !important;
 }
 
 #calendartoolbar a.button.addevent {
@@ -2105,8 +2140,10 @@ input.button.delete:hover {
 
 /*** tasklist module styles ***/
 
-#tasksview {
+#tasksview,
+.tasklistview #tagsbox {
 	background: #fff;
+	top: 57px;
 }
 
 .taskhead {
@@ -2117,7 +2154,7 @@ input.button.delete:hover {
 }
 
 #quickaddbox {
-	top: -7px;
+	top: 7px;
 }
 
 #quickaddinput {
@@ -2127,6 +2164,14 @@ input.button.delete:hover {
 #taskstoolbar a.button.newtask {
 	background-image: url(images/buttons.png);
 	background-position: center -2184px;
+}
+
+#tasklistsbox .treelist li .treetoggle {
+	top: 7px;
+}
+
+#tasklistsbox .treelist li.virtual > .treetoggle {
+	top: 5px;
 }
 
 .tasklistview ul.toolbarmenu li span.expand,
@@ -2142,7 +2187,7 @@ input.button.delete:hover {
 #tagslist li.selected,
 #taskselector li.selected a {
 	background: #e63023;
-	border: none;
+	border-color: transparent;
 	border-radius: 2px;
 	box-shadow: none;
 	-webkit-box-shadow: none;
@@ -2152,6 +2197,24 @@ input.button.delete:hover {
 
 #taskselector li.inactive a {
 	color: #999;
+}
+
+#taskselector li .count {
+	background: #e63023;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+#taskselector li.overdue .count {
+	background: #e73023;
+}
+
+#taskselector li .count:after {
+	border-color: #e63023 transparent;
+}
+
+#taskselector li.overdue .count:after {
+	border-color: #e73023 transparent;
 }
 
 #tagslist li .count {
