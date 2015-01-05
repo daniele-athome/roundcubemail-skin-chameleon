@@ -186,7 +186,7 @@ body.login #header {
 
 #composebody:active,
 #composebody:focus {
-	box-shadow: 0 0 3px 2px @focus-color inset;
+	box-shadow: 0 0 0 2px @focus-color inset;
 }
 
 .ktaskmenu:focus {
@@ -652,6 +652,7 @@ textarea:focus {
 	border-color: @outline-color !important;
 	box-shadow: none;
 	-webkit-box-shadow: none;
+	outline: 1px solid @outline-color;
 }
 
 input[type="text"]:required,
@@ -747,6 +748,7 @@ body.iframe .boxtitle,
 
 #directorylist li a,
 ul.toolbarmenu li span.icon,
+#rcmKSearchpane ul li i.icon,
 .folderlist li.mailbox a,
 .folderlist li.mailbox div.collapsed,
 .folderlist li.mailbox div.expanded,
@@ -931,6 +933,10 @@ ul.toolbarmenu li:hover a.active span.icon.move {
 
 #taskitemmenu ul.toolbarmenu li span.add {
 	background-position: 0px -1996px;
+}
+
+#rcmKSearchpane ul li i.icon {
+	background-position: -2px -3141px;
 }
 
 a.iconlink,
@@ -2283,12 +2289,15 @@ input.button.delete:hover {
 }
 
 .tagcloud li,
-.tagcloud li.inactive,
 #taskselector li a {
 	color: @text-color;
 	font-size: 100%;
 	padding: 0.4em 0.6em;
 	font-weight: bold;
+}
+
+.tagcloud li.inactive {
+	color: lighten(@text-color, 30%);
 }
 
 .tag-draghelper .tag,
