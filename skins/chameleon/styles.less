@@ -413,7 +413,8 @@ h3.boxtitle,
 .ui-datepicker-calendar thead th,
 .ui-widget-header select,
 #taskselector li,
-a.menuselector {
+a.menuselector,
+ul.toolbarmenu li.separator label {
 	text-transform: uppercase;
 }
 
@@ -907,7 +908,7 @@ ul.toolbarmenu li span.icon.tagadd {
 	background-position: 0 -3190px;
 }
 ul.toolbarmenu li:hover span.icon.tagadd {
-	background-position: 0 -3350px;
+	background-position: 0 -3250px;
 }
 
 ul.toolbarmenu li span.icon.tagremove {
@@ -1924,7 +1925,11 @@ input.button.delete:hover {
 .notesview #notebooksbox .treelist div a.subscribed,
 #directorylistbox ul.treelist div span.subscribed,
 #calendars .treelist div a.remove,
+#calendars .treelist div a.quickview,
 #tasklistsbox .treelist div a.remove,
+#tasklistsbox .treelist div a.quickview,
+#calendars .treelist div.focusview a.quickview,
+#tasklistsbox .treelist div.focusview a.quickview,
 .notesview #notebooksbox .treelist div a.remove,
 #directorylistbox ul.treelist div span.remove {
 	background-image: url(images/listicons.png);
@@ -1999,6 +2004,18 @@ input.button.delete:hover {
 #directorylistbox ul.treelist div span.remove:focus,
 #directorylistbox ul.treelist div:hover span.remove {
 	background-position: -26px -2674px;
+}
+
+#calendars .treelist div:hover a.quickview,
+#calendars .treelist div a.quickview:focus,
+#tasklistsbox .treelist div:hover a.quickview,
+#tasklistsbox .treelist div a.quickview:focus {
+	background-position: -1px -3423px;
+}
+
+#calendars .treelist div.focusview a.quickview,
+#tasklistsbox .treelist div.focusview a.quickview {
+	background-position: -22px -3423px;
 }
 
 #calendars .searchresults .listing li,
@@ -2503,6 +2520,7 @@ div.calendar-invitebox .folder-select {
 	border-radius: 2px;
 	box-shadow: none;
 	-webkit-box-shadow: none;
+	text-shadow: none;
 	color: @hightlight-text;
 }
 
