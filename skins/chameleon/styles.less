@@ -409,6 +409,34 @@ html.mozilla #mailboxlist > li:first-child,
 	border-radius: 0;
 }
 
+/** font/text styles **/
+
+h1.boxtitle,
+h2.boxtitle,
+h3.boxtitle,
+.ktaskmenu,
+.ui-widget-header,
+.fc-widget-header,
+.records-table thead th,
+.ui-datepicker-calendar thead th,
+.ui-widget-header select,
+a.menuselector {
+	text-transform: uppercase;
+}
+
+.ui-button,
+a.button,
+input.button,
+.fc-button-today,
+.ui-dialog-buttonpane button
+.contactfieldgroup legend,
+.propform fieldset legend {
+	text-transform: uppercase;
+}
+
+.toolbar a.button {
+	text-transform: none;
+}
 
 /** color style overrides **/
 
@@ -522,8 +550,8 @@ ul.listing.focus .listitem.focused span {
 .listing li.selected > a,
 .messagelist tr.thread.expanded td,
 #calendars .treelist li.selected > div.calendar {
-	color: @text-color;
-	background-color: #f9f9f9;
+	color: @list-selected-text;
+	background-color: @list-selected-background;
 }
 
 .listbox .listitem,
@@ -598,7 +626,7 @@ select.decorated option[selected='selected'],
 .ui-menu .ui-menu-item a.ui-state-focus,
 .ui-menu .ui-menu-item a.ui-state-active {
 	color: @hightlight-text !important;
-	background: @main-color !important;
+	background: @highlight-color !important;
 	text-shadow: none;
 }
 
@@ -609,8 +637,8 @@ select.decorated option[selected='selected'],
 #attendees-freebusy-table h3.boxtitle,
 #schedule-freebusy-times thead th,
 #edit-attendees-table thead th {
-	color: #4c4c4c;
-	background: #f9f9f9;
+	color: @header-text;
+	background: @header-background;
 	border-left: 1px solid #ededed;
 }
 
@@ -621,9 +649,16 @@ select.decorated option[selected='selected'],
 
 .records-table thead th a,
 .records-table thead th span {
-	color: #4c4c4c;
+	color: @header-text;
 	height: 16px;
 	line-height: 16px;
+}
+
+input[type="text"],
+input[type="password"] {
+	padding: 5px;
+	background: #fff;
+	border: 1px solid #dbdbdb;
 }
 
 input[type="text"],
@@ -641,13 +676,6 @@ textarea {
 	background: #fff;
 }
 
-input[type="text"],
-input[type="password"] {
-	padding: 5px;
-	background: #fff;
-	border: 1px solid #dbdbdb;
-}
-
 input[type="text"]:focus,
 input[type="password"]:focus,
 input.button:focus,
@@ -663,13 +691,19 @@ input[type="password"]:required {
 	border-color: #e73023;
 }
 
+.searchbox input,
+#quicksearchbar input {
+	padding-left: 34px;
+	padding-right: 30px;
+}
+
 #tasksview .buttonbar,
 body.iframe .boxtitle,
 .uibox .boxtitle,
 .uibox .listing thead th,
 .uibox .listing thead td {
-	background: #f9f9f9;
-	color: @main-color;
+	background: @title-background;
+	color: @title-text;
 	border-bottom: 1px solid #ebebeb;
 }
 
@@ -687,6 +721,11 @@ body.iframe .boxtitle,
 	border-radius: 0;
 }
 
+h2.subject,
+h3.subject {
+	color: @header-text;
+}
+
 #quotadisplay {
 	color: @text-color;
 	background-image: url(images/quota.png);
@@ -701,7 +740,7 @@ body.iframe .boxtitle,
 }
 
 #messagelistfooter {
-	background: #f9f9f9;
+	background: @header-background;
 	border: none;
 	height: 26px;
 	padding: 6px 6px 2px;
@@ -719,7 +758,7 @@ body.iframe .boxtitle,
 .filelist thead tr th.sortedDESC a,
 .messagelist thead tr th.sortedASC a,
 .messagelist thead tr th.sortedDESC a {
-	color: #4c4c4c;
+	color: @header-text;
 	background-image: url(images/listicons.png);
 }
 
@@ -993,7 +1032,7 @@ body.tasklistview #searchmenulink {
 }
 
 #composebodycontainer .mce-panel {
-	background: #f9f9f9;
+	background: @header-background;
 	border-color: #ededed !important;
 	margin-top: 0;
 }
@@ -1009,6 +1048,15 @@ ul.treelist li div.treetoggle {
 
 ul.treelist li div.treetoggle.expanded {
 	background-position: -3px -166px;
+}
+
+div.calendar-invitebox,
+div.tasklist-invitebox,
+#message-objects div.notice,
+.event-dialog-message,
+.event-update-confirm .message {
+	border: 0;
+	background-color: #fefba2;
 }
 
 
@@ -1108,8 +1156,8 @@ a.menuselector .handle {
 #foldersubscriptions thead th,
 #delegatefolders thead th {
 	border-bottom: 1px solid #ededed;
-	background-color: #f9f9f9;
-	color: @main-color;
+	background-color: @title-background;
+	color: @title-text;
 }
 
 a.menuselector:focus,
@@ -1575,12 +1623,12 @@ input.button.delete:hover {
 
 .ui-dialog .ui-dialog-title {
 	text-shadow: none;
-	color: @main-color;
+	color: @title-text;
 }
 
 .ui-dialog .ui-dialog-titlebar {
 	border-radius: 0;
-	background: #f9f9f9 !important;
+	background: @title-background !important;
 	padding: 10px 1em 12px;
 }
 
@@ -1591,7 +1639,7 @@ input.button.delete:hover {
 #messageheader,
 #mailview-right #messageheader,
 #composeheaders {
-	background: #f9f9f9;
+	background: @header-background;
 	border-bottom: 1px solid #ededed;
 	border-radius: 0;
 }
@@ -1625,7 +1673,7 @@ input.button.delete:hover {
 
 .ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor {
 	background: @main-color;
-	color: #fff;
+	color: @hightlight-text;
 }
 
 .ui-tabs .tabsbar.ui-tabs-nav {
@@ -1709,7 +1757,7 @@ input.button.delete:hover {
 #tasklistsbox .searchresults .boxtitle,
 #directorylist .searchresults .boxtitle,
 .notesview #notebooksbox .searchresults .boxtitle {
-	background: #f9f9f9;
+	background: @title-background;
 	padding: 7px 8px 6px;
 }
 
@@ -1729,7 +1777,7 @@ input.button.delete:hover {
 	background-image: url(images/listicons.png);
 	background-position: right -5000px;
 	background-repeat: no-repeat;
-	color: #4c4c4c;
+	color: @text-color;
 }
 
 #directorylist li.addressbook.readonly {
@@ -2074,7 +2122,7 @@ input.button.delete:hover {
 }
 
 #agendaoptions {
-	background: #f9f9f9;
+	background: @header-background;
 	border-radius: 0;
 	border: none;
 	padding: 9px 8px;
