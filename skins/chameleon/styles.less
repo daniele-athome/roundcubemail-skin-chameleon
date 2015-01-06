@@ -290,7 +290,12 @@ body.login #header {
 
 .ktaskmenu .activetask.notes,
 .ktaskmenu .button-notes .button-inner {
-	background-position: -4px -2582px;
+	background-position: -4px -2742px;
+}
+
+.ktaskmenu .activetask.files,
+.ktaskmenu .button-files .button-inner {
+	background-position: -4px -2767px;
 }
 
 .ktaskmenu .button-logout .button-inner {
@@ -299,62 +304,47 @@ body.login #header {
 
 .ktaskmenu .button-logout:hover .button-inner,
 .ktaskmenu .button-logout:focus .button-inner {
-	background-position: -5px -2944px;
+	background-position: -5px -2983px;
 }
 
 .ktaskmenu .button-mail:hover .button-inner,
 .ktaskmenu .button-mail:focus .button-inner {
-	background-position: -4px -2636px;
+	background-position: -4px -2792px;
 }
 
 .ktaskmenu .button-addressbook:hover .button-inner,
 .ktaskmenu .button-addressbook:focus .button-inner {
-	background-position: -4px -2683px;
+	background-position: -4px -2839px;
 }
 
 .ktaskmenu .button-help:hover .button-inner,
 .ktaskmenu .button-help:focus .button-inner {
-	background-position: -5px -2660px;
+	background-position: -5px -2816px;
 }
 
 .ktaskmenu .button-calendar:hover .button-inner,
 .ktaskmenu .button-calendar:focus .button-inner {
-	background-position: -4px -2779px;
+	background-position: -4px -2935px;
 }
 
 .ktaskmenu .button-tasklist:hover .button-inner,
 .ktaskmenu .button-tasklist:focus .button-inner {
-	background-position: -4px -2707px;
+	background-position: -4px -2863px;
 }
 
 .ktaskmenu .button-settings:hover .button-inner,
 .ktaskmenu .button-settings:focus .button-inner {
-	background-position: -5px -2732px;
+	background-position: -5px -2888px;
 }
 
 .ktaskmenu .button-notes:hover .button-inner,
 .ktaskmenu .button-notes:focus .button-inner {
-	background-position: -5px -2755px;
+	background-position: -5px -2911px;
 }
 
-#ktaskpopup a.button-files .button-inner {
-	display: block;
-	margin: 0;
-	height: 18px;
-	padding: 6px 8px 1px 30px;
-	background-image: url(images/listicons.png);
-	background-repeat: no-repeat;
-	background-position: -2px 2px;
-}
-
-#ktaskpopup a.button-files:hover .button-inner,
-#ktaskpopup a.button-files:focus .button-inner {
-	background-position: -2px -46px;
-}
-
-.ktaskmenu .activetask.files {
-	background-image: url(images/listicons.png);
-	background-position: -1px 2px;
+.ktaskmenu .button-files:hover .button-inner,
+.ktaskmenu .button-files:focus .button-inner {
+	background-position: -5px -2959px;
 }
 
 .ktaskmenu .dropdownhandle {
@@ -795,6 +785,8 @@ h3.subject {
 #directorylist li a,
 ul.toolbarmenu li span.icon,
 #rcmKSearchpane ul li i.icon,
+#rcmKSearchpane ul li.resource i.icon,
+#rcmKSearchpane ul li.collection i.icon,
 .folderlist li.mailbox a,
 .folderlist li.mailbox div.collapsed,
 .folderlist li.mailbox div.expanded,
@@ -833,7 +825,10 @@ ul.toolbarmenu li span.icon,
 #settings-sections .tablink a,
 ul.treelist li div.treetoggle,
 ul.toolbarmenu li span.icon.taskadd,
-ul.toolbarmenu li .appendnote span.icon {
+ul.toolbarmenu li .appendnote span.icon,
+ul.toolbarmenu li span.icon.tagadd,
+ul.toolbarmenu li span.icon.tagremove,
+ul.toolbarmenu li span.icon.tagremoveall {
 	background-image: url(images/listicons.png);
 }
 
@@ -906,6 +901,27 @@ ul.toolbarmenu li span.icon.copy {
 
 ul.toolbarmenu li span.icon.print {
 	background-position: -1px -3003px;
+}
+
+ul.toolbarmenu li span.icon.tagadd {
+	background-position: 0 -3190px;
+}
+ul.toolbarmenu li:hover span.icon.tagadd {
+	background-position: 0 -3350px;
+}
+
+ul.toolbarmenu li span.icon.tagremove {
+	background-position: 0 -3210px;
+}
+ul.toolbarmenu li:hover span.icon.tagremove {
+	background-position: 0 -3270px;
+}
+
+ul.toolbarmenu li span.icon.tagremoveall {
+	background-position: 0 -3230px;
+}
+ul.toolbarmenu li:hover span.icon.tagremoveall {
+	background-position: 0 -3290px;
 }
 
 ul.toolbarmenu li:hover a.active span.icon.download {
@@ -985,6 +1001,18 @@ ul.toolbarmenu li:hover a.active span.icon.move {
 	background-position: -2px -3141px;
 }
 
+#rcmKSearchpane ul li.group i.icon {
+	background-position: -2px -3165px;
+}
+
+#rcmKSearchpane ul li.resource i.icon {
+	background-position: -2px -3312px;
+}
+
+#rcmKSearchpane ul li.collection i.icon {
+	background-position: -2px -3336px;
+}
+
 a.iconlink,
 a.iconbutton,
 a.deletebutton,
@@ -1057,12 +1085,18 @@ ul.treelist li div.treetoggle.expanded {
 div.calendar-invitebox,
 div.tasklist-invitebox,
 #message-objects div.notice,
+.task-dialog-message,
 .event-dialog-message,
 .event-update-confirm .message {
 	border: 0;
 	background-color: #fefba2;
 }
 
+#edit-attendees-notify,
+.event-dialog-message,
+.event-update-confirm .message {
+	padding: 1em;
+}
 
 /*** form styles ***/
 
@@ -1767,15 +1801,15 @@ input.button.delete:hover {
 /*** help plugin styles ***/
 
 .toolbar a.button.help {
-	background: url(images/buttons.png) center -2814px;
+	background: url(images/buttons.png) center -2622px;
 }
 
 .toolbar a.button.about {
-	background: url(images/buttons.png) center -2855px;
+	background: url(images/buttons.png) center -2662px;
 }
 
 .toolbar a.button.license {
-	background: url(images/buttons.png) center -2898px;
+	background: url(images/buttons.png) center -2702px;
 }
 
 /*** kolab folder styles ***/
@@ -2208,6 +2242,24 @@ input.button.delete:hover {
 	padding: 4px;
 }
 
+#event-partstat .changersvp,
+#task-partstat .changersvp,
+.task-attendees span.attendee,
+.event-attendees span.attendee,
+.edit-attendees-table td.confirmstate span,
+div.calendar-invitebox .rsvp-status.declined,
+div.calendar-invitebox .rsvp-status.tentative,
+div.calendar-invitebox .rsvp-status.accepted,
+div.calendar-invitebox .rsvp-status.delegated,
+div.calendar-invitebox .rsvp-status.needs-action,
+div.tasklist-invitebox .rsvp-status.declined,
+div.tasklist-invitebox .rsvp-status.tentative,
+div.tasklist-invitebox .rsvp-status.accepted,
+div.tasklist-invitebox .rsvp-status.delegated,
+div.tasklist-invitebox .rsvp-status.needs-action {
+	background-image: url(images/attendee-status.png);
+}
+
 .attendees-list .attendee,
 .event-attendees span.organizer {
 	background: url(images/listicons.png) 0 -2040px no-repeat;
@@ -2288,6 +2340,7 @@ div.calendar-invitebox .folder-select {
 	padding: 6px 0;
 }
 
+
 /*** tasklist module styles ***/
 
 #tasksview,
@@ -2295,11 +2348,119 @@ div.calendar-invitebox .folder-select {
 	background: #fff;
 }
 
+#thelist {
+	margin: 1em 0 0 0;
+}
+
+.taskitem {
+	margin: 0;
+	border-top: 1px solid #ededed;
+}
+
+#thelist > .taskitem:last-child {
+	border-bottom: 1px solid #ededed;
+}
+
+.taskitem .childtasks {
+	margin-top: 0;
+}
+
 .taskhead {
+	margin: 0;
+	padding: 10px 10px 10px 32px;
+	height: 34px;
+	z-index: 0;
+	box-sizing: border-box;
+	border: 0;
 	box-shadow: none;
 	-webkit-box-shadow: none;
 	border-radius: 0;
-	border: 1px solid #ededed;
+}
+
+.taskitem ul li .taskhead {
+	border-left: 1px solid #ededed;
+}
+
+.taskhead .tags {
+	top: 9px;
+}
+
+.taskhead .date {
+	top: 10px;
+}
+
+.taskhead .actions {
+	top: 7px;
+}
+
+.taskhead .progressbar {
+	left: 32px;
+	bottom: 4px;
+}
+
+.taskhead .progressvalue {
+	border-top: 2px solid @main-color;
+}
+
+.taskhead .flagged,
+.taskhead .complete {
+	margin-right: 8px;
+}
+
+.taskhead .flagged {
+	background: url(images/listicons.png) -500px 0 no-repeat;
+}
+
+.taskhead .flagged:focus,
+.taskhead:hover .flagged {
+	background-position: -23px -1076px;
+}
+
+.taskhead.flagged .flagged {
+	background-position: 0 -1036px;
+}
+
+.taskitem .childtoggle {
+	top: 0;
+	left: 0;
+	z-index: 2;
+	padding: 0;
+	width: 20px;
+	height: 35px;
+	background: #828282;
+}
+
+.taskitem .childtoggle:after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	background: url(images/listicons.png) 0px -3404px no-repeat;
+}
+
+.taskitem .childtoggle.collapsed:after {
+	background-position: 0px -3384px;
+}
+
+.taskhead:focus, .taskhead.droptarget {
+	border-color: @outline-color !important;
+	box-shadow: 0 0 0 2px @focus-color inset;
+}
+
+.taskhead .actions,
+#tasksview .buttonbar-right a.iconbutton {
+	background: url(images/buttons.png) -500px 0 no-repeat;
+}
+
+.taskhead .actions:focus,
+.taskhead:hover .actions,
+#tasksview .buttonbar-right a.iconbutton {
+	background-position: -28px -456px;
+}
+
+#tasksview .buttonbar-right a.iconbutton.sorting {
+	background: url(images/listicons.png) -2px -3360px no-repeat;
 }
 
 #quickaddbox {
@@ -2326,22 +2487,31 @@ div.calendar-invitebox .folder-select {
 .tasklistview ul.toolbarmenu li span.expand,
 .tasklistview ul.toolbarmenu li span.collapse {
 	background-image: url(images/listicons.png);
-	background-position: 0 -2508px;
+	background-position: -2px -2510px;
 }
 
 .tasklistview ul.toolbarmenu li span.collapse {
-	background-position: 0 -2532px;
+	background-position: -2px -2534px;
 }
 
 #tagslist li.selected,
-#taskselector li.selected a {
+#taskselector li.selected a,
+.tagedit span.tag-element,
+.tagedit-list li.tagedit-listelement-old {
 	background: @main-color;
 	border-color: transparent;
 	border-radius: 2px;
 	box-shadow: none;
 	-webkit-box-shadow: none;
-	padding: 0.4em 0.6em;
-	color: #fff;
+	color: @hightlight-text;
+}
+
+.tagedit-list li.tagedit-listelement-old a.tagedit-close {
+	background: url(images/buttons.png) -7px -3010px no-repeat;
+}
+
+.tagedit span.tag-element.inherit {
+	border-color: transparent;
 }
 
 #taskselector li.inactive a {
@@ -2349,7 +2519,7 @@ div.calendar-invitebox .folder-select {
 }
 
 #taskselector li .count {
-	background: @main-color;
+	background: #3a3a3a;
 	box-shadow: none;
 	-webkit-box-shadow: none;
 }
@@ -2359,7 +2529,7 @@ div.calendar-invitebox .folder-select {
 }
 
 #taskselector li .count:after {
-	border-color: @main-color transparent;
+	border-color: #3a3a3a transparent;
 }
 
 #taskselector li.overdue .count:after {
@@ -2383,14 +2553,18 @@ div.calendar-invitebox .folder-select {
 	font-weight: bold;
 }
 
+#taskselector li a {
+	color: #3a3a3a;
+}
+
 .tagcloud li.inactive {
 	color: lighten(@text-color, 30%);
 }
 
 .tag-draghelper .tag,
 .taskhead .tags .tag {
-	color: #fff;
-	background: @main-color;
+	color: #000;
+	background: #e7e7e7;
 	border: none;
 }
 
@@ -2406,21 +2580,17 @@ div.calendar-invitebox .folder-select {
 	background: #eaeaea;
 }
 
+#rootdroppable.droptarget {
+	background: @outline-color;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
 div.messagetasklinks::before {
 	background-image: url(images/listicons.png);
 	background-position: -1px -2693px;
 }
 
-/*
-#thelist {
-	margin: 0;
-}
-
-.taskitem {
-	margin-bottom: 0;
-	border-bottom: 1px solid #ededed;
-}
-*/
 
 /*** kolab_files module styles ***/
 
@@ -2812,12 +2982,29 @@ div.actionrow:hover {
 
 .notesview #notestoolbar a.button.createnote {
 	background-image: url(images/buttons.png);
-	background-position: center -2608px;
+	background-position: center -2584px;
 }
 
 .notesview #notestoolbar a.button.sendnote {
 	background-image: url(images/buttons.png);
 	background-position: left -650px;
+}
+
+.notesview .attachmentslist li.message.eml {
+	background: url(images/listicons.png) -2px -1290px no-repeat;
+}
+
+.notesview .boxpagenav a.icon.sortoptions {
+	background: url(images/listicons.png) -2px -3362px no-repeat;
+}
+
+div.kolabmessagenotes a.kolabnotesref {
+	background: url(images/listicons.png) -2px -1318px no-repeat;
+}
+
+div.kolabmessagenotes {
+	border: 0;
+	background-color: #f9f9f9;
 }
 
 
