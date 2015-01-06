@@ -12,6 +12,8 @@
 
 @import (reference) "colors.less";
 
+@box-padding: 12px;
+
 body {
 	background: #e7e7e7 url(images/bg.gif) 0 0 repeat-x;
 	color: @text-color;
@@ -420,6 +422,7 @@ h3.boxtitle,
 .records-table thead th,
 .ui-datepicker-calendar thead th,
 .ui-widget-header select,
+#taskselector li,
 a.menuselector {
 	text-transform: uppercase;
 }
@@ -428,7 +431,7 @@ a.menuselector {
 a.button,
 input.button,
 .fc-button-today,
-.ui-dialog-buttonpane button
+.ui-dialog-buttonpane button,
 .contactfieldgroup legend,
 .propform fieldset legend {
 	text-transform: uppercase;
@@ -705,6 +708,7 @@ body.iframe .boxtitle,
 	background: @title-background;
 	color: @title-text;
 	border-bottom: 1px solid #ebebeb;
+	padding-left: 10px;
 }
 
 .listbox .boxfooter {
@@ -1073,15 +1077,10 @@ table.propform td.title {
 	color: #4c4c4c;
 }
 
-.propform fieldset {
-	margin-bottom: 0;
-}
-
 .propform fieldset legend,
 .propform fieldset fieldset legend {
 	font-size: 12px;
 	color: #4c4c4c;
-	padding: 10px;
 }
 
 .contactfieldgroup {
@@ -1089,6 +1088,8 @@ table.propform td.title {
 	border-bottom: 1px solid #ededed;
 	border-radius: 0;
 	margin: 0;
+	padding: @box-padding;
+	box-sizing: border-box;
 }
 
 .contactfieldgroup legend {
@@ -1097,7 +1098,8 @@ table.propform td.title {
 	border-radius: 0;
 	border: 0;
 	text-shadow: none;
-	padding: 10px 12px 0;
+	padding: 10px @box-padding 0 @box-padding;
+	margin: 0 -@box-padding;
 }
 
 #contactsectioncontact .contactfieldgroup .row {
@@ -1115,7 +1117,7 @@ img.skinthumbnail {
 
 body.iframe .footerleft.floating,
 #composeview-bottom .formbuttons.floating {
-	padding: 7px 14px;
+	padding: 7px @box-padding;
 }
 
 body.iframe .footerleft.floating:before,
@@ -1125,9 +1127,22 @@ body.iframe .footerleft.floating:before,
 	padding-top: 7px;
 }
 
+.boxcontent {
+	padding: 10px @box-padding;
+}
+
 #sourcename,
 #contact-details #contactphoto {
-	padding-left: 10px;
+	padding-left: 2px;
+}
+
+#contacttabs {
+	margin-left: -@box-padding;
+	margin-right: -@box-padding;
+}
+
+#contacttabs p.addfield {
+	margin-left: @box-padding;
 }
 
 a.menuselector {
@@ -1438,6 +1453,10 @@ input.button.delete:hover {
 	padding: 0.2em 0.5em;
 }
 
+.ui-dialog .ui-dialog-buttonpane {
+	padding-top: 0.5em;
+}
+
 
 /*** message bar ***/
 
@@ -1644,21 +1663,31 @@ input.button.delete:hover {
 	border-radius: 0;
 }
 
+.uidialog-tabbed {
+	padding: 0 !important;
+	margin: 0 -12px !important;
+}
+
 .ui-tabs .ui-tabs-panel {
 	background: #f9f9f9;
 	border-radius: 0;
+	margin-right: 0;
+	margin-top: 1px;
+	padding-top: 10px;
 }
 
 .ui-tabs .ui-tabs-nav {
 	border-radius: 0;
+	background: #ededed;
+	height: 45px;
 }
 
-.ui-tabs .ui-tabs-nav li {
-	background: #fff;
-}
-
+.ui-tabs .ui-tabs-nav li,
 .ui-tabs .ui-tabs-nav li.tablink a {
 	background: #ededed;
+}
+
+.ui-tabs .ui-tabs-nav li:last-child a {
 	border-right: 0;
 }
 
@@ -1669,6 +1698,9 @@ input.button.delete:hover {
 .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
 	background: #ededed;
 	color: @text-color;
+	box-sizing: border-box;
+	padding-bottom: 10px;
+	height: 45px;
 }
 
 .ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor {
@@ -2249,6 +2281,11 @@ input.button.delete:hover {
 
 #resourcequicksearch {
 	background: transparent;
+}
+
+div.calendar-invitebox .folder-select {
+	display: inline-block;
+	padding: 6px 0;
 }
 
 /*** tasklist module styles ***/
