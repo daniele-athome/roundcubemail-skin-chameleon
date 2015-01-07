@@ -414,7 +414,8 @@ h3.boxtitle,
 .ui-widget-header select,
 #taskselector li,
 a.menuselector,
-ul.toolbarmenu li.separator label {
+ul.toolbarmenu li.separator label,
+.ui-dialog-buttonpane a.dropdown-link {
 	text-transform: uppercase;
 }
 
@@ -816,6 +817,7 @@ ul.toolbarmenu li span.icon,
 .messagelist tr .subject span.replied,
 .messagelist tr .subject span.forwarded,
 .messagelist tr d.subject span.unreadchildren,
+.messagelist tbody .attachment span.ical,
 #contacts-table td.contact,
 #contacts-table td.contactgroup,
 #compose-contacts li a,
@@ -831,6 +833,24 @@ ul.toolbarmenu li span.icon.tagadd,
 ul.toolbarmenu li span.icon.tagremove,
 ul.toolbarmenu li span.icon.tagremoveall {
 	background-image: url(images/listicons.png);
+}
+
+.messagelist tbody .attachment span.ical {
+	background-position: -1px -2341px;
+}
+
+.messagelist tr.selected td.status span.unread,
+.messagelist tr.selected td.subject span.unread {
+	background-position: 1px -2898px !important;
+}
+
+.messagelist tr.selected td.subject span.msgicon,
+.messagelist tr.selected td.subject span.unreadchildren {
+	background-position: 1px -2939px;
+}
+
+.messagelist tr.selected td.flag span.flagged {
+	background-position: 0px -2923px;
 }
 
 #settings-sections .filter a {
@@ -1647,6 +1667,22 @@ input.button.delete:hover {
 	background-color: @focus-color;
 }
 
+#taskedit .droptarget.hover,
+#taskedit .droptarget.active,
+#eventedit .droptarget.hover,
+#eventedit .droptarget.active,
+#compose-attachments.droptarget.hover,
+#compose-attachments.droptarget.active {
+	-webkit-box-shadow: 0 0 0 2px @outline-color inset;
+	box-shadow: 0 0 0 2px @outline-color inset;
+	border-color: @outline-color;
+}
+
+#taskedit .droptarget.hover,
+#eventedit .droptarget.hover,
+#compose-attachments.droptarget.hover {
+	background-color: lighten(@focus-color, 30%) !important;
+}
 
 
 /*** jquery UI theme overrides ***/
@@ -1670,7 +1706,7 @@ input.button.delete:hover {
 }
 
 .ui-widget-content {
-	background: #fff !important;
+	background-color: #fff !important;
 	border-radius: 0;
 }
 
@@ -2462,6 +2498,7 @@ div.calendar-invitebox .folder-select {
 
 .taskhead:focus, .taskhead.droptarget {
 	border-color: @outline-color !important;
+	-webkit-box-shadow: 0 0 0 2px @focus-color inset;
 	box-shadow: 0 0 0 2px @focus-color inset;
 }
 

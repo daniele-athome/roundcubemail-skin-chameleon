@@ -62,6 +62,8 @@
     $('#taskmenu').bind('click touchstart', function(e){
       $('#ktaskpopup').toggle();
       e.preventDefault();
+      if (!rcube_event.is_keyboard(e))
+        $(this).blur();
     })
     .bind('keyup', function(e){
       var key = rcube_event.get_keycode(e),
