@@ -17,7 +17,7 @@
 body {
 	background: #e7e7e7 url(images/bg.gif) 0 0 repeat-x;
 	color: @text-color;
-	font-family: Brandon Grotesque, Muli, Noto Sans, Montserat, Trebuchet MS, Fira Sans, Lucida Grande, Lucida Sans Unicode, Lucid Sans, Tahoma, sans-serif;
+	font-family: Brandon Grotesque, Muli, Noto Sans, Trebuchet MS, Fira Sans, Lucida Grande, Lucida Sans Unicode, Lucid Sans, Tahoma, sans-serif;
 	font-size: 12px;
 }
 
@@ -201,7 +201,7 @@ body.login #header {
 .ktaskmenu .activetask {
 	display: block;
 	font-size: 15px;
-	font-weight: bold;
+	font-weight: normal;
 	color: #fff;
 	margin: 17px 0 17px 20px;
 	height: 26px;
@@ -270,7 +270,7 @@ body.login #header {
 
 .ktaskmenu .activetask.help,
 .ktaskmenu .button-help .button-inner {
-	background-position: -5px -23px;
+	background-position: -5px -22px;
 }
 
 .ktaskmenu .activetask.calendar,
@@ -319,7 +319,7 @@ body.login #header {
 
 .ktaskmenu .button-help:hover .button-inner,
 .ktaskmenu .button-help:focus .button-inner {
-	background-position: -5px -2816px;
+	background-position: -5px -2815px;
 }
 
 .ktaskmenu .button-calendar:hover .button-inner,
@@ -430,6 +430,7 @@ input.button,
 }
 
 .toolbar a.button {
+	font-weight: normal;
 	text-transform: none;
 }
 
@@ -501,6 +502,10 @@ ul.listing.focus .listitem.focused span {
 	background-color: @focus-color;
 	text-shadow: none;
 	color: @text-color !important;
+}
+
+ul.treelist li.selected a:focus {
+	color: @list-selected-text !important;
 }
 
 .messagelist tr th.threads .listmenu:focus,
@@ -662,7 +667,7 @@ input[type="password"],
 #login-form input[type="password"],
 .searchbox input,
 #quicksearchbar input,
-.tagedit-list,
+body .tagedit-list,
 textarea {
 	border-radius: 1px;
 	border: 1px solid #dbdbdb;
@@ -715,6 +720,11 @@ body.iframe .boxtitle,
 #messagepreview .rightcol {
 	background: none;
 	border-radius: 0;
+	padding: 0;
+}
+
+#messagepreview .rightcol {
+	margin-top: 0;
 }
 
 h2.subject,
@@ -818,6 +828,7 @@ ul.toolbarmenu li span.icon,
 .messagelist tr .subject span.forwarded,
 .messagelist tr d.subject span.unreadchildren,
 .messagelist tbody .attachment span.ical,
+.treelist li.contactsearch a,
 #contacts-table td.contact,
 #contacts-table td.contactgroup,
 #compose-contacts li a,
@@ -885,7 +896,10 @@ ul.toolbarmenu li span.icon.tagremoveall {
 	background-position: 4px -730px;
 }
 
-#sections-table #rcmrowserver .section,
+#sections-table #rcmrowserver .section {
+	background-position: 4px -812px;
+}
+
 #sections-table #rcmrowserver.selected .section {
 	background-position: 4px -835px;
 }
@@ -1095,14 +1109,6 @@ body.tasklistview #searchmenulink {
 	top: 0;
 }
 
-ul.treelist li div.treetoggle {
-	background-position: -3px -142px;
-}
-
-ul.treelist li div.treetoggle.expanded {
-	background-position: -3px -166px;
-}
-
 div.calendar-invitebox,
 div.tasklist-invitebox,
 #message-objects div.notice,
@@ -1221,13 +1227,20 @@ a.menuselector .handle {
 #delegatefolders tbody td {
 	border-bottom: 1px solid #ededed;
 	background-color: #f9f9f9;
+	padding: 5px;
+}
+
+#foldersubscriptions td.mailbox {
+	padding-left: 5px;
 }
 
 #foldersubscriptions thead th,
 #delegatefolders thead th {
 	border-bottom: 1px solid #ededed;
-	background-color: @title-background;
-	color: @title-text;
+	background-color: @header-background;
+	color: @header-text;
+	text-transform: uppercase;
+	padding: 5px;
 }
 
 a.menuselector:focus,
@@ -1667,6 +1680,11 @@ input.button.delete:hover {
 	background-color: @focus-color;
 }
 
+.attachmentslist li a,
+#compose-attachments ul li {
+	text-shadow: none;
+}
+
 #taskedit .droptarget.hover,
 #taskedit .droptarget.active,
 #eventedit .droptarget.hover,
@@ -1881,6 +1899,14 @@ input.button.delete:hover {
 	background-position: right -5000px;
 	background-repeat: no-repeat;
 	color: @text-color;
+}
+
+#tasklistsbox .treelist li.selected > div span.listname,
+#calendars .treelist li.selected > div span.calname,
+#directorylist li.addressbook.selected > div a,
+.notesview #notebooks li.selected > div .listname,
+#files-folder-list ul li.selected > span.name {
+	color: @list-selected-text !important;
 }
 
 #directorylist li.addressbook.readonly {
@@ -2646,6 +2672,13 @@ div.messagetasklinks::before {
 	background-position: -1px -2693px;
 }
 
+#task-links .attachmentslist li.message.eml,
+#event-links .attachmentslist li.message.eml,
+#taskedit-links .attachmentslist li.message.eml,
+#edit-event-links .attachmentslist li.message.eml {
+	background: url(images/listicons.png) -2px -1294px no-repeat;
+}
+
 
 /*** kolab_files module styles ***/
 
@@ -2784,6 +2817,7 @@ div.foldersblock h3,
 div.subscriptionblock h3 {
 	background-image: url(images/listicons.png);
 	background-repeat: no-repeat;
+	text-transform: uppercase;
 }
 
 div.foldersblock h3.mail,
@@ -3062,6 +3096,7 @@ div.kolabmessagenotes a.kolabnotesref {
 	background: url(images/listicons.png) -2px -1318px no-repeat;
 }
 
+div.messagetasklinks,
 div.kolabmessagenotes {
 	border: 0;
 	background-color: #f9f9f9;
@@ -3075,7 +3110,7 @@ div.kolabmessagenotes {
 }
 
 #settings-sections .activesync.selected a {
-	background-position: 6px -863px;
+	background-position: 6px -887px;
 }
 
 #folder-sync-options {
@@ -3132,98 +3167,98 @@ div.contextmenu ul.iconized li a.compose span.icon,
 div.contextmenu ul.iconized li a.removegroup span.icon,
 div.contextmenu ul.iconized li a.exportalllink span.icon,
 div.contextmenu ul.iconized li a.exportsellink span.icon {
-    background-image: url(images/listicons.png);
+	background-image: url(images/listicons.png);
 }
 
 div.contextmenu ul.iconized li a.readfolder span.icon {
-    background-position: 0px -1220px;
+	background-position: 0px -1220px;
 }
 
 div.contextmenu ul.iconized li a.delete span.icon,
 div.contextmenu ul.iconized li a.cmd_group-delete span.icon,
 div.contextmenu ul.iconized li a.cmd_search-delete span.icon {
-    background-position: 0px -1364px;
+	background-position: 0px -1364px;
 }
 
 div.contextmenu ul.iconized li a.openfolder span.icon {
-    background-position: 0px -1485px;
+	background-position: 0px -1485px;
 }
 
 div.contextmenu ul.iconized li a.reply span.icon {
-    background-position: 0px -2712px;
+	background-position: 0px -2712px;
 }
 
 div.contextmenu ul.iconized li a.reply-all span.icon,
 div.contextmenu ul.iconized li a.replyalllink span.icon,
 div.contextmenu ul.iconized li a.replylistlink span.icon {
-    background-position: 0px -2736px;
+	background-position: 0px -2736px;
 }
 
 div.contextmenu ul.iconized li a.forward span.icon,
 div.contextmenu ul.iconized li a.forwardlink span.icon,
 div.contextmenu ul.iconized li a.forwardattachmentlink span.icon {
-    background-position: 0px -2760px;
+	background-position: 0px -2760px;
 }
 
 ul.rcmcontextmenu .calendar-create-from-mail a span {
-    background-position: 4px -1947px;
+	background-position: 4px -1947px;
 }
 
 ul.rcmcontextmenu .tasklist-create-from-mail a span {
-    background-position: 4px -1971px;
+	background-position: 4px -1971px;
 }
 
 #folder-selector li a span {
-    text-indent: 4px;
-    background-position: 5px -119px;
+	text-indent: 4px;
+	background-position: 5px -119px;
 }
 
 #folder-selector li a.inbox span {
-    background-position: 4px -215px;
+	background-position: 4px -215px;
 }
 
 #folder-selector li a.drafts span {
-    background-position: 4px -263px;
+	background-position: 4px -263px;
 }
 
 #folder-selector li a.sent span {
-    background-position: 4px -311px;
+	background-position: 4px -311px;
 }
 
 #folder-selector li a.junk span {
-    background-position: 4px -359px;
+	background-position: 4px -359px;
 }
 
 #folder-selector li a.trash span {
-    background-position: 4px -407px;
+	background-position: 4px -407px;
 }
 
 #addressbook-selector li a.addressbook span {
-    text-indent: 4px;
-    background-position: 2px -792px;
+	text-indent: 4px;
+	background-position: 2px -792px;
 }
 
 #addressbook-selector li a.contactgroup span {
-    text-indent: 10px;
-    background-position: 10px -1580px;
+	text-indent: 10px;
+	background-position: 10px -1580px;
 }
 
 div.contextmenu ul.iconized li a.compose span.icon {
-    background-position: 0px -1292px;
+	background-position: 0px -1292px;
 }
 
 div.contextmenu ul.iconized li:hover a.active.compose span.icon {
-    background-position: 0px -2829px;
+	background-position: 0px -2829px;
 }
 
 div.contextmenu ul.iconized li a.removegroup span.icon,
 div.contextmenu ul.iconized li a.cmd_book-remove span.icon {
-    background-position: -25px -2670px;
+	background-position: -25px -2670px;
 }
 
 div.contextmenu ul.iconized li a.exportalllink span.icon,
 div.contextmenu ul.iconized li a.exportsellink span.icon {
-    background-position: 0px -2785px;
+	background-position: 0px -2785px;
 }
 
 div.contextmenu ul.iconized li a.cmd_group-create span.icon {
@@ -3231,7 +3266,7 @@ div.contextmenu ul.iconized li a.cmd_group-create span.icon {
 }
 
 div.contextmenu ul.iconized li a.cmd_group-rename span.icon {
-    background-position: 0px -1387px;
+	background-position: 0px -1387px;
 }
 
 div.contextmenu ul.iconized li:hover a.active.cmd_group-rename span.icon {
