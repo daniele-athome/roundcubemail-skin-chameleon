@@ -2997,18 +2997,42 @@ div.subscriptionblock h3.note {
 	color: @text-color;
 }
 
+#acltable tbody tr td.enabled,
+#acltable tbody tr td.partial,
+#acltable tbody tr.selected td.enabled,
 #acltable tbody tr.selected td.partial {
-	background: @main-color !important;
-	background-image: url(images/partial.png);
-	background-position: center;
-	background-repeat: no-repeat;
+	position: relative;
+	background: none;
 }
 
-#acltable tbody tr.selected td.enabled {
-	background: @main-color !important;
-	background-image: url(images/enabled.png);
-	background-position: center;
-	background-repeat: no-repeat;
+#acltable tbody tr td.enabled:after,
+#acltable tbody tr td.partial:after {
+	content: '';
+	position: absolute;
+	top: 7px;
+	left: 50%;
+	width: 10px;
+	height: 5px;
+	margin-left: -4px;
+	border: 3px solid @main-color;
+	border-top: none;
+	border-right: none;
+	background: transparent;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+#acltable tbody tr td.partial:after {
+	border-left-color: #ccc;
+	border-bottom-color: #ccc;
+}
+
+#acltable tbody tr.selected td.enabled:after {
+	border-left-color: @hightlight-text;
+	border-bottom-color: @hightlight-text;
 }
 
 
