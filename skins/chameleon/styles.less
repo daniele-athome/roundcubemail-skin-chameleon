@@ -548,10 +548,13 @@ ul.treelist li.selected a:focus {
 .listing tbody tr.selected td,
 .listing li.selected,
 .listing li.selected > a,
-.messagelist tr.thread.expanded td,
 #calendars .treelist li.selected > div.calendar {
 	color: @list-selected-text;
 	background-color: @list-selected-background;
+}
+
+.messagelist tr.thread.expanded td {
+	background-color: @title-background;
 }
 
 .listbox .listitem,
