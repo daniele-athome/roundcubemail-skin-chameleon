@@ -35,42 +35,103 @@ body.login #header {
 
 /*** basic page layout ***/
 
-#login-form .box-inner {
-	padding-top: 40px;
-	background: #fff;
-	border: none;
-	border-radius: 0;
+#login-form {
+	width: 560px;
 }
 
-#login-form .box-bottom {
-	background: transparent;
+#login-form .login-title {
+	width: auto;
+	margin: 0 80px 20px 80px;
+	font-weight: normal;
+	font-size: 18px;
+	padding-left: 24px;
+	text-transform: uppercase;
+	color: @title-text;
+}
+
+#login-form .box-inner {
+	width: auto;
+	margin: 0 80px;
+	padding: 24px;
+	background: @header-background;
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+#login-form form table,
+#login-form form tbody {
+	display: block;
+	width: 100%;
+}
+
+#login-form table tr,
+#login-form table td {
+	width: auto;
+	display: block;
+}
+
+#login-form table tr {
+	padding: 0;
+	margin-bottom: 15px;
+}
+
+#login-form table td.input {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+#login-form td.input input[type="text"],
+#login-form td.input input[type="password"] {
+	padding: 8px;
+	box-sizing: border-box;
+	font-size: 14px;
 }
 
 #login-form td.title {
-	color: @main-color;
+	color: @text-color;
 	text-shadow: none;
 	font-weight: bold;
+	text-align: left;
+	text-transform: uppercase;
+	margin-bottom: 4px;
 }
 
 #login-form input.button {
+	width: 100%;
+	padding: 10px 0;
 	border: none;
 	text-shadow: none;
 	color: #fff;
 	box-shadow: none;
+	-webkit-box-shadow: none;
 	background: @main-color;
+	box-sizing: border-box;
+	font-size: 14px;
 }
 
 #login-form input.button:hover,
 #login-form input.button:focus {
 	box-shadow: none;
 	-webkit-box-shadow: none;
+	background: darken(@main-color, 7%);
+}
+
+#login-form input.button:active {
+	color: #fff;
+	background: darken(@main-color, 12%);
 }
 
 #login-form p.formbuttons {
-	margin-left: 20%;
-	padding-left: 8px;
-	margin-top: 5px;;
-	text-align: left;
+	margin: 0;
+	margin-top: 24px;
+}
+
+#login-form .box-bottom {
+	background: none;
+	margin-top: 10px;
 }
 
 .topgradient {
@@ -2052,16 +2113,6 @@ input.button.delete:hover {
 
 #directorylist li.addressbook.virtual.user {
 	background-image: url(images/listicons.png) !important;
-}
-
-#directorylist li.addressbook a,
-#directorylist li.addressbook.selected > div a {
-	background-position: 6px -765px;
-}
-
-#directorylist ul li.addressbook > div a,
-#directorylist ul li.addressbook.selected > div a {
-	background-position: 32px -765px;
 }
 
 #directorylist ul li.contactgroup a,
