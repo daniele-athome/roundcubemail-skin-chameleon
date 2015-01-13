@@ -496,12 +496,14 @@ table.records-table {
 }
 
 ul.treelist li a:focus,
+ul.listing li:focus,
 ul.listing .listitem a:focus,
 ul.listing .listitem span:focus,
 ul.listing.focus .listitem.focused span {
 	background-color: @focus-color;
 	text-shadow: none;
 	color: @text-color !important;
+	outline: none;
 }
 
 ul.treelist li.selected a:focus {
@@ -548,6 +550,7 @@ ul.treelist li.selected a:focus {
 .listing tbody tr.selected td,
 .listing li.selected,
 .listing li.selected > a,
+ul.listing li.selected:focus,
 #calendars .treelist li.selected > div.calendar {
 	color: @list-selected-text;
 	background-color: @list-selected-background;
@@ -1603,75 +1606,153 @@ input.button.delete:hover {
 	background-image: url(images/filetypes.png);
 }
 
+#filelist tbody td.filename span {
+	background-image: url(images/filetypes.png) !important;
+	background-position: 0px 0px;
+	padding: 5px 2px 6px 30px;
+}
+
+.attachmentslist li.pdf,
+#filelist tbody td.filename.pdf span,
+#filelist tbody td.filename.application_pdf span {
+	background-position: 0 -26px;
+}
+
+.attachmentslist li.doc,
+.attachmentslist li.docx,
+.attachmentslist li.msword,
+#filelist tbody td.filename.application_vnd_ms_word span,
+#filelist tbody td.filename.application_msword span {
+	background-position: 0 -52px;
+}
+
+.attachmentslist li.xls,
+.attachmentslist li.xlsx,
+.attachmentslist li.msexcel,
+#filelist tbody td.filename.application_vnd_ms_excel span,
+#filelist tbody td.filename.application_vnd_oasis_opendocument_spreadsheet span,
+#filelist tbody td.filename.application_vnd_oasis_opendocument_spreadsheet_template span {
+	background-position: 0 -104px;
+}
+
 .attachmentslist li.ppt,
 .attachmentslist li.pptx,
-.attachmentslist li.mspowerpoint {
+.attachmentslist li.mspowerpoint,
+#filelist tbody td.filename.application_vnd_ms_powerpoint span {
 	background-position: 0 -156px;
 }
 
-.attachmentslist li.odp {
+.attachmentslist li.odt,
+#filelist tbody td.filename.application_vnd_oasis_opendocument_text span {
+	background-position: 0 -78px;
+}
+
+.attachmentslist li.odp,
+#filelist tbody td.filename.application_vnd_oasis_opendocument_presentation span,
+#filelist tbody td.filename.application_vnd_oasis_opendocument_presentation_template span {
 	background-position: 0 -182px;
 }
 
 .attachmentslist li.gz,
 .attachmentslist li.zip,
-.attachmentslist li.rar {
+.attachmentslist li.rar,
+#filelist tbody td.filename.tar span,
+#filelist tbody td.filename.application_zip span,
+#filelist tbody td.filename.application_x_7z_compressed span,
+#filelist tbody td.filename.application_x_ace span,
+#filelist tbody td.filename.application_x_arc span,
+#filelist tbody td.filename.application_x_arj span,
+#filelist tbody td.filename.application_x_bzip_compressed_tar span,
+#filelist tbody td.filename.application_x_lha span,
+#filelist tbody td.filename.application_x_rar span,
+#filelist tbody td.filename.application_x_tarz span,
+#filelist tbody td.filename.application_x_tzo span,
+#filelist tbody td.filename.application_x_zip span,
+#filelist tbody td.filename.application_x_zoo span {
 	background-position: 0 -234px;
 }
 
 .attachmentslist li.jpg,
 .attachmentslist li.jpeg,
 .attachmentslist li.png,
-.attachmentslist li.image {
+.attachmentslist li.image,
+#filelist tbody td.filename.image span,
+#filelist tbody td.filename.image_png span,
+#filelist tbody td.filename.image_svg_xml span,
+#filelist tbody td.filename.image_jpeg span,
+#filelist tbody td.filename.image_jpeg2000 span,
+#filelist tbody td.filename.application_vnd_stardivision_draw span,
+#filelist tbody td.filename.application_vnd_sun_xml_draw span,
+#filelist tbody td.filename.application_vnd_sun_xml_draw_template span {
 	background-position: 0 -208px;
 }
 
 .attachmentslist li.sig,
 .attachmentslist li.pgp-signature,
-.attachmentslist li.pkcs7-signature {
+.attachmentslist li.pkcs7-signature,
+#filelist tbody td.filename.application_pgp_keys span,
+#filelist tbody td.filename.application_pkcs7_mime span {
 	background-position: 0 -260px;
 }
 
 .attachmentslist li.m4p,
 .attachmentslist li.mp3,
-.attachmentslist li.audio {
+.attachmentslist li.audio,
+#filelist tbody td.filename.audio span {
 	background-position: 0 -286px;
 }
 
-.attachmentslist li.video {
+.attachmentslist li.video,
+#filelist tbody td.filename.video span {
 	background-position: 0 -338px;
 }
 
 .attachmentslist li.txt,
-.attachmentslist li.text {
+.attachmentslist li.text,
+#filelist tbody td.filename.ascii span,
+#filelist tbody td.filename.text_plain span {
 	background-position: 0 -416px;
 }
 
 .attachmentslist li.ics,
-.attachmentslist li.calendar {
+.attachmentslist li.calendar,
+#filelist tbody td.filename.vcalendar span {
 	background-position: 0 -364px;
 }
 
-.attachmentslist li.vcard {
+.attachmentslist li.vcard,
+#filelist tbody td.filename.vcard span,
+#filelist tbody td.filename.text_x_vcard span {
 	background-position: 0 -390px;
 }
 
-.attachmentslist li.html {
+.attachmentslist li.html,
+#filelist tbody td.filename.text_html span {
 	background-position: 0 -442px;
 }
 
-.attachmentslist li.css {
+.attachmentslist li.css,
+#filelist tbody td.filename.style_css span {
 	background-position: 0 -468px;
 }
 
-.attachmentslist li.csv {
+.attachmentslist li.csv,
+#filelist tbody td.filename.text_csv span {
 	background-position: 0 -494px;
 }
 
 .attachmentslist li.eml,
-.attachmentslist li.rfc822 {
+.attachmentslist li.rfc822,
+#filelist tbody td.filename.message_rfc822 span {
 	background-position: 0 -520px;
 }
+
+.attachmentslist li.eps,
+.attachmentslist li.svg,
+#filelist tbody td.filename.image_x_eps span {
+	background-position: 0 -546px;
+}
+
 
 .attachmentslist li a.drop {
 	background-position: center -1570px;
@@ -2764,8 +2845,8 @@ ul.toolbarmenu li:hover a.active span.saveas {
 }
 
 .filelist tbody tr td {
-	height: 25px;
-	line-height: 25px;
+	height: 28px;
+	line-height: 28px;
 }
 
 table.propform td.source.selected {
