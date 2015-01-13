@@ -1517,6 +1517,7 @@ input.button,
 	-webkit-box-shadow: none;
 	text-shadow: none;
 	color: @button-color;
+	filter: none;
 	font-weight: bold;
 	padding: 6px 10px;
 	margin: 1px 2px;
@@ -1930,6 +1931,7 @@ input.button.delete:hover {
 .ui-tabs .ui-tabs-nav li,
 .ui-tabs .ui-tabs-nav li.tablink a {
 	background: #ededed;
+	filter: none;
 }
 
 .ui-tabs .ui-tabs-nav li:last-child a {
@@ -1951,6 +1953,7 @@ input.button.delete:hover {
 .ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor {
 	background: @main-color;
 	color: @hightlight-text;
+	filter: none;
 }
 
 .ui-tabs .tabsbar.ui-tabs-nav {
@@ -1997,6 +2000,7 @@ input.button.delete:hover {
 .ui-slider .ui-slider-range {
 	border-radius: 0;
 	background: @main-color;
+	filter: none;
 }
 
 
@@ -2442,11 +2446,13 @@ input.button.delete:hover {
 #datepicker td.ui-datepicker-activerange a {
 	color: @text-color;
 	background: @light-color;
+	filter: none;
 }
 
 #datepicker td.ui-datepicker-activerange a.ui-state-active {
 	color: #fff;
 	background: @main-color;
+	filter: none;
 }
 
 .ui-datepicker td span,
@@ -2458,11 +2464,13 @@ input.button.delete:hover {
 	border-color: #4d4d4d !important;
 	text-shadow: none !important;
 	background: @main-color !important;
+	filter: none;
 }
 
 .ui-datepicker td a.ui-state-default {
 	background: #ededed;
 	border: none !important;
+	filter: none;
 }
 
 .ui-datepicker table:focus {
@@ -3169,6 +3177,10 @@ div.subscriptionblock h3.note {
 
 
 /*** ACL plugin ***/
+
+body.iframe.aclform {
+	background: #fff;
+}
 
 #aclcontainer {
 	background: none;
