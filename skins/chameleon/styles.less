@@ -528,13 +528,12 @@ ul.listing li {
 	padding: 4px 0;
 }
 
-#contacts-table td span.email,
 .listbox .listitem a,
 .listbox .tablink a,
 .listing tbody td,
 .listing tbody td a,
 .listing li a {
-	color: #3a3a3a;
+	color: @list-text;
 	height: 17px;
 	line-height: 17px;
 	text-shadow: none;
@@ -666,7 +665,7 @@ select.decorated option,
 ul.toolbarmenu li,
 .ui-menu .ui-menu-item a,
 #rcmKSearchpane ul li {
-	background: #3a3a3a;
+	background: @list-text;
 }
 
 select.decorated option,
@@ -2064,6 +2063,7 @@ input.button.delete:hover {
 	color: @text-color;
 }
 
+.listing tbody tr.selected td a,
 #tasklistsbox .treelist li.selected > div span.listname,
 #calendars .treelist li.selected > div span.calname,
 #directorylist li.addressbook.selected > div a,
@@ -2249,11 +2249,13 @@ input.button.delete:hover {
 	background-position: 4px -1625px;
 }
 
+#contacts-table td.contactgroup,
 #contacts-table td.contact.group,
 #contacts-table .contact.group td.name {
 	background-position: 4px -1552px;
 }
 
+#contacts-table tr.selected td.contactgroup,
 #contacts-table tr.selected td.contact.group,
 #contacts-table.focus .group.selected.focused td.name {
 	background-position: 4px -1578px;
@@ -2287,6 +2289,10 @@ input.button.delete:hover {
 #sections-table #rcmrowcalendar.selected .section,
 #sections-table #rcmrowcalendar .section {
 	background-position: 4px -524px;
+}
+
+#contacts-table td span.email {
+	color: #999;
 }
 
 
@@ -2793,7 +2799,7 @@ div.calendar-invitebox .folder-select {
 }
 
 #taskselector li a {
-	color: #3a3a3a;
+	color: @list-text;
 }
 
 .tagcloud li.inactive {
