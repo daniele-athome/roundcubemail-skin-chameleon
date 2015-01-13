@@ -1202,9 +1202,13 @@ body.iframe .footerleft.floating:before,
 	padding-left: 2px;
 }
 
-#contacttabs {
+#contacttabs fieldset.ui-tabs-panel {
 	margin-left: -@box-padding;
 	margin-right: -@box-padding;
+}
+
+#contacttabs .tabsbar.ui-tabs-nav {
+	margin-bottom: 0;
 }
 
 #contacttabs p.addfield {
@@ -1854,6 +1858,10 @@ input.button.delete:hover {
 	height: 45px;
 }
 
+.ui-dialog-content .ui-tabs .tabsbar.ui-tabs-nav {
+	margin-bottom: 10px;
+}
+
 .ui-tabs .ui-tabs-nav li,
 .ui-tabs .ui-tabs-nav li.tablink a {
 	background: #ededed;
@@ -1881,8 +1889,12 @@ input.button.delete:hover {
 }
 
 .ui-tabs .tabsbar.ui-tabs-nav {
-	margin-bottom: 0;
 	border-radius: 0;
+}
+
+.boxcontent .ui-tabs .tabsbar.ui-tabs-nav {
+	margin-left: -@box-padding;
+	margin-right: -@box-padding;
 }
 
 .ui-datepicker {
@@ -2176,14 +2188,18 @@ input.button.delete:hover {
 	background-position: 4px -1602px;
 }
 
-#contacts-table td.contactgroup,
-#contacts-table tr.selected td.contactgroup,
-#contacts-table .contactgroup td.name {
-	background-position: 4px -1553px;
-}
-
 #contacts-table .contact.selected td.name {
 	background-position: 4px -1625px;
+}
+
+#contacts-table td.contact.group,
+#contacts-table .contact.group td.name {
+	background-position: 4px -1552px;
+}
+
+#contacts-table tr.selected td.contact.group,
+#contacts-table.focus .group.selected.focused td.name {
+	background-position: 4px -1578px;
 }
 
 #sections-table #rcmrowgeneral.selected .section,
