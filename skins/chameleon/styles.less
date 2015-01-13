@@ -1121,7 +1121,7 @@ div.tasklist-invitebox,
 .event-dialog-message,
 .event-update-confirm .message {
 	border: 0;
-	background-color: #fefba2;
+	background-color: @invitation-box-color;
 }
 
 #edit-attendees-notify,
@@ -2472,6 +2472,27 @@ div.tasklist-invitebox .rsvp-status.needs-action {
 
 #resourcequicksearch {
 	background: transparent;
+}
+
+div.calendar-invitebox,
+div.tasklist-invitebox {
+	position: relative;
+	background-image: none;
+}
+
+div.calendar-invitebox:before,
+div.tasklist-invitebox:before {
+	content: '';
+	position: absolute;
+	top: 6px;
+	left: 8px;
+	width: 21px;
+	height: 21px;
+	background: url(images/invitations.png) -1px 0px no-repeat;
+}
+
+div.tasklist-invitebox:before {
+	background-position: -1px -22px;
 }
 
 div.calendar-invitebox .folder-select {
