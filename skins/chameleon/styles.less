@@ -756,7 +756,7 @@ textarea:focus {
 	border-color: @outline-color !important;
 	box-shadow: none;
 	-webkit-box-shadow: none;
-	outline: 1px solid @outline-color;
+	outline: 2px solid @outline-color;
 }
 
 input[type="text"]:required,
@@ -1331,12 +1331,90 @@ a.iconbutton:focus,
 
 /*** button styles ***/
 
-a.button, .buttongroup {
+.calendarmain #calendar .fc-button-today,
+.calendarmain #calendar .fc-button-today.fc-state-default,
+.calendarmain #calendar .fc-button-today.fc-state-hover,
+.ui-dialog .ui-dialog-buttonpane button,
+.ui-button.ui-state-default,
+a.button,
+input.button,
+.formbuttons input.button {
 	background: #e7e7e7;
-	color: @text-color;
+	border: none;
+	border-radius: 2px;
 	box-shadow: none;
 	-webkit-box-shadow: none;
 	text-shadow: none;
+	color: @button-color;
+	filter: none;
+	font-weight: bold;
+	padding: 6px 10px;
+	margin: 1px 2px;
+}
+
+a.button.disabled,
+input.button.disabled,
+input.button[disabled],
+a.button.disabled:hover,
+input.button.disabled:hover,
+input.button[disabled]:hover {
+	background: #e7e7e7;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	opacity: 0.85;
+}
+
+.ui-dialog .ui-dialog-buttonpane button.mainaction,
+input.button.mainaction {
+	background: #add03e;
+	color: #fff;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	text-shadow: none;
+}
+
+.ui-dialog .ui-dialog-buttonpane button.delete,
+input.button.delete {
+	background: #df4440;
+	color: #fff;
+}
+
+.ui-dialog .ui-dialog-buttonpane button:focus,
+.ui-dialog .ui-dialog-buttonpane button:hover,
+input.button:hover,
+input.button:focus,
+.formbuttons input.button:focus,
+.formbuttons input.button:hover {
+	border: none;
+	color: @button-color;
+	background: #e0e0e0;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+.ui-dialog .ui-dialog-buttonpane button.mainaction:focus,
+.ui-dialog .ui-dialog-buttonpane button.mainaction:hover,
+input.button.mainaction:focus,
+input.button.mainaction:hover {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	border: none;
+	color: #fff;
+	background: #88b400;
+}
+
+.ui-dialog .ui-dialog-buttonpane button.delete:focus,
+.ui-dialog .ui-dialog-buttonpane button.delete:hover,
+input.button.delete:focus,
+input.button.delete:hover {
+	background: #d1403c;
+	color: #fff;
+}
+
+.ui-dialog .ui-dialog-titlebar-close.ui-button:focus,
+.ui-dialog .ui-dialog-titlebar-close.ui-button.ui-state-focus {
+	-webkit-box-shadow: 0 0 0 2px @outline-color !important;
+	box-shadow: 0 0 0 2px @outline-color !important;
 }
 
 .pagenav a.button,
@@ -1377,6 +1455,8 @@ a.button span.icon,
 	-webkit-box-shadow: none;
 	background-color: #ededed;
 	border-color: @main-color;
+	color: @text-color;
+	text-shadow: none;
 }
 
 .buttongroup a.button.first,
@@ -1502,86 +1582,6 @@ a.button.changeformat.text.selected span.icon {
 
 #compose-contacts #directorylist {
 	border-bottom-color: #ededed;
-}
-
-.calendarmain #calendar .fc-button-today,
-.calendarmain #calendar .fc-button-today.fc-state-default,
-.calendarmain #calendar .fc-button-today.fc-state-hover,
-.ui-dialog .ui-dialog-buttonpane button,
-.ui-button.ui-state-default,
-a.button,
-input.button,
-.formbuttons input.button {
-	background: #e7e7e7;
-	border: none;
-	border-radius: 2px;
-	box-shadow: none;
-	-webkit-box-shadow: none;
-	text-shadow: none;
-	color: @button-color;
-	filter: none;
-	font-weight: bold;
-	padding: 6px 10px;
-	margin: 1px 2px;
-}
-
-.ui-dialog .ui-dialog-buttonpane button.mainaction,
-input.button.mainaction {
-	background: #add03e;
-	color: #fff;
-	box-shadow: none;
-	-webkit-box-shadow: none;
-	text-shadow: none;
-}
-
-.ui-dialog .ui-dialog-titlebar-close.ui-button:focus,
-.ui-dialog .ui-dialog-titlebar-close.ui-button.ui-state-focus {
-	-webkit-box-shadow: 0 0 0 2px @outline-color !important;
-	box-shadow: 0 0 0 2px @outline-color !important;
-}
-
-.ui-dialog .ui-dialog-buttonpane button.delete,
-input.button.delete {
-	background: #df4440;
-	color: #fff;
-}
-
-.ui-dialog .ui-dialog-buttonpane button:focus,
-.ui-dialog .ui-dialog-buttonpane button:hover,
-input.button.disabled:hover,
-input.button:hover,
-input.button:focus,
-.formbuttons input.button:focus,
-.formbuttons input.button:hover {
-	border: none;
-	color: @button-color;
-	background: #e0e0e0;
-	box-shadow: none;
-	-webkit-box-shadow: none;
-}
-
-.toolbar a.button.disabled:hover {
-	box-shadow: none;
-	-webkit-box-shadow: none;
-}
-
-.ui-dialog .ui-dialog-buttonpane button.mainaction:focus,
-.ui-dialog .ui-dialog-buttonpane button.mainaction:hover,
-input.button.mainaction:focus,
-input.button.mainaction:hover {
-	box-shadow: none;
-	-webkit-box-shadow: none;
-	border: none;
-	color: #fff;
-	background: #88b400;
-}
-
-.ui-dialog .ui-dialog-buttonpane button.delete:focus,
-.ui-dialog .ui-dialog-buttonpane button.delete:hover,
-input.button.delete:focus,
-input.button.delete:hover {
-	background: #d1403c;
-	color: #fff;
 }
 
 .popupdialog .formbuttons {
@@ -2242,6 +2242,21 @@ input.button.delete:hover {
 	background-color: #fff;
 }
 
+#calendars .treelist .calendar .count {
+	font-size: inherit;
+	font-weight: bold;
+	color: @list-selected-text;
+	background: @list-selected-background;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	padding: 2px;
+}
+
+#calendars .treelist li.selected .calendar .count {
+	color: @list-text;
+	background: #fff;
+}
+
 #contacts-table td.contact,
 #contacts-table tr.selected td.contact,
 #contacts-table .contact td.name {
@@ -2545,6 +2560,13 @@ div.tasklist-invitebox .rsvp-status.needs-action {
 	background-color: fade(@main-color, 0%);
 }
 
+.calendarmain .fc-event:focus {
+	outline: 1px solid @outline-color;
+	-webkit-box-shadow: 0 0 1px 2px @outline-color;
+	-moz-box-shadow: 0 0 1px 2px @outline-color;
+	-o-box-shadow: 0 0 1px 2px @outline-color;
+	box-shadow: 0 0 1px 2px @outline-color;
+}
 
 #taskedit .edit-attendees-table th.invite label,
 #eventedit .edit-attendees-table th.invite label {
@@ -2586,6 +2608,10 @@ div.calendar-invitebox .folder-select {
 	padding: 6px 0;
 }
 
+.calendar.attachmentwin #attachmenttoolbar,
+.tasklist.attachmentwin #attachmenttoolbar {
+	top: 0;
+}
 
 /*** tasklist module styles ***/
 
