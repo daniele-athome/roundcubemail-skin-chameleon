@@ -521,7 +521,8 @@ a:visited {
 .listbox .boxfooter,
 .listbox table.listing,
 .ui-dialog .listbox,
-ul.listing li {
+ul.listing li,
+ul.listing li.selected ul {
 	background: #fff;
 }
 
@@ -575,6 +576,11 @@ ul.listing.focus .listitem.focused span {
 
 ul.treelist li.selected a:focus {
 	color: @list-selected-text !important;
+}
+
+ul.listing li.droptarget,
+table.listing tr.droptarget td {
+	background-color: @focus-color;
 }
 
 .messagelist tr th.threads .listmenu:focus,
