@@ -619,8 +619,6 @@ table.listing tr.droptarget td {
 .listbox .tablink.selected,
 .listbox .listitem.selected > a,
 .listbox .tablink.selected > a,
-.listing tbody tr.unfocused td,
-.listing tbody tr.selected td,
 .listing li.selected,
 .listing li.selected > a,
 ul.listing li.selected:focus,
@@ -655,7 +653,10 @@ ul.treelist li ul li:last-child {
 	color: @hightlight-text !important;
 }
 
-.records-table tr.selected td {
+.listing tbody tr.unfocused td,
+.listing tbody tr.selected td,
+.records-table tr.selected td,
+.notesview #kolabnoteslist li.selected {
 	background-color: @main-color !important;
 	color: @hightlight-text !important;
 }
@@ -968,20 +969,9 @@ ul.toolbarmenu li span.icon.tagremoveall {
 	background-position: 6px -503px;
 }
 
-#sections-table #rcmrowmailview .section {
-	background-position: 4px -730px;
-}
-
-#sections-table #rcmrowmailview.selected .section {
-	background-position: 4px -730px;
-}
-
-#sections-table #rcmrowserver .section {
-	background-position: 4px -812px;
-}
-
+#sections-table #rcmrowserver .section,
 #sections-table #rcmrowserver.selected .section {
-	background-position: 4px -835px;
+	background-position: 4px -836px;
 }
 
 #preferences-details fieldset.advanced legend {
@@ -1133,6 +1123,8 @@ a.iconbutton,
 a.deletebutton,
 a.button span.icon,
 .toolbar a.button,
+.toolbar a.button:hover,
+.toolbar a.button:focus,
 .toolbar a.button.disabled,
 .boxpagenav a.icon,
 .draglayercopy:before,
@@ -1392,6 +1384,8 @@ input.button.delete {
 .ui-button.ui-state-hover,
 .ui-dialog .ui-dialog-buttonpane button:focus,
 .ui-dialog .ui-dialog-buttonpane button:hover,
+a.button:hover,
+a.button:focus,
 input.button:hover,
 input.button:focus,
 .formbuttons input.button:focus,
@@ -2152,9 +2146,13 @@ a.button.changeformat.text.selected span.icon {
 	background-image: url(images/listicons.png) !important;
 }
 
-#directorylist ul li.contactgroup a,
 #directorylist li.contactgroup.selected a {
-	background-position: 32px -1578px;
+	background-position: 32px -2268px;
+}
+
+#directorylist li.addressbook a,
+#directorylist li.addressbook.selected > div a {
+	background-position: 6px -768px;
 }
 
 #calendars .treelist div:hover span.actions,
@@ -2307,34 +2305,44 @@ a.button.changeformat.text.selected span.icon {
 	background-position: 4px -1578px;
 }
 
-#sections-table #rcmrowgeneral.selected .section,
-#sections-table #rcmrowgeneral .section {
-	background-position: 4px -570px;
-}
-
-#sections-table #rcmrowmailbox.selected .section,
 #sections-table #rcmrowmailbox .section {
-	background-position: 4px -644px;
+	background-position: 4px -620px;
 }
 
-#sections-table #rcmrowcompose.selected .section,
+#sections-table #rcmrowmailbox.selected .section {
+	background-position: 4px -645px;
+}
+
 #sections-table #rcmrowcompose .section {
 	background-position: 4px -669px;
 }
 
-#sections-table #rcmrowaddressbook.selected .section,
-#sections-table #rcmrowaddressbook .section {
-	background-position: 4px -765px;
+#sections-table #rcmrowcompose.selected .section {
+	background-position: 4px -694px;
 }
 
-#sections-table #rcmrowfolders.selected .section,
+#sections-table #rcmrowaddressbook .section {
+	background-position: 4px -766px;
+}
+
+#sections-table #rcmrowaddressbook.selected .section {
+	background-position: 4px -790px;
+}
+
 #sections-table #rcmrowfolders .section {
 	background-position: 4px 4px;
 }
 
-#sections-table #rcmrowcalendar.selected .section,
+#sections-table #rcmrowfolders.selected .section {
+	background-position: 4px -44px;
+}
+
 #sections-table #rcmrowcalendar .section {
 	background-position: 4px -524px;
+}
+
+#sections-table #rcmrowcalendar.selected .section {
+	background-position: 4px -548px;
 }
 
 #contacts-table td span.email {
