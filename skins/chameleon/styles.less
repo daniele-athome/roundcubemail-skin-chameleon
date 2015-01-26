@@ -770,6 +770,12 @@ input[type="password"]:required {
 	border-color: #e73023;
 }
 
+textates[disabled],
+input[type="text"][disabled],
+input[type="password"][disabled] {
+	color: #999;
+}
+
 .searchbox input,
 #quicksearchbar input {
 	padding-left: 34px;
@@ -1383,6 +1389,7 @@ input.button.delete {
 	color: #fff;
 }
 
+.ui-button.ui-state-hover,
 .ui-dialog .ui-dialog-buttonpane button:focus,
 .ui-dialog .ui-dialog-buttonpane button:hover,
 input.button:hover,
@@ -1599,7 +1606,7 @@ a.button.changeformat.text.selected span.icon {
 }
 
 .ui-dialog .ui-dialog-buttonpane button {
-	padding: 0.2em 0.5em;
+	padding: 8px 18px;
 }
 
 .ui-dialog .ui-dialog-buttonpane {
@@ -1909,6 +1916,10 @@ a.button.changeformat.text.selected span.icon {
 
 .ui-dialog .ui-dialog-titlebar-close .ui-icon-closethick {
 	background: url(images/ui-dialog-close.png) 1px 1px no-repeat;
+}
+
+.ui-button-text-only .ui-button-text {
+	padding: 0;
 }
 
 #messageheader,
@@ -2518,8 +2529,35 @@ a.button.changeformat.text.selected span.icon {
 	outline: 2px solid @outline-color;
 }
 
-#schedule-freebusy-times td {
+.availability img.availabilityicon {
+	border-radius: 2px;
+}
+
+#schedule-freebusy-times tr.times td,
+#attendees-freebusy-table div.timesheader {
 	padding: 4px;
+	line-height: 18px;
+}
+
+#schedule-freebusy-times td.free,
+.availability img.availabilityicon.free {
+	background-color: #adce4a;
+}
+
+#schedule-freebusy-times td.busy,
+.availability img.availabilityicon.busy {
+	background-color: #da4340;
+}
+
+#schedule-freebusy-times td.tentative,
+.availability img.availabilityicon.tentative {
+	background-color: #8c699f;
+}
+
+#schedule-freebusy-times td.all-busy,
+#schedule-freebusy-times td.all-tentative,
+#schedule-freebusy-times td.all-out-of-office {
+	background-image: url('images/freebusy-colors.png');
 }
 
 #event-partstat .changersvp,
@@ -2545,6 +2583,7 @@ div.tasklist-invitebox .rsvp-status.needs-action {
 .attendees-list span.attendee {
 	display: inline-block;
 	line-height: 14px;
+	padding-left: 22px;
 }
 
 .attendees-list div.attendee {
@@ -2558,6 +2597,10 @@ div.tasklist-invitebox .rsvp-status.needs-action {
 
 #schedule-freebusy-times td {
 	line-height: 15px;
+}
+
+.attendees-list a.attendee-role-toggle {
+	width: 18px;
 }
 
 .attendees-list .spacer,
@@ -2588,6 +2631,10 @@ div.tasklist-invitebox .rsvp-status.needs-action {
 #taskedit .edit-attendees-table th.invite label,
 #eventedit .edit-attendees-table th.invite label {
 	background: url(images/listicons.png) 2px -1294px no-repeat;
+}
+
+#schedule-event-time {
+	border-radius: 0;
 }
 
 #eventresourcesdialog {
