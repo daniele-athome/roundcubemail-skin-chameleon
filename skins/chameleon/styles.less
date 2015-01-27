@@ -648,6 +648,7 @@ ul.treelist li ul li:last-child {
 	border-bottom: none !important;
 }
 
+.listing tbody tr.selected td a,
 .records-table tr.selected td a,
 .records-table tr.selected td span {
 	color: @hightlight-text !important;
@@ -2088,7 +2089,6 @@ a.button.changeformat.text.selected span.icon {
 	color: @text-color;
 }
 
-.listing tbody tr.selected td a,
 #tasklistsbox .treelist li.selected > div span.listname,
 #calendars .treelist li.selected > div span.calname,
 #directorylist li.addressbook.selected > div a,
@@ -2151,7 +2151,8 @@ a.button.changeformat.text.selected span.icon {
 }
 
 #directorylist li.addressbook a,
-#directorylist li.addressbook.selected > div a {
+#directorylist li.addressbook.selected > div a,
+#compose-contacts li.addressbook.selected a {
 	background-position: 6px -768px;
 }
 
@@ -2284,11 +2285,11 @@ a.button.changeformat.text.selected span.icon {
 }
 
 #contacts-table td.contact,
-#contacts-table tr.selected td.contact,
 #contacts-table .contact td.name {
 	background-position: 4px -1602px;
 }
 
+#contacts-table tr.selected td.contact,
 #contacts-table .contact.selected td.name {
 	background-position: 4px -1625px;
 }
@@ -2302,7 +2303,7 @@ a.button.changeformat.text.selected span.icon {
 #contacts-table tr.selected td.contactgroup,
 #contacts-table tr.selected td.contact.group,
 #contacts-table.focus .group.selected.focused td.name {
-	background-position: 4px -1578px;
+	background-position: 4px -1577px;
 }
 
 #sections-table #rcmrowmailbox .section {
@@ -2347,6 +2348,15 @@ a.button.changeformat.text.selected span.icon {
 
 #contacts-table td span.email {
 	color: #999;
+	font-weight: normal;
+}
+
+#contacts-table tr.selected td span.email {
+	color: lighten(@hightlight-text, 15%);
+}
+
+#contacts-table td.contactgroup a .action {
+	color: @link-color;
 }
 
 
