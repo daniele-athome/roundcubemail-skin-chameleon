@@ -1996,14 +1996,14 @@ a.button.changeformat.text.selected span.icon {
 }
 
 .ie10 .ui-datepicker .ui-datepicker-title select,
-.webkit .ui-datepicker .ui-datepicker-title select,
-.mozilla .ui-datepicker .ui-datepicker-title select {
+.webkit .ui-datepicker .ui-datepicker-title select {
 	background-image: url(images/ui-icons-datepicker.png);
-	background-position: right -18px;
 }
 
-.mozilla .ui-datepicker .ui-datepicker-title select {
-	background-position: right -14px;
+@supports (-moz-appearance:none) and (mask-type:alpha) and (not (will-change:auto)) {
+	.mozilla .ui-datepicker .ui-datepicker-title select {
+		background-image: url(images/ui-icons-datepicker.png);
+	}
 }
 
 .ui-datepicker .ui-datepicker-header .ui-icon {
