@@ -1373,17 +1373,6 @@ input.button,
 	margin: 1px 2px;
 }
 
-input.button.disabled,
-input.button[disabled],
-input.button.disabled:hover,
-input.button[disabled]:hover {
-	background: #e7e7e7;
-	box-shadow: none;
-	-moz-box-shadow: none;
-	-webkit-box-shadow: none;
-	opacity: 0.85;
-}
-
 .ui-dialog .ui-dialog-buttonpane button.mainaction,
 input.button.mainaction {
 	background: #add03e;
@@ -1442,6 +1431,20 @@ input.button.delete:hover {
 	-webkit-box-shadow: 0 0 0 2px @outline-color !important;
 	-moz-box-shadow: 0 0 0 2px @outline-color !important;
 	box-shadow: 0 0 0 2px @outline-color !important;
+}
+
+a.button.disabled,
+input.button.disabled,
+input.button[disabled],
+a.button.disabled:hover,
+input.button.disabled:hover,
+input.button[disabled]:hover {
+	color: lighten(@button-color, 50%);
+	background: #e7e7e7;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	opacity: 0.85;
 }
 
 .pagenav a.button,
@@ -2668,7 +2671,7 @@ div.tasklist-invitebox .rsvp-status.needs-action {
 }
 
 .calendarmain .fc-state-highlight {
-	background-color: fade(@main-color, 0%);
+	background-color: fade(@main-color, 10%);
 }
 
 .calendarmain .fc-event:focus {
