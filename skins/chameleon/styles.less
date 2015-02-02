@@ -186,6 +186,10 @@ body.login #header {
 	height: 20px;
 }
 
+#header #topline {
+	background: none;
+}
+
 #toplogo {
 	margin-top: 8px;
 	margin-left: 18px;
@@ -2726,6 +2730,59 @@ div.calendar-invitebox .folder-select {
 	display: inline-block;
 	padding: 6px 0;
 }
+
+body.calendaritipattend {
+	background: #e7e7e7;
+}
+
+body.calendaritipattend #header {
+	height: 60px;
+	background: #3a3a3a;
+}
+
+body.calendaritipattend #topline {
+	display: none;
+}
+
+body.calendaritipattend #topnav {
+	background: url(images/kolab_logo.png) 18px 10px no-repeat;
+	height: 60px;
+	margin: 0;
+}
+
+body.calendaritipattend #topnav > * {
+	display: none;
+}
+
+body.calendaritipattend .centerbox {
+	background: #f9f9f9;
+}
+
+body.calendaritipattend .calendar-invitebox:before {
+	top: -2px;
+	left: -75px;
+	width: 60px;
+	height: 60px;
+	background: url(images/calendar-invitation.png) top left no-repeat;
+}
+
+body.calendaritipattend #event-rsvp .itip-reply-controls {
+	margin-top: 1em;
+}
+
+body.calendaritipattend .itip-reply-controls .noreply-toggle,
+body.calendaritipattend .itip-reply-controls #noreply-event-rsvp {
+	display: none;
+}
+
+body.calendaritipattend .itip-reply-controls  a.reply-comment-toggle {
+	margin-left: 2px;
+}
+
+body.calendaritipattend #message {
+	text-align: center;
+}
+
 
 /*** tasklist module styles ***/
 
