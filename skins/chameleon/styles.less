@@ -3461,12 +3461,25 @@ div.rulerow:hover,
 div.actionrow:hover {
 	border-color: fade(@main-color, 20%);
 	background-color: fade(@main-color, 5%);
+	border-radius: 0;
 }
 
 #filter-form .rowbuttons a.button {
 	padding: 0;
 	box-shadow: none;
 }
+
+#filterslist tbody tr.disabled td,
+#filtersetslist tbody tr.disabled td {
+	color: #999;
+}
+
+#filter-form fieldset {
+	border-radius: 0;
+	border-color: #bbb;
+	border-width: 1px;
+}
+
 
 /*** Kolab Notes plugin ***/
 
