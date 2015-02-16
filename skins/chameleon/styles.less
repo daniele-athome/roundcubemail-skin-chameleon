@@ -1144,6 +1144,7 @@ a.button span.icon,
 .toolbar a.button:hover,
 .toolbar a.button:focus,
 .toolbar a.button.disabled,
+.toolbar a.button.disabled:hover,
 .boxpagenav a.icon,
 .draglayercopy:before,
 .dropbutton .dropbuttontip,
@@ -1405,10 +1406,14 @@ input.button:focus,
 .formbuttons input.button:hover {
 	border: none;
 	color: @button-color;
-	background: #e0e0e0;
+	background-color: #e0e0e0;
 	box-shadow: none;
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
+}
+
+.toolbar a.button {
+	color: @text-color;
 }
 
 .ui-dialog .ui-dialog-buttonpane button.mainaction:focus,
@@ -1445,11 +1450,18 @@ a.button.disabled:hover,
 input.button.disabled:hover,
 input.button[disabled]:hover {
 	color: lighten(@button-color, 50%);
-	background: #e7e7e7;
+	background-color: #e7e7e7;
 	box-shadow: none;
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
 	opacity: 0.85;
+}
+
+.toolbar a.button.disabled,
+.toolbar a.button.disabled:hover {
+	color: lighten(@button-color, 50%);
+	background-color: transparent;
+	opacity: 0.4;
 }
 
 .pagenav a.button,
