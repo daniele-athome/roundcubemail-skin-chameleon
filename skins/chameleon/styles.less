@@ -2201,14 +2201,31 @@ a.button.changeformat.text.selected span.icon {
 	background-image: url(images/listicons.png) !important;
 }
 
-#directorylist li.contactgroup.selected a {
+#directorylist li.contactgroup.selected a,
+#directorylist ul li.contactgroup.selected a {
 	background-position: 32px -2268px;
+}
+
+#directorylist ul ul li.contactgroup.selected a {
+	background-position: 58px -2268px;
+}
+
+#directorylist ul ul ul li.contactgroup.selected a {
+	background-position: 84px -2268px;
 }
 
 #directorylist li.addressbook a,
 #directorylist li.addressbook.selected > div a,
 #compose-contacts li.addressbook.selected a {
 	background-position: 6px -768px;
+}
+
+#directorylist ul li.addressbook.selected > div a {
+	background-position: 32px -766px;
+}
+
+#directorylist ul ul li.addressbook.selected > div a {
+	background-position: 58px -766px;
 }
 
 #calendars .treelist div:hover span.actions,
