@@ -2011,6 +2011,22 @@ a.button.changeformat.text.selected span.icon {
 	border-right: 0;
 }
 
+.ui-tabs .ui-tabs-nav li:focus,
+.ui-tabs .ui-tabs-nav li.ui-state-focus,
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor:focus {
+	outline: 0;
+}
+
+.ui-tabs .ui-tabs-nav li:focus > a,
+.ui-tabs .ui-tabs-nav li.ui-state-focus > a {
+	box-shadow: 0 0 0 2px @outline-color inset;
+	color: #111;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-state-active.ui-state-focus > a {
+	box-shadow: 0 0 0 2px darken(@outline-color, 25%) inset;
+}
+
 .ui-tabs .ui-tabs-nav li.ui-tabs-active {
 	padding-bottom: 0;
 }
