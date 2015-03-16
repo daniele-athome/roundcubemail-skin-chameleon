@@ -835,8 +835,17 @@ h3.subject {
 }
 
 #quotadisplay {
-	color: @text-color;
+	color: #8d8d8d;
 	background-image: url(images/quota.png);
+}
+
+#quotadisplay.p80 {
+	color: @warning-color;
+}
+
+#quotadisplay.p90,
+#quotadisplay.p100 {
+	color: @error-color;
 }
 
 #all-headers {
@@ -1704,7 +1713,7 @@ a.button.changeformat.text.selected span.icon {
 }
 
 #messagestack div.confirmation {
-	color: #c1e065;
+	color: @confirm-color;
 }
 
 #messagestack div.confirmation:after {
@@ -1712,7 +1721,7 @@ a.button.changeformat.text.selected span.icon {
 }
 
 #messagestack div.warning {
-	color: #e07400;
+	color: @warning-color;
 }
 
 #messagestack div.warning:after {
@@ -1720,7 +1729,7 @@ a.button.changeformat.text.selected span.icon {
 }
 
 #messagestack div.error {
-	color: #dd4646;
+	color: @error-color;
 }
 
 #messagestack div.error:after {
