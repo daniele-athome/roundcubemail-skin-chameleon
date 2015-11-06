@@ -2181,6 +2181,7 @@ a.button.changeformat.text.selected span.icon {
 #calendars .treelist li span.calname,
 #directorylist li.addressbook.readonly,
 #directorylist li.addressbook.shared,
+#files-folder-list li.readonly,
 .notesview #notebooks div.folder span.handle,
 .notesview #notebooks li .listname {
 	background-image: url(images/listicons.png);
@@ -2200,6 +2201,7 @@ a.button.changeformat.text.selected span.icon {
 #directorylist li.addressbook.readonly {
 	background-position: 98% -2121px;
 }
+
 #tasklistsbox  .treelist .readonly > span.listname,
 #calendars .treelist div.readonly span.calname,
 .notesview #notebooks div.readonly span.handle,
@@ -2300,10 +2302,6 @@ a.button.changeformat.text.selected span.icon {
 	margin-bottom: 0;
 }
 
-#files-folder-list li a.subscription {
-	margin-top: 3px;
-}
-
 #directorylistbox ul.treelist div span.subscribed,
 #directorylistbox ul.treelist div span.remove {
 	top: 7px;
@@ -2363,6 +2361,7 @@ a.button.changeformat.text.selected span.icon {
 
 #files-folder-list li a.subscription {
 	background-position: -4px -2605px;
+	margin-top: 2px;
 }
 
 #files-folder-list li a.subscription.subscribed {
@@ -3215,7 +3214,7 @@ div.messagetasklinks::before {
 	color: #aaa;
 }
 
-#files-folder-list ul li.mailbox.collection.selected .name {
+#files-folder-list ul li.mailbox.selected > .name {
 	color: #fff;
 }
 
@@ -3237,6 +3236,10 @@ div.messagetasklinks::before {
 #files-folder-list ul li.mailbox.collection.document .name,
 #files-folder-list ul li.mailbox.collection.document.selected .name {
 	background-position: 7px -2435px;
+}
+
+#files-folder-list li.readonly {
+	background-position: 88% -2121px;
 }
 
 ul.toolbarmenu li span.saveas {
