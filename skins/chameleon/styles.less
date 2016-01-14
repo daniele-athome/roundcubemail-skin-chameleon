@@ -3190,7 +3190,7 @@ div.messagetasklinks::before {
 }
 
 #filestoolbar a.button.edit {
-	background-position: center -2384px;
+	background-position: center -2385px;
 }
 
 #filestoolbar a.button.save,
@@ -3206,6 +3206,31 @@ div.messagetasklinks::before {
 #filestoolbar a.button.delete {
 	background-image: url(images/buttons.png);
 	background-position: center -690px;
+}
+
+.manticore #filestoolbar a.button.delete {
+	background-image: url(images/buttons.png);
+	background-position: center -3039px;
+}
+
+#filestoolbar a.button.export {
+	background-position: -5px -2264px;
+}
+
+#filestoolbar a.button.create {
+	background-position: center -3078px;
+}
+
+#filestoolbar a.button.rename {
+	background-position: center -3118px;
+}
+
+#filestoolbar > label {
+	text-shadow: none;
+}
+
+#collaborators.toolbar {
+	top: 0;
 }
 
 #files-folder-list ul li .name,
@@ -3242,6 +3267,11 @@ div.messagetasklinks::before {
 	background-position: 7px -2435px;
 }
 
+#files-folder-list ul li.mailbox.collection.sessions .name,
+#files-folder-list ul li.mailbox.collection.sessions.selected .name {
+	background-position: 10px -3589px;
+}
+
 #files-folder-list li.readonly {
 	background-position: 88% -2121px;
 }
@@ -3262,8 +3292,8 @@ ul.toolbarmenu li:hover a.active span.saveas {
 }
 
 .filelist tbody tr td {
-	height: 28px;
-	line-height: 28px;
+	height: 26px;
+	line-height: 26px;
 }
 
 table.propform td.source.selected {
@@ -3281,6 +3311,34 @@ table.propform td.source.selected {
 #files-compose-dialog #filelistcontainer {
 	border: 5px solid #e7e7e7;
 	border-left: none;
+}
+
+.filelist tbody td.options span {
+	background-image: url(images/listicons.png);
+	background-position: -25px 0;
+	height: 24px;
+	width: 24px;
+}
+
+.filelist tbody tr.session > td.options span {
+	background-position: -25px -2268px;
+}
+
+.filelist tbody tr.session.invited > td.options span {
+	background-position: -25px -2244px;
+}
+
+.filelist tbody tr.session.owner > td.options span {
+	background-position: 0 -2244px;
+}
+
+.filelist tbody tr.selected.session > td.options span {
+	background-position: 0 -3161px;
+}
+
+#collaborators a.button.add {
+	background-image: url(images/listicons.png);
+	background-position: 0 -2810px;
 }
 
 /*** kolab delegation plugin ***/
