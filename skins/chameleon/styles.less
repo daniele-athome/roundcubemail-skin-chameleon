@@ -282,7 +282,7 @@ body.login #header {
 }
 
 .ktaskmenu:focus {
-	background-color: @focus-color;
+	background-color: @menu-focus-color;
 }
 
 .ktaskmenu .activetask {
@@ -333,7 +333,8 @@ body.login #header {
 }
 
 #ktaskpopup a:hover {
-	color: @hightlight-text;
+	color: @menu-highlight-text;
+	background-color: @menu-highlight-color;
 }
 
 #ktaskpopup a .button-inner {
@@ -729,8 +730,6 @@ ul.toolbarmenu li a {
 	text-shadow: none;
 }
 
-.ktaskmenu .popupmenu a:hover,
-.ktaskmenu .popupmenu a:focus,
 #rcmKSearchpane ul li.selected,
 .records-table.focus tr.selected td,
 .googie_list td.googie_list_onhover,
