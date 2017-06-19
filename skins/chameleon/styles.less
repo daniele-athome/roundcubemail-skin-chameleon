@@ -479,6 +479,7 @@ html.mozilla #mailboxlist > li:first-child,
 #preferences-frame,
 #helpcontentframe,
 .widescreen #mailview-bottom,
+.widescreen #messagelistheader,
 #mailview-bottom {
 	border-radius: 0;
 	border: none;
@@ -581,6 +582,7 @@ ul.listing li.selected ul {
 	text-shadow: none;
 	margin-top: 2px;
 	margin-bottom: 2px;
+	padding: 4px 8px;
 }
 
 .listing tbody td {
@@ -981,6 +983,7 @@ ul.toolbarmenu li span.icon,
 #sections-table tbody td,
 #settings-sections .listitem a,
 #settings-sections .tablink a,
+.widescreen #messagelistheader .listmenu,
 ul.treelist li div.treetoggle,
 ul.toolbarmenu li span.icon.taskadd,
 ul.toolbarmenu li .appendnote span.icon,
@@ -988,6 +991,11 @@ ul.toolbarmenu li span.icon.tagadd,
 ul.toolbarmenu li span.icon.tagremove,
 ul.toolbarmenu li span.icon.tagremoveall {
 	background-image: url(images/listicons.png);
+}
+
+.widescreen #messagelistheader .listmenu {
+	background-position: 0 -976px;
+	line-height: 22px;
 }
 
 .messagelist tbody .attachment span.ical {
