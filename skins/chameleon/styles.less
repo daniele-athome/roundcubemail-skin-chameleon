@@ -3815,6 +3815,7 @@ div.kolabmessagenotes {
 /*** Contextmenu plugin ***/
 
 #folder-selector li a span,
+#addressgroup-selector li a span,
 #addressbook-selector li a span,
 div.contextmenu ul.iconized li a.readfolder span.icon,
 div.contextmenu ul.iconized li a.openfolder span.icon,
@@ -3881,34 +3882,44 @@ ul.rcmcontextmenu .tasklist-create-from-mail a span {
 	background-position: 5px -119px;
 }
 
+#folder-selector li.inbox span,
 #folder-selector li a.inbox span {
 	background-position: 4px -215px;
 }
 
+#folder-selector li.drafts span,
 #folder-selector li a.drafts span {
 	background-position: 4px -263px;
 }
 
+#folder-selector li.sent span,
 #folder-selector li a.sent span {
 	background-position: 4px -311px;
 }
 
+#folder-selector li.junk span,
 #folder-selector li a.junk span {
 	background-position: 4px -359px;
 }
 
+#folder-selector li.trash span,
 #folder-selector li a.trash span {
-	background-position: 4px -407px;
+	background-position: 4px -408px;
 }
 
 #addressbook-selector li a.addressbook span {
 	text-indent: 4px;
-	background-position: 2px -792px;
+	background-position: 2px -769px;
 }
 
+#addressbook-selector li:hover a.addressbook span {
+	background-position: 2px -793px;
+}
+
+#addressgroup-selector li a.contactgroup span,
 #addressbook-selector li a.contactgroup span {
 	text-indent: 10px;
-	background-position: 10px -1580px;
+	background-position: 10px -1556px;
 }
 
 div.contextmenu ul.iconized li a.compose span.icon {
