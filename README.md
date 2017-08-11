@@ -1,20 +1,21 @@
 Kolab Enterprise Web Client Skin
 ================================
 
-Screendesign and icons by Kolab Systems AG, Zurich, Switzerland
-http://kolabsys.com
+Screendesign and icons by [Kolab Systems AG, Zurich, Switzerland](http://kolabsys.com)
+# Screenshots
+![Kolab Theme](screenshots/roundcubemail-skin-chameleon-1.jpg)
+![Kolab Theme](screenshots/roundcubemail-skin-chameleon-2.jpg)
 
 
-LICENSE
--------
+# License
 The contents of this folder can be redistributed and/or modified
 under the terms of the GNU Affero General Public License as published
 by the Free Software Foundation, either version 3 of the License,
 or (at your option) any later version.
 
 
-PACKAGING and INSTALLATION
---------------------------
+# Packaging and installation
+
 
 styles.css is written using LESS syntax. Thus it needs to be compiled
 using the `lessc` command line tool. This comes with the `nodejs-less`
