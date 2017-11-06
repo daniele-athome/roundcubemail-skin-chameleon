@@ -778,7 +778,8 @@ select.decorated option[selected='selected'],
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+select {
 	padding: 5px;
 	background: #fff;
 	border: 1px solid #dbdbdb;
@@ -791,7 +792,8 @@ input[type="password"],
 .searchbox input,
 #quicksearchbar input,
 body .tagedit-list,
-textarea {
+textarea,
+select {
 	border-radius: 1px;
 	border: 1px solid #dbdbdb;
 	box-shadow: none;
@@ -804,7 +806,8 @@ textarea {
 input[type="text"]:focus,
 input[type="password"]:focus,
 input.button:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
 	border-color: @outline-color !important;
 	box-shadow: none;
 	-moz-box-shadow: none;
