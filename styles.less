@@ -478,6 +478,8 @@ html.mozilla #mailboxlist > li:first-child,
 #messagelistfooter,
 #preferences-frame,
 #helpcontentframe,
+.widescreen #mailview-bottom,
+.widescreen #messagelistheader,
 #mailview-bottom {
 	border-radius: 0;
 	border: none;
@@ -514,9 +516,10 @@ h3.boxtitle,
 .ui-widget-header,
 .fc-widget-header,
 .records-table thead th,
-.ui-datepicker-calendar thead th,
 .ui-widget-header select,
 #taskselector li,
+#prefs-title,
+#filter-title,
 a.menuselector,
 ul.toolbarmenu li.separator label,
 .ui-dialog-buttonpane a.dropdown-link {
@@ -579,6 +582,7 @@ ul.listing li.selected ul {
 	text-shadow: none;
 	margin-top: 2px;
 	margin-bottom: 2px;
+	padding: 4px 8px;
 }
 
 .listing tbody td {
@@ -979,6 +983,7 @@ ul.toolbarmenu li span.icon,
 #sections-table tbody td,
 #settings-sections .listitem a,
 #settings-sections .tablink a,
+.widescreen #messagelistheader .listmenu,
 ul.treelist li div.treetoggle,
 ul.toolbarmenu li span.icon.taskadd,
 ul.toolbarmenu li .appendnote span.icon,
@@ -986,6 +991,11 @@ ul.toolbarmenu li span.icon.tagadd,
 ul.toolbarmenu li span.icon.tagremove,
 ul.toolbarmenu li span.icon.tagremoveall {
 	background-image: url(images/listicons.png);
+}
+
+.widescreen #messagelistheader .listmenu {
+	background-position: 0 -976px;
+	line-height: 22px;
 }
 
 .messagelist tbody .attachment span.ical {
@@ -1068,21 +1078,21 @@ ul.toolbarmenu li span.icon.print {
 ul.toolbarmenu li span.icon.tagadd {
 	background-position: 0 -3190px;
 }
-ul.toolbarmenu li:hover span.icon.tagadd {
+ul.toolbarmenu li:hover a.active span.icon.tagadd {
 	background-position: 0 -3250px;
 }
 
 ul.toolbarmenu li span.icon.tagremove {
 	background-position: 0 -3210px;
 }
-ul.toolbarmenu li:hover span.icon.tagremove {
+ul.toolbarmenu li:hover a.active span.icon.tagremove {
 	background-position: 0 -3270px;
 }
 
 ul.toolbarmenu li span.icon.tagremoveall {
 	background-position: 0 -3230px;
 }
-ul.toolbarmenu li:hover span.icon.tagremoveall {
+ul.toolbarmenu li:hover a.active span.icon.tagremoveall {
 	background-position: 0 -3290px;
 }
 
@@ -1534,6 +1544,10 @@ a.button span.icon,
 	text-shadow: none;
 }
 
+.pagenav .pagejumper {
+	background: #fff;
+}
+
 .pagenavbuttons {
 	top: 0;
 }
@@ -1691,6 +1705,11 @@ a.button.changeformat.text.selected span.icon {
 
 .ui-dialog .ui-dialog-buttonpane {
 	padding-top: 0.5em;
+}
+
+.popupmenu > .buttons {
+	height: 35px;
+	border-top: 0;
 }
 
 
@@ -2700,24 +2719,24 @@ a.button.changeformat.text.selected span.icon {
 	line-height: 18px;
 }
 
-#schedule-freebusy-times td.free,
+#schedule-freebusy-times td div.free,
 .availability img.availabilityicon.free {
 	background-color: #adce4a;
 }
 
-#schedule-freebusy-times td.busy,
+#schedule-freebusy-times td div.busy,
 .availability img.availabilityicon.busy {
 	background-color: #da4340;
 }
 
-#schedule-freebusy-times td.tentative,
+#schedule-freebusy-times td div.tentative,
 .availability img.availabilityicon.tentative {
 	background-color: #8c699f;
 }
 
-#schedule-freebusy-times td.all-busy,
-#schedule-freebusy-times td.all-tentative,
-#schedule-freebusy-times td.all-out-of-office {
+#schedule-freebusy-times td div.all-busy,
+#schedule-freebusy-times td div.all-tentative,
+#schedule-freebusy-times td div.all-out-of-office {
 	background-image: url('images/freebusy-colors.png');
 }
 
@@ -2758,13 +2777,12 @@ div.tasklist-invitebox .rsvp-status.needs-action {
 	line-height: 15px;
 }
 
-.attendees-list div.attendee.spacer,
-#schedule-freebusy-times tr.spacer td {
+.attendees-list div.attendee.spacer {
 	line-height: 5px;
 }
 
-#schedule-freebusy-times td {
-	line-height: 15px;
+#schedule-freebusy-times tbody td {
+	height: 23px;
 }
 
 .attendees-list a.attendee-role-toggle {
@@ -2828,7 +2846,8 @@ div.calendar-invitebox,
 div.tasklist-invitebox {
 	position: relative;
 	background-image: none;
-	margin: 0 0 8px 0;
+	margin: 8px;
+	margin-bottom: 0;
 }
 
 div.calendar-invitebox:before,
@@ -3320,6 +3339,10 @@ ul.toolbarmenu li:hover a.active span.saveas {
 	line-height: 26px;
 }
 
+.filelist tr > .mtime {
+	width: 150px;
+}
+
 table.propform td.source.selected {
 	background-color: fade(@main-color, 10%);
 }
@@ -3666,6 +3689,10 @@ div.actionrow:hover {
 	border-width: 1px;
 }
 
+#filter-form input.error,
+#filter-form textarea.error {
+	background-color: #ffffc4;
+}
 
 /*** Kolab Notes plugin ***/
 
@@ -3707,7 +3734,10 @@ div.kolabmessagenotes a.kolabnotesref {
 div.messagetasklinks,
 div.kolabmessagenotes {
 	border: 0;
-	background-color: #f9f9f9;
+	background-color: #f6f6f6;
+	margin: 8px;
+	margin-bottom: 0;
+	border-radius: 0;
 }
 
 
@@ -3785,6 +3815,7 @@ div.kolabmessagenotes {
 /*** Contextmenu plugin ***/
 
 #folder-selector li a span,
+#addressgroup-selector li a span,
 #addressbook-selector li a span,
 div.contextmenu ul.iconized li a.readfolder span.icon,
 div.contextmenu ul.iconized li a.openfolder span.icon,
@@ -3851,34 +3882,44 @@ ul.rcmcontextmenu .tasklist-create-from-mail a span {
 	background-position: 5px -119px;
 }
 
+#folder-selector li.inbox span,
 #folder-selector li a.inbox span {
 	background-position: 4px -215px;
 }
 
+#folder-selector li.drafts span,
 #folder-selector li a.drafts span {
 	background-position: 4px -263px;
 }
 
+#folder-selector li.sent span,
 #folder-selector li a.sent span {
 	background-position: 4px -311px;
 }
 
+#folder-selector li.junk span,
 #folder-selector li a.junk span {
 	background-position: 4px -359px;
 }
 
+#folder-selector li.trash span,
 #folder-selector li a.trash span {
-	background-position: 4px -407px;
+	background-position: 4px -408px;
 }
 
 #addressbook-selector li a.addressbook span {
 	text-indent: 4px;
-	background-position: 2px -792px;
+	background-position: 2px -769px;
 }
 
+#addressbook-selector li:hover a.addressbook span {
+	background-position: 2px -793px;
+}
+
+#addressgroup-selector li a.contactgroup span,
 #addressbook-selector li a.contactgroup span {
 	text-indent: 10px;
-	background-position: 10px -1580px;
+	background-position: 10px -1556px;
 }
 
 div.contextmenu ul.iconized li a.compose span.icon {
@@ -3911,3 +3952,11 @@ div.contextmenu ul.iconized li:hover a.active.cmd_group-rename span.icon {
 	background-position: 0 -2954px;
 }
 
+/*** Enigma plugin ***/
+
+#mainscreen.enigma {
+	top: 78px;
+}
+#keystoolbar {
+	top: -14px;
+}
